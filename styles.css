@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+header {
+    background-color: #242424;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.contenedor {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+input {
+    width: 100%;
+    max-width: 350px;
+    padding: 10px;
+    margin: 10px 5px 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contador {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#numero {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.form-producto {
+    margin-bottom: 20px;
+}
+
+#lista-productos {
+    padding-left: 20px;
+}
+
+#lista-productos li {
+    margin-bottom: 8px;
+}
+
+.tarjeta {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;
+}
+
+.tarjeta h3 {
+    margin-top: 0;
+}
+
+.alerta {
+    background-color: #e5e7eb;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    background-color: #242424;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+}
