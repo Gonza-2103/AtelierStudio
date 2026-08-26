@@ -2,11 +2,19 @@
     box-sizing: border-box;
 }
 
+.logo{
+    width: 50%;  /* Reduce el ancho al 50% */
+    height: auto;  /* Mantiene la proporción original */
+    display: block;  /* Permite centrar mediante márgenes */
+    margin: 0 auto;  /* Centra horizontalmente*/
+    margin-top: 10%;
+    margin-bottom: 25%;
+}
+
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f5f5;
-    color: #222;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('Fondo de madera transparente.jpg');
 }
 
 header {
