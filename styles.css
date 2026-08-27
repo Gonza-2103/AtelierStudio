@@ -2,19 +2,95 @@
     box-sizing: border-box;
 }
 
-.logo{
-    width: 50%;  /* Reduce el ancho al 50% */
-    height: auto;  /* Mantiene la proporción original */
-    display: block;  /* Permite centrar mediante márgenes */
-    margin: 0 auto;  /* Centra horizontalmente*/
-    margin-top: 10%;
-    margin-bottom: 25%;
+.pagina_login {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    justify-content: center;  
+    text-align: center;  
+    
+    background-image: url('Fondo de madera transparente.jpg');
+    background-position: center;  /* Centra la imagen de fondo vertical y horizontalmente */
+    background-repeat: no-repeat;  /* Evita que el fondo se repita */
+    background-size: cover;  /* Ajusta la imagen a toda la pantalla manteniendo proporción*/
+    background-attachment: fixed;  /* Deja la imagen fija al hacer scroll */
+    
+    
+    padding: 0;  /* Elimina rellenos por defecto */
+    width: 100%;  /* Ocupa el 100% del ancho de la pantalla */
+    height: 100vh;  /* Fija la altura exactamente al 100% de la ventana */
+    overflow: hidden;  /* Oculta barras de desplazamiento y bloquea el scroll */ 
 }
 
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('Fondo de madera transparente.jpg');
+.pagina_login img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.adm button {
+    background-color: black;
+    color: gold;
+    padding: 0;  
+    border: none;  
+
+    width: 50px;  
+    height: 50px;  
+    border-radius: 50%;  /* Hace la forma completamente redonda */
+    position: fixed;  
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+
+    display: inline-flex;  /* Centra el icono o texto adentro */
+    cursor: pointer;  /* Cursor de mano al pasar por encima */
+    align-items: center;  
+    justify-content: center;  
+}
+
+.adm svg {
+    width: 28px;
+    height: 28px;
+}
+
+.logo {
+    width: 250px;  /* Reduce el ancho al 40% */
+    height: auto;  /* Mantiene la proporción original */
+    display: block;  /* Permite centrar mediante márgenes */
+    margin: 0 auto;  /* Centra horizontalmente */
+    flex-shrink: 0;  /* Evita que se encoja si está dentro de un contenedor flex */
+}
+
+.infologin {
+    margin-top: 3%;
+    width: 300px;
+    max-width: 85%;  
+    margin: 0 auto;  /* Centra los objetos y el texto horizontalmente */
+    text-align: center;
+}
+
+.botones_login {
+    display: flex;  /* Coloca los botones uno al lado del otro */  
+    gap: 30px;  /* Espacio de separación entre los botones */
+    width: 100%;  /* El conjunto mide lo mismo que campos de escritura (inputs) */
+    justify-content: center;  /* Centra ambos botones al medio */
+}
+
+.botones_login button {
+    flex: 1;  /* Hace que ambos botones se repartan */
+    padding: 12px 0;  /* Altura idéntica a los inputs */
+    background-color: black;
+}
+
+.forgot {
+    background: none;  /* Quita el color por defecto del botón */
+    border: none;  /* Quita el borde */
+    padding: 0;  /* Elimina el relleno interno */
+    color: black;  /* Color del texto del botón */
+    cursor: pointer;  /* Muestra el cursor de mano al pasar por encima */
+    text-decoration: underline;  /* Subraya el texto como un enlace */
 }
 
 header {
