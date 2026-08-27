@@ -56,7 +56,7 @@
 }
 
 .logo {
-    width: 250px;  /* Reduce el ancho al 40% */
+    width: 250px;  /*  */
     height: auto;  /* Mantiene la proporción original */
     display: block;  /* Permite centrar mediante márgenes */
     margin: 0 auto;  /* Centra horizontalmente */
@@ -91,6 +91,58 @@
     color: black;  /* Color del texto del botón */
     cursor: pointer;  /* Muestra el cursor de mano al pasar por encima */
     text-decoration: underline;  /* Subraya el texto como un enlace */
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+#prod {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('fondomadera.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  /* Mantiene la madera fija */
+}
+
+/* Título y logo de producto */
+#titulo_prod {
+    justify-content: center;
+    background-image: url('fondoturquesa.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Medidas fijas para que no cambie su estructura */
+    width: 100%;
+    min-height: 110px;  /* Asegura una altura mínima constante */
+    padding: 20px 30px;  /* Padding moderado que no aplasta el contenido */
+    box-sizing: border-box;  /* Respeta los límites sin desbordar */
+
+    /* Alineación centrada vertical */
+    display: flex;  
+    align-items: center;  
+}
+
+#titulo_prod #titlogo {
+    display: flex;
+    align-items: center;  /* Centrado vertical entre logo y texto */
+    gap: 20px;  /* Separación entre logo y texto */
+    margin: 0;
+}
+
+#titulo_prod img{  /* '!important' obliga al navegador a hacer el cambio */
+    width: 70px;      /* Reduce el ancho a la mitad del contenedor padre */
+    height: auto;  /* Mantiene la proporción original */
+    flex-shrink: 0;  /* Evita que se encoja si está dentro de un contenedor flex */
+    display: block;  
+}
+
+#titulo_prod h2 {
+    margin: 0;
+    color: black;
+    font-size: 28px;
 }
 
 header {
