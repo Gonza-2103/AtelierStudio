@@ -24,39 +24,43 @@
             <!-- Formulario de Registro -->
             <form id="formRegistro" class="campos_registro mx-auto" style="max-width: 500px;">
 
-                <!-- 1. RUN -->
+                <!--RUN -->
                 <div class="mb-3">
                     <label for="run" class="form-label"><strong>RUN:</strong></label>
-                    <input type="text" id="run" name="run" class="form-control" placeholder="Ej: 19011022K (Sin puntos ni guion)" minlength="7" maxlength="9" required/>
+                    <input type="text" id="run" name="run" class="form-control" placeholder="Ej: 19011022K (Sin puntos ni guion)" minlength="7" maxlength="9" />
                     <small class="form-text text-muted">Ingresar sin puntos ni guión. Mínimo 7 y máximo 9 caracteres.</small>
+                    <small id="errorRun" class="text-danger fw-bold"></small>
                 </div>
 
-                <!-- 2. Nombre -->
+                <!-- Nombre -->
                 <div class="mb-3">
                     <label for="nombre" class="form-label"><strong>Nombre:</strong></label>
-                    <input type="text" id="nombre" name="nombre" class="form-control" maxlength="50" required/>
+                    <input type="text" id="nombre" name="nombre" class="form-control" maxlength="50" />
+                    <small id="errorNombre" class="text-danger fw-bold"></small>
                 </div>
 
-                <!-- 3. Apellidos -->
+                <!--  Apellidos -->
                 <div class="mb-3">
                     <label for="apellidos" class="form-label"><strong>Apellidos:</strong></label>
-                    <input type="text" id="apellidos" name="apellidos" class="form-control" maxlength="100" required/>
+                    <input type="text" id="apellidos" name="apellidos" class="form-control" maxlength="100" />
+                    <small id="errorApellidos" class="text-danger fw-bold"></small>
                 </div>
 
-                <!-- 4. Correo Electrónico -->
+                <!--Correo Electrónico -->
                 <div class="mb-3">
                     <label for="correo" class="form-label"><strong>Correo electrónico:</strong></label>
-                    <input type="email" id="correo" name="correo" class="form-control" placeholder="ejemplo@duoc.cl" maxlength="100" required/>
-                    <small class="form-text text-muted">Solo se permiten dominios @duoc.cl, @profesor.duoc.cl y @gmail.com</small>
+                    <input type="text" id="correo" name="correo" class="form-control" placeholder="ejemplo@duocuc.cl" maxlength="100" >
+                    <small class="form-text text-muted">Solo se permiten dominios @duocuc.cl, @profesor.duocuc.cl y @gmail.com</small>
+                    <small id="errorCorreo" class="text-danger fw-bold"></small>
                 </div>
 
-                <!-- 5. Fecha de Nacimiento (Opcional) -->
+                <!-- Fecha de Nacimiento (Opcional) -->
                 <div class="mb-3">
                     <label for="fechaNacimiento" class="form-label"><strong>Fecha de Nacimiento (Opcional):</strong></label>
                     <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control"/>
                 </div>
 
-                <!-- 6. Tipo de Usuario (Para vista de Administrador) -->
+                <!--Tipo de Usuario  -->
                 <div class="mb-3">
                     <label for="tipoUsuario" class="form-label"><strong>Tipo de Usuario / Perfil:</strong></label>
                     <select id="tipoUsuario" name="tipoUsuario" class="form-select">
@@ -66,28 +70,30 @@
                     </select>
                 </div>
 
-                <!-- 7. Región -->
+                <!-- Región -->
                 <div class="mb-3">
                     <label for="region" class="form-label"><strong>Región:</strong></label>
-                    <select id="region" name="region" class="form-select" required>
+                    <select id="region" name="region" class="form-select" >
                         <option value="">Seleccione una Región</option>
-                        <!-- Se poblará dinámicamente desde el arreglo JS -->
+                    
                     </select>
+                    <small id="errorRegion" class="text-danger fw-bold"></small>
                 </div>
 
-                <!-- 8. Comuna -->
+                <!-- Comuna -->
                 <div class="mb-3">
                     <label for="comuna" class="form-label"><strong>Comuna:</strong></label>
-                    <select id="comuna" name="comuna" class="form-select" required>
+                    <select id="comuna" name="comuna" class="form-select" >
                         <option value="">Seleccione una Comuna</option>
-                        <!-- Se actualizará según la región seleccionada -->
                     </select>
+                    <small id="errorComuna" class="text-danger fw-bold"></small>
                 </div>
 
-                <!-- 9. Dirección -->
+                <!-- Dirección -->
                 <div class="mb-3">
                     <label for="direccion" class="form-label"><strong>Dirección:</strong></label>
-                    <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Calle, número" maxlength="300" required/>
+                    <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Calle, número" maxlength="300" />
+                    <small id="errorDireccion" class="text-danger fw-bold"></small>
                 </div>
 
                 <!-- Botones de Acción -->
@@ -104,7 +110,9 @@
             </form>
         </div>
 
-        <!-- Inclusión del script principal donde se hará la lógica de regiones/comunas y validaciones JavaScript -->
-        <script src="script.js"></script>
+        <!-- carga del arreglo complementario -->
+        <script src="regiones.js"></script>
+        <!--validaciones JavaScript -->
+        <script src="registro.js"></script>
     </body>
 </html>
