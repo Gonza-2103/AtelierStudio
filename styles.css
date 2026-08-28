@@ -11,7 +11,7 @@
     justify-content: center;  
     text-align: center;  
     
-    background-image: url('Fondo de madera transparente.jpg');
+    background-image: url('fondomadera.jpg');  /* Imagen de fondo */
     background-position: center;  /* Centra la imagen de fondo vertical y horizontalmente */
     background-repeat: no-repeat;  /* Evita que el fondo se repita */
     background-size: cover;  /* Ajusta la imagen a toda la pantalla manteniendo proporción*/

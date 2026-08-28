@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Registro de Usuario - AtelierStudio</title>
+
+        <!-- Estilos personalizados -->
+        <!-- <link rel="stylesheet" href="styles.css"/> -->
+    </head>
+
+    <body class="pagina_registro">
+
+        <!-- Logo de la empresa -->
+        <div class="logo">
+            <img src="atelierstudiologo.png" alt="Logo AtelierStudio" class="logo" width="40%"/>
+        </div>
+
+        <div class="inforegistro container my-4">
+            <div class="palabra_registro text-center mb-4">
+                <h1>Crear Cuenta / Registrar Usuario</h1>
+            </div>
+
+            <!-- Formulario de Registro -->
+            <form id="formRegistro" class="campos_registro mx-auto" style="max-width: 500px;">
+
+                <!-- 1. RUN -->
+                <div class="mb-3">
+                    <label for="run" class="form-label"><strong>RUN:</strong></label>
+                    <input type="text" id="run" name="run" class="form-control" placeholder="Ej: 19011022K (Sin puntos ni guion)" minlength="7" maxlength="9" required/>
+                    <small class="form-text text-muted">Ingresar sin puntos ni guión. Mínimo 7 y máximo 9 caracteres.</small>
+                </div>
+
+                <!-- 2. Nombre -->
+                <div class="mb-3">
+                    <label for="nombre" class="form-label"><strong>Nombre:</strong></label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" maxlength="50" required/>
+                </div>
+
+                <!-- 3. Apellidos -->
+                <div class="mb-3">
+                    <label for="apellidos" class="form-label"><strong>Apellidos:</strong></label>
+                    <input type="text" id="apellidos" name="apellidos" class="form-control" maxlength="100" required/>
+                </div>
+
+                <!-- 4. Correo Electrónico -->
+                <div class="mb-3">
+                    <label for="correo" class="form-label"><strong>Correo electrónico:</strong></label>
+                    <input type="email" id="correo" name="correo" class="form-control" placeholder="ejemplo@duoc.cl" maxlength="100" required/>
+                    <small class="form-text text-muted">Solo se permiten dominios @duoc.cl, @profesor.duoc.cl y @gmail.com</small>
+                </div>
+
+                <!-- 5. Fecha de Nacimiento (Opcional) -->
+                <div class="mb-3">
+                    <label for="fechaNacimiento" class="form-label"><strong>Fecha de Nacimiento (Opcional):</strong></label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control"/>
+                </div>
+
+                <!-- 6. Tipo de Usuario (Para vista de Administrador) -->
+                <div class="mb-3">
+                    <label for="tipoUsuario" class="form-label"><strong>Tipo de Usuario / Perfil:</strong></label>
+                    <select id="tipoUsuario" name="tipoUsuario" class="form-select">
+                        <option value="Cliente" selected>Cliente</option>
+                        <option value="Vendedor">Vendedor</option>
+                        <option value="Administrador">Administrador</option>
+                    </select>
+                </div>
+
+                <!-- 7. Región -->
+                <div class="mb-3">
+                    <label for="region" class="form-label"><strong>Región:</strong></label>
+                    <select id="region" name="region" class="form-select" required>
+                        <option value="">Seleccione una Región</option>
+                        <!-- Se poblará dinámicamente desde el arreglo JS -->
+                    </select>
+                </div>
+
+                <!-- 8. Comuna -->
+                <div class="mb-3">
+                    <label for="comuna" class="form-label"><strong>Comuna:</strong></label>
+                    <select id="comuna" name="comuna" class="form-select" required>
+                        <option value="">Seleccione una Comuna</option>
+                        <!-- Se actualizará según la región seleccionada -->
+                    </select>
+                </div>
+
+                <!-- 9. Dirección -->
+                <div class="mb-3">
+                    <label for="direccion" class="form-label"><strong>Dirección:</strong></label>
+                    <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Calle, número" maxlength="300" required/>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="botones_registro d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-primary btn-registrar">
+                        <strong>REGISTRAR</strong>
+                    </button>
+
+                    <a href="login.html" class="btn btn-outline-secondary text-center">
+                        <strong>Volver al Inicio de Sesión</strong>
+                    </a>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Inclusión del script principal donde se hará la lógica de regiones/comunas y validaciones JavaScript -->
+        <script src="script.js"></script>
+    </body>
+</html>
