@@ -1,3 +1,5 @@
+/* GENERAL */
+
 * {
     box-sizing: border-box;
 }
@@ -11,12 +13,11 @@
     justify-content: center;  
     text-align: center;  
     
-    background-image: url('fondomadera.jpg');
+    background-image: url('imagenes/fondomadera.jpg');
     background-position: center;  /* Centra la imagen de fondo vertical y horizontalmente */
     background-repeat: no-repeat;  /* Evita que el fondo se repita */
     background-size: cover;  /* Ajusta la imagen a toda la pantalla manteniendo proporción*/
     background-attachment: fixed;  /* Deja la imagen fija al hacer scroll */
-    
     
     padding: 0;  /* Elimina rellenos por defecto */
     width: 100%;  /* Ocupa el 100% del ancho de la pantalla */
@@ -94,22 +95,126 @@
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* PORTADA */
 
-#prod {
+#port {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Tipografía general*/
     margin: 0;  /* Elimina márgenes externos */
     padding: 0;  /* Elimina rellenos internos */
-    background-image: url('fondomadera.jpg');  /* Imagen de fondo */
+    background-image: url('imagenes/fondogeneral.jpg');  /* Imagen de fondo */
     background-size: cover;  /* Cubre toda la pantalla */
     background-position: center;  /* Centra el fondo */
     background-repeat: no-repeat;  /* No repite el fondo */
     background-attachment: fixed;  /* Mantiene la madera fija */
 }
 
-/* Título y logo de producto */
+/* Título de portada y logo */
+#titulo_port {
+    justify-content: center;  /* Centra el contenido */
+    background-image: url('imagenes/fondoportada.jpg');  
+    background-size: cover;  /* Cubre el ancho del header */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    padding-bottom: 1px !important; /* Espacio casi nulo al fondo del header */
+    overflow: hidden;  /* Oculta desbordamientos */
+
+    /* Medidas fijas para que no cambie su estructura */
+    width: 100%;  /* Ocupa el 100% del ancho */
+    min-height: 110px;  /* Asegura una altura mínima constante */
+    padding: 20px 30px;  /* Padding moderado que no aplasta el contenido */
+    box-sizing: border-box;  /* Respeta los límites sin desbordar la pantalla */
+
+    /* Alineación centrada */
+    display: flex;  /* Activa 'Flexbox' */
+    align-items: center;  /* Centra horizontalmente los bloques */
+    flex-direction: column;  /* Pone los botones DEBAJO del logo */
+    justify-content: center;  /* Centra verticalmente */
+}
+
+#titulo_port #titlogo {
+    display: flex;  /* Pone logo y texto en linea */
+    align-items: center;  /* Centrado vertical entre logo y texto */
+    gap: 20px;  /* Separación entre logo y texto */
+    margin: 0;  /* Quita margenes externos */
+}
+
+#titulo_port img{  /* '!important' obliga al navegador a hacer el cambio */
+    width: 70px;      /* Reduce el ancho a la mitad del contenedor padre */
+    height: auto;  /* Mantiene la proporción original */
+    flex-shrink: 0;  /* Evita que se encoja si está dentro de un contenedor flex */
+    display: block;  /* Quita espacios base de imagen */
+}
+
+#titulo_port h2 {
+    margin: 0;  /* Elimina márgenes por defecto */
+    color: white;  /* Color de texto negro */
+    font-size: 28px;  /* Tamaño de letra del título */
+    white-space: nowrap;  /* Evita saltos de linea */
+}
+
+#btns_navegacion_port {
+    display: flex;  /* Coloca los botones en fila horizontal */
+    gap: 10px;  /* Espacio uniforme entre botones */
+    justify-content: center;  /* Centra la barra de botones */
+    box-sizing: border-box;  /* Incluye padding en el ancho */
+    color: white;  /* Color del texto del botón */
+    text-decoration: underline;  /* Subraya el texto como un enlace */  
+    margin-bottom: 0 !important;  /* Elimina cualquier separación sobrante abajo */
+    max-width: 100%;  /* Evita que sobrepase la pantalla */
+}
+
+#btns_navegacion_port #nav_btn {
+    background: none;  /* Botones sin fondo */
+    border: none;  /* Quita el borde */
+    color: white;  /* Color del texto */
+    flex: 1;  /* Distribuye espacio por igual */
+    width: 100px;  /* Ancho base de cada botón */
+    border-radius: 6px;  /* Bordes redondeados */
+    text-align: center;  /* Centra el texto */
+    white-space: nowrap;  /* Evita que el texto se quiebre en dos líneas */
+}
+
+.pie_pag_port {
+    justify-content: center;  /* Centra el contenido */
+    background-image: url('imagenes/fondopiedepagina.jpg');  
+    background-size: cover;  /* Cubre el ancho del header */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    padding-bottom: 1px !important; /* Espacio casi nulo al fondo del header */
+    overflow: hidden;  /* Oculta desbordamientos */
+
+    /* Medidas fijas para que no cambie su estructura */
+    width: 100%;  /* Ocupa el 100% del ancho */
+    min-height: 110px;  /* Asegura una altura mínima constante */
+    padding: 20px 30px;  /* Padding moderado que no aplasta el contenido */
+    box-sizing: border-box;  /* Respeta los límites sin desbordar la pantalla */
+
+    /* Alineación centrada */
+    display: flex;  /* Activa 'Flexbox' */
+    align-items: center;  /* Centra horizontalmente los bloques */
+    flex-direction: column;  /* Pone los botones DEBAJO del logo */
+    justify-content: center;  /* Centra verticalmente */
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* PRODUCTOS */
+
+#prod {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Tipografía general*/
+    margin: 0;  /* Elimina márgenes externos */
+    padding: 0;  /* Elimina rellenos internos */
+    background-image: url('imagenes/fondogeneral.jpg');  /* Imagen de fondo */
+    background-size: cover;  /* Cubre toda la pantalla */
+    background-position: center;  /* Centra el fondo */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    background-attachment: fixed;  /* Mantiene la madera fija */
+}
+
+/* Título de producto y logo */
 #titulo_prod {
     justify-content: center;  /* Centra el contenido */
-    background-image: url('fondoturquesa.jpg');  
+    background-image: url('imagenes/fondoturquesa.jpg');  
     background-size: cover;  /* Cubre el ancho del header */
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -151,7 +256,7 @@
     white-space: nowrap;  /* Evita saltos de linea */
 }
 
-#btns_navegacion {
+#btns_navegacion_prod {
     display: flex;  /* Coloca los botones en fila horizontal */
     gap: 10px;  /* Espacio uniforme entre botones */
     justify-content: center;  /* Centra la barra de botones */
@@ -162,10 +267,449 @@
     max-width: 100%;  /* Evita que sobrepase la pantalla */
 }
 
-#btns_navegacion #nav_btn {
+#btns_navegacion_prod #nav_btn {
     background: none;  /* Botones sin fondo */
     border: none;  /* Quita el borde */
     color: black;  /* Color del texto */
+    flex: 1;  /* Distribuye espacio por igual */
+    width: 100px;  /* Ancho base de cada botón */
+    border-radius: 6px;  /* Bordes redondeados */
+    text-align: center;  /* Centra el texto */
+    white-space: nowrap;  /* Evita que el texto se quiebre en dos líneas */
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* CARRITO */
+
+#car {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Tipografía general*/
+    margin: 0;  /* Elimina márgenes externos */
+    padding: 0;  /* Elimina rellenos internos */
+    background-image: url('imagenes/fondogeneral.jpg');  /* Imagen de fondo */
+    background-size: cover;  /* Cubre toda la pantalla */
+    background-position: center;  /* Centra el fondo */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    background-attachment: fixed;  /* Mantiene la madera fija */
+}
+
+/* Título de carrito y logo */
+#titulo_car {
+    justify-content: center;  /* Centra el contenido */
+    background-image: url('imagenes/fondocarrito.jpg');  
+    background-size: cover;  /* Cubre el ancho del header */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    padding-bottom: 1px !important; /* Espacio casi nulo al fondo del header */
+    overflow: hidden;  /* Oculta desbordamientos */
+
+    /* Medidas fijas para que no cambie su estructura */
+    width: 100%;  /* Ocupa el 100% del ancho */
+    min-height: 110px;  /* Asegura una altura mínima constante */
+    padding: 20px 30px;  /* Padding moderado que no aplasta el contenido */
+    box-sizing: border-box;  /* Respeta los límites sin desbordar la pantalla */
+
+    /* Alineación centrada */
+    display: flex;  /* Activa 'Flexbox' */
+    align-items: center;  /* Centra horizontalmente los bloques */
+    flex-direction: column;  /* Pone los botones DEBAJO del logo */
+    justify-content: center;  /* Centra verticalmente */
+    
+}
+
+#titulo_car #titlogo {
+    display: flex;  /* Pone logo y texto en linea */
+    align-items: center;  /* Centrado vertical entre logo y texto */
+    gap: 20px;  /* Separación entre logo y texto */
+    margin: 0;  /* Quita margenes externos */
+}
+
+#titulo_car img{  /* '!important' obliga al navegador a hacer el cambio */
+    width: 70px;      /* Reduce el ancho a la mitad del contenedor padre */
+    height: auto;  /* Mantiene la proporción original */
+    flex-shrink: 0;  /* Evita que se encoja si está dentro de un contenedor flex */
+    display: block;  /* Quita espacios base de imagen */
+}
+
+#titulo_car h2 {
+    margin: 0;  /* Elimina márgenes por defecto */
+    color: white;  /* Color de texto negro */
+    font-size: 28px;  /* Tamaño de letra del título */
+    white-space: nowrap;  /* Evita saltos de linea */
+}
+
+#btns_navegacion_car {
+    display: flex;  /* Coloca los botones en fila horizontal */
+    gap: 10px;  /* Espacio uniforme entre botones */
+    justify-content: center;  /* Centra la barra de botones */
+    box-sizing: border-box;  /* Incluye padding en el ancho */
+    color: white;  /* Color del texto del botón */
+    text-decoration: underline;  /* Subraya el texto como un enlace */  
+    margin-bottom: 0 !important;  /* Elimina cualquier separación sobrante abajo */
+    max-width: 100%;  /* Evita que sobrepase la pantalla */
+}
+
+#btns_navegacion_car #nav_btn {
+    background: none;  /* Botones sin fondo */
+    border: none;  /* Quita el borde */
+    color: white;  /* Color del texto */
+    flex: 1;  /* Distribuye espacio por igual */
+    width: 100px;  /* Ancho base de cada botón */
+    border-radius: 6px;  /* Bordes redondeados */
+    text-align: center;  /* Centra el texto */
+    white-space: nowrap;  /* Evita que el texto se quiebre en dos líneas */
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* BÚSQUEDA */
+
+.busq {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Tipografía general*/
+    margin: 0;  /* Elimina márgenes externos */
+    padding: 0;  /* Elimina rellenos internos */
+    background-image: url('imagenes/fondogeneral.jpg');  /* Imagen de fondo */
+    background-size: cover;  /* Cubre toda la pantalla */
+    background-position: center;  /* Centra el fondo */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    background-attachment: fixed;  /* Mantiene la madera fija */
+}
+
+/* Título de búsqueda y logo */
+.titulo_busq {
+    justify-content: center;  /* Centra el contenido */
+    background-image: url('imagenes/fondobusqueda.jpg');  
+    background-size: cover;  /* Cubre el ancho del header */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    padding-bottom: 1px !important; /* Espacio casi nulo al fondo del header */
+    overflow: hidden;  /* Oculta desbordamientos */
+
+    /* Medidas fijas para que no cambie su estructura */
+    width: 100%;  /* Ocupa el 100% del ancho */
+    min-height: 110px;  /* Asegura una altura mínima constante */
+    padding: 20px 30px;  /* Padding moderado que no aplasta el contenido */
+    box-sizing: border-box;  /* Respeta los límites sin desbordar la pantalla */
+
+    /* Alineación centrada */
+    display: flex;  /* Activa 'Flexbox' */
+    align-items: center;  /* Centra horizontalmente los bloques */
+    flex-direction: column;  /* Pone los botones DEBAJO del logo */
+    justify-content: center;  /* Centra verticalmente */
+    
+}
+
+.titulo_busq .titlogo {
+    display: flex;  /* Pone logo y texto en linea */
+    align-items: center;  /* Centrado vertical entre logo y texto */
+    gap: 20px;  /* Separación entre logo y texto */
+    margin: 0;  /* Quita margenes externos */
+}
+
+.titulo_busq img{  /* '!important' obliga al navegador a hacer el cambio */
+    width: 70px;      /* Reduce el ancho a la mitad del contenedor padre */
+    height: auto;  /* Mantiene la proporción original */
+    flex-shrink: 0;  /* Evita que se encoja si está dentro de un contenedor flex */
+    display: block;  /* Quita espacios base de imagen */
+}
+
+.titulo_busq h2 {
+    margin: 0;  /* Elimina márgenes por defecto */
+    color: white;  /* Color de texto negro */
+    font-size: 28px;  /* Tamaño de letra del título */
+    white-space: nowrap;  /* Evita saltos de linea */
+}
+
+.btns_navegacion_busq {
+    display: flex;  /* Coloca los botones en fila horizontal */
+    gap: 10px;  /* Espacio uniforme entre botones */
+    justify-content: center;  /* Centra la barra de botones */
+    box-sizing: border-box;  /* Incluye padding en el ancho */
+    color: white;  /* Color del texto del botón */
+    text-decoration: underline;  /* Subraya el texto como un enlace */  
+    margin-bottom: 0 !important;  /* Elimina cualquier separación sobrante abajo */
+    max-width: 100%;  /* Evita que sobrepase la pantalla */
+}
+
+.btns_navegacion_busq .nav_btn {
+    background: none;  /* Botones sin fondo */
+    border: none;  /* Quita el borde */
+    color: white;  /* Color del texto */
+    flex: 1;  /* Distribuye espacio por igual */
+    width: 100px;  /* Ancho base de cada botón */
+    border-radius: 6px;  /* Bordes redondeados */
+    text-align: center;  /* Centra el texto */
+    white-space: nowrap;  /* Evita que el texto se quiebre en dos líneas */
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* FORO */
+
+.foro {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Tipografía general*/
+    margin: 0;  /* Elimina márgenes externos */
+    padding: 0;  /* Elimina rellenos internos */
+    background-image: url('imagenes/fondogeneral.jpg');  /* Imagen de fondo */
+    background-size: cover;  /* Cubre toda la pantalla */
+    background-position: center;  /* Centra el fondo */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    background-attachment: fixed;  /* Mantiene la madera fija */
+}
+
+/* Título de foro y logo */
+.titulo_foro {
+    justify-content: center;  /* Centra el contenido */
+    background-image: url('imagenes/fondoforo.jpg');  
+    background-size: cover;  /* Cubre el ancho del header */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    padding-bottom: 1px !important; /* Espacio casi nulo al fondo del header */
+    overflow: hidden;  /* Oculta desbordamientos */
+
+    /* Medidas fijas para que no cambie su estructura */
+    width: 100%;  /* Ocupa el 100% del ancho */
+    min-height: 110px;  /* Asegura una altura mínima constante */
+    padding: 20px 30px;  /* Padding moderado que no aplasta el contenido */
+    box-sizing: border-box;  /* Respeta los límites sin desbordar la pantalla */
+
+    /* Alineación centrada */
+    display: flex;  /* Activa 'Flexbox' */
+    align-items: center;  /* Centra horizontalmente los bloques */
+    flex-direction: column;  /* Pone los botones DEBAJO del logo */
+    justify-content: center;  /* Centra verticalmente */
+    
+}
+
+.titulo_foro .titlogo {
+    display: flex;  /* Pone logo y texto en linea */
+    align-items: center;  /* Centrado vertical entre logo y texto */
+    gap: 20px;  /* Separación entre logo y texto */
+    margin: 0;  /* Quita margenes externos */
+}
+
+.titulo_foro img{  /* '!important' obliga al navegador a hacer el cambio */
+    width: 70px;      /* Reduce el ancho a la mitad del contenedor padre */
+    height: auto;  /* Mantiene la proporción original */
+    flex-shrink: 0;  /* Evita que se encoja si está dentro de un contenedor flex */
+    display: block;  /* Quita espacios base de imagen */
+}
+
+.titulo_foro h2 {
+    margin: 0;  /* Elimina márgenes por defecto */
+    color: white;  /* Color de texto negro */
+    font-size: 28px;  /* Tamaño de letra del título */
+    white-space: nowrap;  /* Evita saltos de linea */
+}
+
+.btns_navegacion_foro {
+    display: flex;  /* Coloca los botones en fila horizontal */
+    gap: 10px;  /* Espacio uniforme entre botones */
+    justify-content: center;  /* Centra la barra de botones */
+    box-sizing: border-box;  /* Incluye padding en el ancho */
+    color: white;  /* Color del texto del botón */
+    text-decoration: underline;  /* Subraya el texto como un enlace */  
+    margin-bottom: 0 !important;  /* Elimina cualquier separación sobrante abajo */
+    max-width: 100%;  /* Evita que sobrepase la pantalla */
+}
+
+.btns_navegacion_foro .nav_btn {
+    background: none;  /* Botones sin fondo */
+    border: none;  /* Quita el borde */
+    color: white;  /* Color del texto */
+    flex: 1;  /* Distribuye espacio por igual */
+    width: 100px;  /* Ancho base de cada botón */
+    border-radius: 6px;  /* Bordes redondeados */
+    text-align: center;  /* Centra el texto */
+    white-space: nowrap;  /* Evita que el texto se quiebre en dos líneas */
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* BLOG */
+
+.blog {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Tipografía general*/
+    margin: 0;  /* Elimina márgenes externos */
+    padding: 0;  /* Elimina rellenos internos */
+    background-image: url('imagenes/fondogeneral.jpg');  /* Imagen de fondo */
+    background-size: cover;  /* Cubre toda la pantalla */
+    background-position: center;  /* Centra el fondo */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    background-attachment: fixed;  /* Mantiene la madera fija */
+    color: white;
+    text-align: justify;
+}
+
+/* Título de blog y logo */
+.titulo_blog {
+    justify-content: center;  /* Centra el contenido */
+    background-image: url('imagenes/fondoblog.jpg');  
+    background-size: cover;  /* Cubre el ancho del header */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    padding-bottom: 1px !important; /* Espacio casi nulo al fondo del header */
+    overflow: hidden;  /* Oculta desbordamientos */
+
+    /* Medidas fijas para que no cambie su estructura */
+    width: 100%;  /* Ocupa el 100% del ancho */
+    min-height: 110px;  /* Asegura una altura mínima constante */
+    padding: 20px 30px;  /* Padding moderado que no aplasta el contenido */
+    box-sizing: border-box;  /* Respeta los límites sin desbordar la pantalla */
+
+    /* Alineación centrada */
+    display: flex;  /* Activa 'Flexbox' */
+    align-items: center;  /* Centra horizontalmente los bloques */
+    flex-direction: column;  /* Pone los botones DEBAJO del logo */
+    justify-content: center;  /* Centra verticalmente */
+    
+}
+
+.titulo_blog .titlogo {
+    display: flex;  /* Pone logo y texto en linea */
+    align-items: center;  /* Centrado vertical entre logo y texto */
+    gap: 20px;  /* Separación entre logo y texto */
+    margin: 0;  /* Quita margenes externos */
+}
+
+.titulo_blog img{  /* '!important' obliga al navegador a hacer el cambio */
+    width: 70px;      /* Reduce el ancho a la mitad del contenedor padre */
+    height: auto;  /* Mantiene la proporción original */
+    flex-shrink: 0;  /* Evita que se encoja si está dentro de un contenedor flex */
+    display: block;  /* Quita espacios base de imagen */
+}
+
+.titulo_blog h2 {
+    margin: 0;  /* Elimina márgenes por defecto */
+    color: black;  /* Color de texto negro */
+    font-size: 28px;  /* Tamaño de letra del título */
+    white-space: nowrap;  /* Evita saltos de linea */
+}
+
+.btns_navegacion_blog {
+    display: flex;  /* Coloca los botones en fila horizontal */
+    gap: 10px;  /* Espacio uniforme entre botones */
+    justify-content: center;  /* Centra la barra de botones */
+    box-sizing: border-box;  /* Incluye padding en el ancho */
+    color: black;  /* Color del texto del botón */
+    text-decoration: underline;  /* Subraya el texto como un enlace */  
+    margin-bottom: 0 !important;  /* Elimina cualquier separación sobrante abajo */
+    max-width: 100%;  /* Evita que sobrepase la pantalla */
+}
+
+.btns_navegacion_blog .nav_btn {
+    background: none;  /* Botones sin fondo */
+    border: none;  /* Quita el borde */
+    color: black;  /* Color del texto */
+    flex: 1;  /* Distribuye espacio por igual */
+    width: 100px;  /* Ancho base de cada botón */
+    border-radius: 6px;  /* Bordes redondeados */
+    text-align: center;  /* Centra el texto */
+    white-space: nowrap;  /* Evita que el texto se quiebre en dos líneas */
+}
+
+.caso .img1, .caso .img2 {
+    display: block;  /* Permite centrar con márgenes */
+    margin: 0 auto;  /* Centra horizontalmente la imagen */
+}
+
+.pie_pag_blog {
+    justify-content: center;  /* Centra el contenido */
+    background-image: url('imagenes/fondopiedepagina.jpg');  
+    background-size: cover;  /* Cubre el ancho del header */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    padding-bottom: 1px !important; /* Espacio casi nulo al fondo del header */
+    overflow: hidden;  /* Oculta desbordamientos */
+
+    /* Medidas fijas para que no cambie su estructura */
+    width: 100%;  /* Ocupa el 100% del ancho */
+    min-height: 110px;  /* Asegura una altura mínima constante */
+    padding: 20px 30px;  /* Padding moderado que no aplasta el contenido */
+    box-sizing: border-box;  /* Respeta los límites sin desbordar la pantalla */
+
+    /* Alineación centrada */
+    display: flex;  /* Activa 'Flexbox' */
+    align-items: center;  /* Centra horizontalmente los bloques */
+    flex-direction: column;  /* Pone los botones DEBAJO del logo */
+    justify-content: center;  /* Centra verticalmente */
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* AYUDA */
+
+.ayuda {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Tipografía general*/
+    margin: 0;  /* Elimina márgenes externos */
+    padding: 0;  /* Elimina rellenos internos */
+    background-image: url('imagenes/fondogeneral.jpg');  /* Imagen de fondo */
+    background-size: cover;  /* Cubre toda la pantalla */
+    background-position: center;  /* Centra el fondo */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    background-attachment: fixed;  /* Mantiene la madera fija */
+}
+
+/* Título de ayuda y logo */
+.titulo_ayuda {
+    justify-content: center;  /* Centra el contenido */
+    background-image: url('imagenes/fondoayuda.jpg');  
+    background-size: cover;  /* Cubre el ancho del header */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    padding-bottom: 1px !important; /* Espacio casi nulo al fondo del header */
+    overflow: hidden;  /* Oculta desbordamientos */
+
+    /* Medidas fijas para que no cambie su estructura */
+    width: 100%;  /* Ocupa el 100% del ancho */
+    min-height: 110px;  /* Asegura una altura mínima constante */
+    padding: 20px 30px;  /* Padding moderado que no aplasta el contenido */
+    box-sizing: border-box;  /* Respeta los límites sin desbordar la pantalla */
+
+    /* Alineación centrada */
+    display: flex;  /* Activa 'Flexbox' */
+    align-items: center;  /* Centra horizontalmente los bloques */
+    flex-direction: column;  /* Pone los botones DEBAJO del logo */
+    justify-content: center;  /* Centra verticalmente */
+    
+}
+
+.titulo_ayuda .titlogo {
+    display: flex;  /* Pone logo y texto en linea */
+    align-items: center;  /* Centrado vertical entre logo y texto */
+    gap: 20px;  /* Separación entre logo y texto */
+    margin: 0;  /* Quita margenes externos */
+}
+
+.titulo_ayuda img{  /* '!important' obliga al navegador a hacer el cambio */
+    width: 70px;      /* Reduce el ancho a la mitad del contenedor padre */
+    height: auto;  /* Mantiene la proporción original */
+    flex-shrink: 0;  /* Evita que se encoja si está dentro de un contenedor flex */
+    display: block;  /* Quita espacios base de imagen */
+}
+
+.titulo_ayuda h2 {
+    margin: 0;  /* Elimina márgenes por defecto */
+    color: white;  /* Color de texto negro */
+    font-size: 28px;  /* Tamaño de letra del título */
+    white-space: nowrap;  /* Evita saltos de linea */
+}
+
+.btns_navegacion_ayuda {
+    display: flex;  /* Coloca los botones en fila horizontal */
+    gap: 10px;  /* Espacio uniforme entre botones */
+    justify-content: center;  /* Centra la barra de botones */
+    box-sizing: border-box;  /* Incluye padding en el ancho */
+    color: white;  /* Color del texto del botón */
+    text-decoration: underline;  /* Subraya el texto como un enlace */  
+    margin-bottom: 0 !important;  /* Elimina cualquier separación sobrante abajo */
+    max-width: 100%;  /* Evita que sobrepase la pantalla */
+}
+
+.btns_navegacion_ayuda .nav_btn {
+    background: none;  /* Botones sin fondo */
+    border: none;  /* Quita el borde */
+    color: white;  /* Color del texto */
     flex: 1;  /* Distribuye espacio por igual */
     width: 100px;  /* Ancho base de cada botón */
     border-radius: 6px;  /* Bordes redondeados */
