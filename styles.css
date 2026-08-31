@@ -842,182 +842,306 @@
 /* - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* AYUDA */
 
+/* Fondo general de la página */
+
 .ayuda {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Tipografía general*/
-    margin: 0;  /* Elimina márgenes externos */
-    padding: 0;  /* Elimina rellenos internos */
-    background-image: url('imagenes/fondogeneral.jpg');  /* Imagen de fondo */
-    background-size: cover;  /* Cubre toda la pantalla */
-    background-position: center;  /* Centra el fondo */
-    background-repeat: no-repeat;  /* No repite el fondo */
-    background-attachment: fixed;  /* Mantiene la madera fija */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background-image: url("imagenes/fondogeneral.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* Título de ayuda y logo */
+
+/* Encabezado de Ayuda */
+
 .titulo_ayuda {
-    justify-content: center;  /* Centra el contenido */
-    background-image: url('imagenes/fondoayuda.jpg');  
-    background-size: cover;  /* Cubre el ancho del header */
-    background-position: center;  /* Centra la imagen */
-    background-repeat: no-repeat;  /* No repite el fondo */
-    padding-bottom: 1px !important; /* Espacio casi nulo al fondo del header */
-    overflow: hidden;  /* Oculta desbordamientos */
+    width: 100%;
+    min-height: 110px;
+    padding: 20px 30px 1px;
 
-    /* Medidas fijas para que no cambie su estructura */
-    width: 100%;  /* Ocupa el 100% del ancho */
-    min-height: 110px;  /* Asegura una altura mínima constante */
-    padding: 20px 30px;  /* Padding moderado que no aplasta el contenido */
-    box-sizing: border-box;  /* Respeta los límites sin desbordar la pantalla */
+    background-image: url("imagenes/fondoblog.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    /* Alineación centrada */
-    display: flex;  /* Activa 'Flexbox' */
-    align-items: center;  /* Centra horizontalmente los bloques */
-    flex-direction: column;  /* Pone los botones DEBAJO del logo */
-    justify-content: center;  /* Centra verticalmente */
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    overflow: hidden;
 }
+
+
+/* Logo y título del encabezado */
 
 .titulo_ayuda .titlogo {
-    display: flex;  /* Pone logo y texto en linea */
-    align-items: center;  /* Centrado vertical entre logo y texto */
-    gap: 20px;  /* Separación entre logo y texto */
-    margin: 0;  /* Quita margenes externos */
-}
-
-.titulo_ayuda img{  /* '!important' obliga al navegador a hacer el cambio */
-    width: 70px;      /* Reduce el ancho a la mitad del contenedor padre */
-    height: auto;  /* Mantiene la proporción original */
-    flex-shrink: 0;  /* Evita que se encoja si está dentro de un contenedor flex */
-    display: block;  /* Quita espacios base de imagen */
-}
-
-.titulo_ayuda h2 {
-    margin: 0;  /* Elimina márgenes por defecto */
-    color: white;  /* Color de texto negro */
-    font-size: 28px;  /* Tamaño de letra del título */
-    white-space: nowrap;  /* Evita saltos de linea */
-}
-
-.btns_navegacion_ayuda {
-    display: flex;  /* Coloca los botones en fila horizontal */
-    gap: 10px;  /* Espacio uniforme entre botones */
-    justify-content: center;  /* Centra la barra de botones */
-    box-sizing: border-box;  /* Incluye padding en el ancho */
-    color: white;  /* Color del texto del botón */
-    text-decoration: underline;  /* Subraya el texto como un enlace */  
-    margin-bottom: 0 !important;  /* Elimina cualquier separación sobrante abajo */
-    max-width: 100%;  /* Evita que sobrepase la pantalla */
-}
-
-.btns_navegacion_ayuda .nav_btn {
-    background: none;  /* Botones sin fondo */
-    border: none;  /* Quita el borde */
-    color: white;  /* Color del texto */
-    flex: 1;  /* Distribuye espacio por igual */
-    width: 100px;  /* Ancho base de cada botón */
-    border-radius: 6px;  /* Bordes redondeados */
-    text-align: center;  /* Centra el texto */
-    white-space: nowrap;  /* Evita que el texto se quiebre en dos líneas */
-}
-
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - */
-
-header {
-    background-color: #242424;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-}
-
-header h1 {
-    margin-bottom: 10px;
-}
-
-main {
-    width: 90%;
-    max-width: 900px;
-    margin: 30px auto;
-}
-
-.contenedor {
-    background-color: white;
-    padding: 25px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    margin-top: 0;
-}
-
-button {
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #1d4ed8;
-}
-
-input {
-    width: 100%;
-    max-width: 350px;
-    padding: 10px;
-    margin: 10px 5px 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.contador {
     display: flex;
     align-items: center;
     gap: 20px;
+    margin: 0;
 }
 
-#numero {
-    font-size: 30px;
-    font-weight: bold;
+.titulo_ayuda .titlogo img {
+    display: block;
+    width: 70px;
+    height: auto;
+    flex-shrink: 0;
 }
 
-.form-producto {
-    margin-bottom: 20px;
+.titulo_ayuda .titlogo h2 {
+    margin: 0;
+    color: black;
+    font-size: 28px;
+    white-space: nowrap;
 }
 
-#lista-productos {
-    padding-left: 20px;
+
+/* Botones de navegación */
+
+.btns_navegacion_ayuda {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    max-width: 100%;
+    margin-bottom: 0;
+
+    color: black;
+    text-decoration: underline;
+    box-sizing: border-box;
 }
 
-#lista-productos li {
-    margin-bottom: 8px;
+.btns_navegacion_ayuda .nav_btn {
+    display: inline-block;
+    flex: 1;
+
+    width: 100px;
+    padding: 5px;
+
+    color: black;
+    background: none;
+    border: none;
+    border-radius: 6px;
+
+    font-family: inherit;
+    text-align: center;
+    text-decoration: underline;
+    white-space: nowrap;
+    cursor: pointer;
 }
 
-.tarjeta {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    max-width: 300px;
+
+/* Contenido principal */
+
+.contenido_ayuda {
+    width: 90%;
+    max-width: 850px;
+    margin: 40px auto;
 }
 
-.tarjeta h3 {
-    margin-top: 0;
+
+/* Presentación de la empresa */
+
+.presentacion_ayuda {
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
 }
 
-.alerta {
-    background-color: #e5e7eb;
-    padding: 15px;
+.logo_ayuda {
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+}
+
+.presentacion_ayuda h1 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.presentacion_ayuda p {
+    color: white;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px black;
+}
+
+
+/* Contenedor del formulario */
+
+.contenedor_formulario_ayuda {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 25px;
+
+    background-color: rgba(255, 255, 255, 0.90);
+    border: 2px solid black;
     border-radius: 5px;
 }
 
-footer {
+.contenedor_formulario_ayuda h2 {
+    margin: -25px -25px 25px;
+    padding: 12px;
+
+    color: black;
+    background-color: #d3d3d3;
+
+    font-size: 20px;
     text-align: center;
-    background-color: #242424;
+    text-transform: uppercase;
+}
+
+
+/* Campos del formulario */
+
+.campo_ayuda {
+    margin-bottom: 20px;
+}
+
+.campo_ayuda label {
+    display: block;
+    margin-bottom: 7px;
+    color: black;
+    text-align: left;
+}
+
+.campo_ayuda input,
+.campo_ayuda textarea {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 10px;
+
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 3px;
+
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.campo_ayuda textarea {
+    resize: vertical;
+}
+
+
+/* Texto explicativo del correo */
+
+.texto_ayuda {
+    display: block;
+    margin-top: 5px;
+    padding: 5px 8px;
+
+    color: #333;
+    background-color: white;
+    border-radius: 4px;
+
+    text-align: left;
+}
+
+
+/* Asterisco de campos obligatorios */
+
+.obligatorio {
+    padding: 0 3px;
+
+    color: #b00020;
+    background-color: white;
+    border-radius: 3px;
+
+    font-weight: bold;
+}
+
+
+/* Aviso de campos obligatorios */
+
+.aviso_obligatorio {
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+/* Mensajes de error */
+
+.formulario_ayuda small[id^="error"]:not(:empty) {
+    display: block;
+    margin-top: 5px;
+    padding: 6px 8px;
+
+    color: #b00020;
+    background-color: white;
+    border: 1px solid #b00020;
+    border-radius: 4px;
+
+    font-weight: bold;
+    text-align: left;
+}
+
+
+/* Botón para enviar el mensaje */
+
+.boton_ayuda {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.boton_ayuda button {
+    padding: 12px 35px;
+
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+.boton_ayuda button:hover {
     color: white;
-    padding: 20px;
-    margin-top: 40px;
+    background-color: #333;
+}
+
+
+/* Diseño para pantallas pequeñas */
+
+@media (max-width: 768px) {
+
+    .titulo_ayuda {
+        padding: 15px 10px 1px;
+    }
+
+    .btns_navegacion_ayuda {
+        flex-wrap: wrap;
+    }
+
+    .btns_navegacion_ayuda .nav_btn {
+        flex: none;
+        width: auto;
+    }
+
+    .contenido_ayuda {
+        width: 95%;
+        margin-top: 20px;
+    }
+
+    .contenedor_formulario_ayuda {
+        padding: 18px;
+    }
+
+    .contenedor_formulario_ayuda h2 {
+        margin: -18px -18px 20px;
+    }
+
 }
