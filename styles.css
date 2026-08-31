@@ -303,182 +303,280 @@
     white-space: nowrap;  /* Evita que el texto se quiebre en dos líneas */
 }
 
-#contenedor_prod_1 {
-    background-image: url('imagenes/fondocontadorproducto.jpg');  /* Fondo gris/textura del producto */
-    background-size: cover;  /* Cubre todo el fondo del contenedor */
-    background-position: center;  /* Centra la imagen de fondo */
-    background-repeat: no-repeat;  /* No repite el fondo */
-    
-    /* Tamaño de imagen */
-    width: 30%;  /* Ancho base en pantallas grandes */
-    min-width: 260px;  /* Evita que se encoja demasiado en pantalla dividida */
-    max-width: 100%;  /* No sobrepasa la pantalla */
-    height: auto;  /* Altura automática según el contenido */
-    
-    margin: 25px auto;  /* Centra el contenedor y da margen */
-    padding: 1px;  /* Espacio interno para que la foto no toque los bordes */
-    border-radius: 8px;  /* Bordes redondeados sutiles */
-    box-sizing: border-box;  /* Incluye padding dentro del ancho total */
-    overflow: hidden;  /* Controla desbordes */
+/* Contenido principal de productos */
+
+.contenido_productos {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
 }
 
-#contenedor_prod_1 img {
-    width: 100%;  /* Se ajusta al 100% del contenedor sin cortarse */
-    max-width: 100%;  /* Impide que sobrepase los límites */
-    height: auto;   /* Mantiene la proporción original completa */
-    display: block;  /* Quita espacios residuales inferiores */
-    object-fit: contain;  /* Muestra la imagen entera sin recortarla */
-    border-radius: 4px;  /* Redondea los bordes de la foto */
-}
-
-#contenedor_prod_1 h4 {
+.contenido_productos > h1 {
+    color: white;
     text-align: center;
 }
 
-#contenedor_prod_1 #btns_cont_prod {
-    display: flex;  /* Activa Flexbox para alinear en fila */
-    align-items: center;  /* Centra verticalmente botones y numero */
-    gap: 12px;  /* Espacio uniforme entre botones y numero */
-    margin-top: 10px;  /* Separacion con respecto a la imagen */
-    justify-content: center;  /* Centra horizontalmente los botones y el numero */
-    width: 100%;  /* Ocupa el ancho para poder centrarse en el contenedor */
+
+/* Contenedor de las tarjetas */
+/* Cuadrícula de productos */
+
+#contenedor_prod {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+
+    width: 100%;
 }
 
-#contenedor_prod_1 #btn_restar, 
-#contenedor_prod_1 #btn_sumar {
-    width: 32px;  /* Ancho fijo para hacer un circulo perfecto */
-    height: 32px;  /* Alto igual al ancho */
-    border-radius: 50%;  /* Transforma la forma cuadrada en circulo */
-    border: none;  /* Quita el borde por defecto */
-    display: flex;  /* Flexbox para centrar el simbolo */
-    align-items: center;  /* Centra el simbolo verticalmente */
-    justify-content: center;  /* Centra el simbolo horizontalmente */
-    cursor: pointer;  /* Cambia el puntero al pasar por encima */
+
+/* Tarjeta de cada producto */
+
+/* Tarjeta de producto */
+
+.producto_card {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+
+    margin: 0;
+    padding: 18px;
+
+    color: black;
+
+    background-image: url("imagenes/fondocontadorproducto.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 8px;
+
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-#contenedor_prod_1 #btn_agr_car_det {
-    display: flex;  /* Coloca ambos botones en la misma fila */
-    align-items: center;  /* Alinea la altura vertical de ambos */
-    justify-content: center;  /* Centra los botones en el contenedor */
-    gap: 10px;  /* Espacio de separacion entre ambos */
-    margin: 0;  /* Quita margenes por defecto del figure */
-    padding: 0;  /* Quita rellenos internos */
-    justify-content: flex-end;  /* Alinea los botones a la derecha */
-    margin-top: 25px;  /* Empuja el bloque al fondo del contenedor */
-    width: 100%;  /* Asegura el ancho completo para alinearse al extremo */
-    
-}
 
-/* Botón 'ver detalles' */
-#contenedor_prod_1 #btn_agr_car_det #btn_ver_det {
-    border: none;  /* Quita el borde */
-    background: none;  /* Elimina cualquier fondo de color */
-    color: black;  /* Color del texto */
-    font-size: 12px;  /* Reduce el tamano de la fuente */
-    cursor: pointer;  /* Cambia el cursor a mano interactiva */
-    padding: 6px 10px;  /* Relleno interno para clic comodo */
-    white-space: nowrap;  /* Evita que el texto salte a dos lineas */
-    text-decoration: underline;  /* Subraya el texto como un enlace */
-}
+/* Nombre del producto */
 
-/* Botón 'carrito de compras' */
-#contenedor_prod_1 #btn_agr_car_det #btn_car_comp {
-    display: flex;  /* Activa flex para centrar el icono SVG */
-    align-items: center;  /* Centra el icono verticalmente */
-    justify-content: center;  /* Centra el icono horizontalmente */
-    cursor: pointer;  /* Cambia el cursor al pasar por encima */
-    padding: 7px;  /* Espaciado interno alrededor del icono */
-    display: inline-flex;  /* Centra el icono o texto adentro */
-    background-color: green;
-}
+.producto_card h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
 
-#contenedor_prod_2 {
-    background-image: url('imagenes/fondocontadorproducto.jpg');  /* Fondo gris/textura del producto */
-    background-size: cover;  /* Cubre todo el fondo del contenedor */
-    background-position: center;  /* Centra la imagen de fondo */
-    background-repeat: no-repeat;  /* No repite el fondo */
-    
-    /* Tamaño de imagen */
-    width: 30%;  /* Ancho base en pantallas grandes */
-    min-width: 260px;  /* Evita que se encoja demasiado en pantalla dividida */
-    max-width: 100%;  /* No sobrepasa la pantalla */
-    height: auto;  /* Altura automática según el contenido */
-    
-    margin: 25px auto;  /* Centra el contenedor y da margen */
-    padding: 1px;  /* Espacio interno para que la foto no toque los bordes */
-    border-radius: 8px;  /* Bordes redondeados sutiles */
-    box-sizing: border-box;  /* Incluye padding dentro del ancho total */
-    overflow: hidden;  /* Controla desbordes */
-}
-
-#contenedor_prod_2 img {
-    width: 100%;  /* Se ajusta al 100% del contenedor sin cortarse */
-    max-width: 100%;  /* Impide que sobrepase los límites */
-    height: auto;   /* Mantiene la proporción original completa */
-    display: block;  /* Quita espacios residuales inferiores */
-    object-fit: contain;  /* Muestra la imagen entera sin recortarla */
-    border-radius: 4px;  /* Redondea los bordes de la foto */
-}
-
-#contenedor_prod_2 h4 {
+    color: black;
+    font-size: 22px;
     text-align: center;
 }
 
-#contenedor_prod_2 #btns_cont_prod {
-    display: flex;  /* Activa Flexbox para alinear en fila */
-    align-items: center;  /* Centra verticalmente botones y numero */
-    gap: 12px;  /* Espacio uniforme entre botones y numero */
-    margin-top: 10px;  /* Separacion con respecto a la imagen */
-    justify-content: center;  /* Centra horizontalmente los botones y el numero */
-    width: 100%;  /* Ocupa el ancho para poder centrarse en el contenedor */
+
+/* Imagen del producto */
+
+.producto_card .imagen_producto {
+    display: block;
+
+    width: 100%;
+    height: 180px;
+
+    margin: 0 auto 15px;
+
+    object-fit: contain;
+    border-radius: 4px;
 }
 
-#contenedor_prod_2 #btn_restar, 
-#contenedor_prod_2 #btn_sumar {
-    width: 32px;  /* Ancho fijo para hacer un circulo perfecto */
-    height: 32px;  /* Alto igual al ancho */
-    border-radius: 50%;  /* Transforma la forma cuadrada en circulo */
-    border: none;  /* Quita el borde por defecto */
-    display: flex;  /* Flexbox para centrar el simbolo */
-    align-items: center;  /* Centra el simbolo verticalmente */
-    justify-content: center;  /* Centra el simbolo horizontalmente */
-    cursor: pointer;  /* Cambia el puntero al pasar por encima */
+
+/* Descripción */
+
+.producto_card .descripcion_producto {
+    margin: 12px 0;
+
+    color: #333;
+    font-size: 14px;
+    text-align: center;
 }
 
-#contenedor_prod_2 #btn_agr_car_det {
-    display: flex;  /* Coloca ambos botones en la misma fila */
-    align-items: center;  /* Alinea la altura vertical de ambos */
-    justify-content: center;  /* Centra los botones en el contenedor */
-    gap: 10px;  /* Espacio de separacion entre ambos */
-    margin: 0;  /* Quita margenes por defecto del figure */
-    padding: 0;  /* Quita rellenos internos */
-    justify-content: flex-end;  /* Alinea los botones a la derecha */
-    margin-top: 25px;  /* Empuja el bloque al fondo del contenedor */
-    width: 100%;  /* Asegura el ancho completo para alinearse al extremo */
-    
+
+/* Precio */
+
+.producto_card .precio_producto {
+    margin: 10px 0;
+
+    color: black;
+    font-size: 17px;
+    text-align: center;
 }
 
-/* Botón 'ver detalles' */
-#contenedor_prod_2 #btn_agr_car_det #btn_ver_det {
-    border: none;  /* Quita el borde */
-    background: none;  /* Elimina cualquier fondo de color */
-    color: black;  /* Color del texto */
-    font-size: 12px;  /* Reduce el tamano de la fuente */
-    cursor: pointer;  /* Cambia el cursor a mano interactiva */
-    padding: 6px 10px;  /* Relleno interno para clic comodo */
-    white-space: nowrap;  /* Evita que el texto salte a dos lineas */
-    text-decoration: underline;  /* Subraya el texto como un enlace */
+
+/* Stock */
+
+.producto_card .stock_producto {
+    margin: 8px 0;
+
+    color: #333;
+    font-size: 14px;
+    text-align: center;
 }
 
-/* Botón 'carrito de compras' */
-#contenedor_prod_2 #btn_agr_car_det #btn_car_comp {
-    display: flex;  /* Activa flex para centrar el icono SVG */
-    align-items: center;  /* Centra el icono verticalmente */
-    justify-content: center;  /* Centra el icono horizontalmente */
-    cursor: pointer;  /* Cambia el cursor al pasar por encima */
-    padding: 7px;  /* Espaciado interno alrededor del icono */
-    display: inline-flex;  /* Centra el icono o texto adentro */
+
+/* Contador de unidades */
+
+.producto_card .contador_producto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    margin-top: 15px;
+}
+
+
+/* Botones para sumar y restar */
+
+.producto_card .btn_restar,
+.producto_card .btn_sumar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 32px;
+    height: 32px;
+    padding: 0;
+
+    color: black;
+    background-color: white;
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.producto_card .btn_restar:hover,
+.producto_card .btn_sumar:hover {
+    color: black;
+    background-color: #d3d3d3;
+}
+
+
+/* Número de unidades */
+
+.producto_card .numero_producto {
+    min-width: 25px;
+
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+/* Botones inferiores */
+
+.producto_card .acciones_producto {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+    margin-top: 25px;
+}
+
+
+/* Botón Ver detalles */
+
+.producto_card .btn_ver_detalle {
+    padding: 6px 10px;
+
+    color: black;
+    background: none;
+
+    border: none;
+
+    font-size: 12px;
+    text-decoration: underline;
+    white-space: nowrap;
+
+    cursor: pointer;
+}
+
+.producto_card .btn_ver_detalle:hover {
+    color: #333;
+    background: none;
+}
+
+
+/* Botón verde del carrito */
+
+.producto_card .btn_agregar_carrito {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 7px;
+
+    color: black;
     background-color: green;
+
+    border: 2px solid #333;
+    border-radius: 0;
+
+    cursor: pointer;
+}
+
+.producto_card .btn_agregar_carrito:hover {
+    color: black;
+    background-color: #00a000;
+}
+
+
+/* Icono del carrito */
+
+.producto_card .icono_carrito {
+    width: 30px;
+    height: 30px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* Diseño para pantallas pequeñas */
+/* Dos productos por fila en tablet */
+
+@media (max-width: 900px) {
+
+    #contenedor_prod {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* Un producto por fila en celular */
+
+@media (max-width: 550px) {
+
+    .contenido_productos {
+        width: 95%;
+    }
+
+    #contenedor_prod {
+        grid-template-columns: 1fr;
+    }
+
+    .producto_card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .producto_card .imagen_producto {
+        height: auto;
+        max-height: 300px;
+    }
+
 }
 
 
