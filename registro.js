@@ -5,6 +5,12 @@ const inputRun = document.getElementById("run");
 const inputNombre = document.getElementById("nombre");
 const inputApellidos = document.getElementById("apellidos");
 const inputCorreo = document.getElementById("correo");
+const inputContrasena = document.getElementById("contrasena");
+const inputConfirmarContrasena = document.getElementById("confirmarContrasena");
+const inputTelefono =document.getElementById("telefono");
+const errorContrasena =document.getElementById("errorContrasena");
+const errorConfirmarContrasena = document.getElementById("errorConfirmarContrasena");
+const errorTelefono =  document.getElementById("errorTelefono");
 const inputFechaNacimiento = document.getElementById("fechaNacimiento");
 const selectRegion = document.getElementById("region");
 const selectComuna = document.getElementById("comuna");
@@ -61,6 +67,9 @@ formulario.addEventListener("submit", function (event) {
     const nombre = inputNombre.value.trim();
     const apellidos = inputApellidos.value.trim();
     const correo = inputCorreo.value.trim().toLowerCase();
+    const contrasena = inputContrasena.value;
+    const confirmarContrasena = inputConfirmarContrasena.value;
+    const telefono = inputTelefono.value.trim();
     const fechaNacimiento = inputFechaNacimiento.value;
     const region = selectRegion.value;
     const comuna = selectComuna.value;
@@ -123,7 +132,85 @@ formulario.addEventListener("submit", function (event) {
         console.log("Correo válido: " + correo);
     }
 
-    // Validar Fecha de Nacimiento (Opcional)
+    // Validar Contraseña (Requerida, entre 4 y 10 caracteres)
+
+    if (contrasena === "" || contrasena.length < 4 || contrasena.length > 10) {
+
+        errorContrasena.innerHTML ="La contraseña es requerida y debe tener entre 4 y 10 caracteres.";
+
+        console.log("Error en Contraseña: Debe tener entre 4 y 10 caracteres." );
+
+        registroValido = false;
+
+    } else { errorContrasena.innerHTML = "";
+            console.log("Contraseña válida.");
+
+    }
+
+
+    // Validar Confirmación de Contraseña
+
+    if (confirmarContrasena === "") {
+
+        errorConfirmarContrasena.innerHTML =
+            "Debe confirmar la contraseña.";
+
+        console.log(
+            "Error en Confirmación: El campo está vacío."
+        );
+
+        registroValido = false;
+
+    } else if (confirmarContrasena !== contrasena) {
+
+        errorConfirmarContrasena.innerHTML =
+            "Las contraseñas no coinciden.";
+
+        console.log(
+            "Error en Confirmación: Las contraseñas no coinciden."
+        );
+
+        registroValido = false;
+
+    } else {
+
+        errorConfirmarContrasena.innerHTML = "";
+
+        console.log("Las contraseñas coinciden.");
+
+    }
+
+
+    // Validar Teléfono (Opcional)
+
+    const formatoTelefonoValido = /^[0-9]{9}$/.test(telefono);
+
+    if (telefono === "") {
+
+        errorTelefono.innerHTML = "";
+
+        console.log("Teléfono: No ingresado (opcional).");
+
+    } else if (!formatoTelefonoValido) {
+
+        errorTelefono.innerHTML =
+            "El teléfono debe contener 9 números.";
+
+        console.log(
+            "Error en Teléfono: Debe contener 9 números."
+        );
+
+        registroValido = false;
+
+    } else {
+
+        errorTelefono.innerHTML = "";
+
+        console.log("Teléfono válido: " + telefono);
+
+    }
+
+    // Fecha de Nacimiento (Opcional)
     if (fechaNacimiento === "") {
         console.log("Fecha de nacimiento: No ingresada (opcional).");
     } else {
@@ -176,6 +263,9 @@ formulario.addEventListener("submit", function (event) {
         if (errorNombre.innerHTML !== "") camposConError.push("- Nombre");
         if (errorApellidos.innerHTML !== "") camposConError.push("- Apellidos");
         if (errorCorreo.innerHTML !== "") camposConError.push("- Correo");
+        if (errorContrasena.innerHTML !== "") {camposConError.push("- Contraseña");}
+        if (errorConfirmarContrasena.innerHTML !== "") {camposConError.push("- Confirmar contraseña");}
+        if (errorTelefono.innerHTML !== "") {camposConError.push("- Teléfono");}
         if (errorRegion.innerHTML !== "") camposConError.push("- Región");
         if (errorComuna.innerHTML !== "") camposConError.push("- Comuna");
         if (errorDireccion.innerHTML !== "") camposConError.push("- Dirección");

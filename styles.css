@@ -1158,6 +1158,9 @@
     padding: 0;
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+
+    color: white;
 
     background-image: url("imagenes/fondogeneral.jpg");
     background-size: cover;
@@ -1207,8 +1210,10 @@
 
 .titulo_nosotros .titlogo h2 {
     margin: 0;
+
     color: black;
     font-size: 28px;
+
     white-space: nowrap;
 }
 
@@ -1225,26 +1230,28 @@
 
     color: black;
     text-decoration: underline;
+
     box-sizing: border-box;
 }
 
 .btns_navegacion_nosotros .nav_btn {
-    display: inline-block;
     flex: 1;
-
     width: 100px;
-    padding: 5px;
 
     color: black;
     background: none;
     border: none;
     border-radius: 6px;
 
-    font-family: inherit;
     text-align: center;
-    text-decoration: underline;
     white-space: nowrap;
+
     cursor: pointer;
+}
+
+.btns_navegacion_nosotros .nav_btn:hover {
+    color: black;
+    background: none;
 }
 
 
@@ -1298,9 +1305,13 @@
     gap: 25px;
 }
 
+
+/* Imágenes de las secciones */
+
 .nosotros .about-image,
 .nosotros .mission-image {
     display: block;
+
     width: 50%;
     max-width: 500px;
     height: auto;
@@ -1309,26 +1320,17 @@
 }
 
 
-/* Textos */
-
-.nosotros .text-block {
-    width: 100%;
-}
+/* Bloque de texto */
 
 .nosotros .text-block p {
     margin-top: 0;
     margin-bottom: 20px;
 
     color: white;
-    font-size: 18px;
+
+    font-size: 16px;
     line-height: 1.6;
     text-align: justify;
-}
-
-.nosotros .team-intro {
-    color: white;
-    font-size: 18px;
-    text-align: left;
 }
 
 
@@ -1428,8 +1430,10 @@
         margin-top: 20px;
     }
 
-    .nosotros .section-content {
-        flex-direction: column;
+    .nosotros .about-section,
+    .nosotros .mission-section,
+    .nosotros .team-section {
+        padding: 20px;
     }
 
     .nosotros .about-image,
@@ -1442,15 +1446,5 @@
         grid-template-columns: 1fr;
     }
 
-    /* Texto del pie de página */
-
-    .nosotros .pie_pag_blog {
-        color: white;
-    }
-
-    .nosotros .pie_pag_blog p,
-    .nosotros .pie_pag_blog strong {
-        color: white;
-    }
 
 }
