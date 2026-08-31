@@ -579,6 +579,30 @@
 
 }
 
+/* Acceso al carrito debajo de los productos */
+
+.acceso_carrito_productos {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.acceso_carrito_productos button {
+    padding: 12px 25px;
+
+    color: black;
+    background-color: green;
+
+    border: 2px solid black;
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+.acceso_carrito_productos button:hover {
+    color: white;
+    background-color: #006400;
+}
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* CARRITO */

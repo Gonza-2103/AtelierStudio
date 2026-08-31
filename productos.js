@@ -38,11 +38,21 @@ const productos = [
 ];
 
 
-// Captura del contenedor de productos
+// Captura del contenedor de productos y del botón de ver carrito
 
 const contenedorProductos =
     document.getElementById("contenedor_prod");
 
+const botonVerCarrito =
+    document.getElementById("btnVerCarrito");
+
+// Abrir la página del carrito
+
+botonVerCarrito.addEventListener("click", function () {
+
+    window.location.href = "carrito.html";
+
+});
 
 // Objeto para guardar temporalmente las cantidades seleccionadas
 
@@ -412,6 +422,7 @@ function agregarAlCarrito(idProducto) {
 
 
     guardarCarrito();
+    actualizarContadorCarrito();
 
 
     alert(
@@ -439,6 +450,9 @@ function guardarCarrito() {
     );
 
 
+    actualizarContadorCarrito();
+
+
     console.log("Carrito guardado:", carrito);
 
 }
@@ -461,7 +475,30 @@ function verDetalle(idProducto) {
 
 }
 
+// Actualizar la cantidad del carrito
+
+function actualizarContadorCarrito() {
+
+    let cantidadTotal = 0;
+
+
+    for (let i = 0; i < carrito.length; i++) {
+
+        cantidadTotal += carrito[i].cantidad;
+
+    }
+
+
+    const contadorCarrito =
+        document.getElementById("contadorCarrito");
+
+
+    contadorCarrito.innerHTML = cantidadTotal;
+
+}
 
 // Ejecutar la función al cargar la página
 
 mostrarProductos();
+
+actualizarContadorCarrito();
