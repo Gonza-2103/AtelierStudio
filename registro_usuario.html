@@ -1,118 +1,215 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Registro de Usuario - AtelierStudio</title>
 
-        <!-- Estilos personalizados -->
-        <!-- <link rel="stylesheet" href="styles.css"/> -->
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <body class="pagina_registro">
+    <title>Registro de Usuario - AtelierStudio</title>
 
-        <!-- Logo de la empresa -->
-        <div class="logo">
-            <img src="atelierstudiologo.png" alt="Logo AtelierStudio" class="logo" width="40%"/>
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="pagina_registro">
+
+    <!-- Logo de la empresa -->
+    <div class="logo">
+        <img
+            src="imagenes/atelierstudiologo.png"
+            alt="Logo AtelierStudio"
+            class="logo"
+        >
+    </div>
+
+    <!-- Contenido principal del registro -->
+    <main class="inforegistro">
+
+        <div class="palabra_registro">
+            <h1>Crear Cuenta </h1>
         </div>
 
-        <div class="inforegistro container my-4">
-            <div class="palabra_registro text-center mb-4">
-                <h1>Crear Cuenta / Registrar Usuario</h1>
+        <!-- Formulario de registro -->
+        <form id="formRegistro" class="campos_registro" novalidate>
+
+            <p class="aviso-obligatorio">
+                 <span class="obligatorio">*</span> Campos obligatorios
+            </p>
+
+            <!-- RUN -->
+            <div>
+                <label for="run">
+                    <strong>RUN: <span class="obligatorio">*</span> </strong>
+                </label>
+
+                <input
+                    type="text"
+                    id="run"
+                    name="run"
+                    placeholder="Ej: 19011022K (Sin puntos ni guion)"
+                >
+
+                <small class="texto-ayuda">
+                      Mínimo 7 y máximo 9 caracteres.
+                </small>
+
+                <small id="errorRun"></small>
             </div>
 
-            <!-- Formulario de Registro -->
-            <form id="formRegistro" class="campos_registro mx-auto" style="max-width: 500px;">
+            <!-- Nombre -->
+            <div>
+                <label for="nombre">
+                    <strong>Nombre: <span class="obligatorio">*</span> </strong>
+                </label>
 
-                <!--RUN -->
-                <div class="mb-3">
-                    <label for="run" class="form-label"><strong>RUN:</strong></label>
-                    <input type="text" id="run" name="run" class="form-control" placeholder="Ej: 19011022K (Sin puntos ni guion)" minlength="7" maxlength="9" />
-                    <small class="form-text text-muted">Ingresar sin puntos ni guión. Mínimo 7 y máximo 9 caracteres.</small>
-                    <small id="errorRun" class="text-danger fw-bold"></small>
-                </div>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                >
 
-                <!-- Nombre -->
-                <div class="mb-3">
-                    <label for="nombre" class="form-label"><strong>Nombre:</strong></label>
-                    <input type="text" id="nombre" name="nombre" class="form-control" maxlength="50" />
-                    <small id="errorNombre" class="text-danger fw-bold"></small>
-                </div>
+                <small id="errorNombre"></small>
+            </div>
 
-                <!--  Apellidos -->
-                <div class="mb-3">
-                    <label for="apellidos" class="form-label"><strong>Apellidos:</strong></label>
-                    <input type="text" id="apellidos" name="apellidos" class="form-control" maxlength="100" />
-                    <small id="errorApellidos" class="text-danger fw-bold"></small>
-                </div>
+            <!-- Apellidos -->
+            <div>
+                <label for="apellidos">
+                    <strong>Apellidos: <span class="obligatorio">*</span> </strong>
+                </label>
 
-                <!--Correo Electrónico -->
-                <div class="mb-3">
-                    <label for="correo" class="form-label"><strong>Correo electrónico:</strong></label>
-                    <input type="text" id="correo" name="correo" class="form-control" placeholder="ejemplo@duocuc.cl" maxlength="100" >
-                    <small class="form-text text-muted">Solo se permiten dominios @duocuc.cl, @profesor.duocuc.cl y @gmail.com</small>
-                    <small id="errorCorreo" class="text-danger fw-bold"></small>
-                </div>
+                <input
+                    type="text"
+                    id="apellidos"
+                    name="apellidos"
+                >
 
-                <!-- Fecha de Nacimiento (Opcional) -->
-                <div class="mb-3">
-                    <label for="fechaNacimiento" class="form-label"><strong>Fecha de Nacimiento (Opcional):</strong></label>
-                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control"/>
-                </div>
+                <small id="errorApellidos"></small>
+            </div>
 
-                <!--Tipo de Usuario  -->
-                <div class="mb-3">
-                    <label for="tipoUsuario" class="form-label"><strong>Tipo de Usuario / Perfil:</strong></label>
-                    <select id="tipoUsuario" name="tipoUsuario" class="form-select">
-                        <option value="Cliente" selected>Cliente</option>
-                        <option value="Vendedor">Vendedor</option>
-                        <option value="Administrador">Administrador</option>
-                    </select>
-                </div>
+            <!-- Correo electrónico -->
+            <div>
+                <label for="correo">
+                    <strong>Correo electrónico: <span class="obligatorio">*</span> </strong>
+                </label>
 
-                <!-- Región -->
-                <div class="mb-3">
-                    <label for="region" class="form-label"><strong>Región:</strong></label>
-                    <select id="region" name="region" class="form-select" >
-                        <option value="">Seleccione una Región</option>
-                    
-                    </select>
-                    <small id="errorRegion" class="text-danger fw-bold"></small>
-                </div>
+                <input
+                    type="text"
+                    id="correo"
+                    name="correo"
+                    placeholder="ejemplo@duocuc.cl"
+                >
 
-                <!-- Comuna -->
-                <div class="mb-3">
-                    <label for="comuna" class="form-label"><strong>Comuna:</strong></label>
-                    <select id="comuna" name="comuna" class="form-select" >
-                        <option value="">Seleccione una Comuna</option>
-                    </select>
-                    <small id="errorComuna" class="text-danger fw-bold"></small>
-                </div>
+                <small class="texto-ayuda">
+                    Solo se permiten dominios @duocuc.cl,
+                    @profesor.duocuc.cl y @gmail.com
+                </small>
 
-                <!-- Dirección -->
-                <div class="mb-3">
-                    <label for="direccion" class="form-label"><strong>Dirección:</strong></label>
-                    <input type="text" id="direccion" name="direccion" class="form-control" placeholder="Calle, número" maxlength="300" />
-                    <small id="errorDireccion" class="text-danger fw-bold"></small>
-                </div>
+                <small id="errorCorreo"></small>
+            </div>
 
-                <!-- Botones de Acción -->
-                <div class="botones_registro d-grid gap-2 mt-4">
-                    <button type="submit" class="btn btn-primary btn-registrar">
-                        <strong>REGISTRAR</strong>
-                    </button>
+            <!-- Fecha de nacimiento -->
+            <div>
+                <label for="fechaNacimiento">
+                    <strong>Fecha de Nacimiento:</strong>
+                </label>
 
-                    <a href="login.html" class="btn btn-outline-secondary text-center">
-                        <strong>Volver al Inicio de Sesión</strong>
-                    </a>
-                </div>
+                <input
+                    type="date"
+                    id="fechaNacimiento"
+                    name="fechaNacimiento"
+                >
+            </div>
 
-            </form>
-        </div>
+            <!-- Tipo de usuario -->
+            <div>
+                <label for="tipoUsuario">
+                    <strong>Tipo de Usuario / Perfil:</strong>
+                </label>
 
-        <!-- carga del arreglo complementario -->
-        <script src="regiones.js"></script>
-        <!--validaciones JavaScript -->
-        <script src="registro.js"></script>
-    </body>
+                <select
+                    id="tipoUsuario"
+                    name="tipoUsuario"
+                >
+                    <option value="Cliente" selected>Cliente</option>
+                    <option value="Vendedor">Vendedor</option>
+                    <option value="Administrador">Administrador</option>
+                </select>
+            </div>
+
+            <!-- Región -->
+            <div>
+                <label for="region">
+                    <strong>Región: <span class="obligatorio">*</span> </strong>
+                </label>
+
+                <select
+                    id="region"
+                    name="region"
+                >
+                    <option value="">Seleccione una Región</option>
+                </select>
+
+                <small id="errorRegion"></small>
+            </div>
+
+            <!-- Comuna -->
+            <div>
+                <label for="comuna">
+                    <strong>Comuna: <span class="obligatorio">*</span> </strong>
+                </label>
+
+                <select
+                    id="comuna"
+                    name="comuna"
+                >
+                    <option value="">Seleccione una Comuna</option>
+                </select>
+
+                <small id="errorComuna"></small>
+            </div>
+
+            <!-- Dirección -->
+            <div>
+                <label for="direccion">
+                    <strong>Dirección: <span class="obligatorio">*</span> </strong>
+                </label>
+
+                <input
+                    type="text"
+                    id="direccion"
+                    name="direccion"
+                    placeholder="Calle, número"
+                >
+
+                <small id="errorDireccion"></small>
+            </div>
+
+            <!-- Botones -->
+            <div class="botones_registro">
+
+                <button
+                    type="submit"
+                    class="btn-registrar"
+                >
+                    <strong>REGISTRAR</strong>
+                </button>
+
+                <a href="login.html">
+                    <strong>Volver al Inicio de Sesión</strong>
+                </a>
+
+            </div>
+
+        </form>
+
+    </main>
+
+    <!-- Regiones y comunas -->
+    <script src="regiones.js"></script>
+
+    <!-- Validaciones del formulario -->
+    <script src="registro.js"></script>
+
+</body>
+
 </html>

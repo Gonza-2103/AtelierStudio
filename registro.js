@@ -72,9 +72,11 @@ formulario.addEventListener("submit", function (event) {
     console.log("Validando registro de usuario...");
 
     //Validar RUN (Requerido, sin puntos ni guion, entre 7 y 9 caracteres)
-    if (run === "" || run.length < 7 || run.length > 9 || run.includes(".") || run.includes("-")) {
-        errorRun.innerHTML = "El RUN es requerido, debe tener entre 7 y 9 caracteres y NO debe llevar puntos ni guion.";
-        console.log("Error en RUN: Es requerido, debe tener entre 7 y 9 caracteres y NO debe llevar puntos ni guion.");
+    const formatoRunValido = /^[0-9]{6,8}[0-9Kk]$/.test(run);
+
+    if (!formatoRunValido) {
+        errorRun.innerHTML = "El RUN debe contener solo números y terminar en un número o K, sin puntos ni guion.";
+        console.log("Error en RUN: Formato inválido.");
         registroValido = false;
     } else {
         errorRun.innerHTML = "";
