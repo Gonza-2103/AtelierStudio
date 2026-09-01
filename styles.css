@@ -1345,6 +1345,91 @@
     white-space: nowrap;  /* Evita que el texto se quiebre en dos líneas */
 }
 
+/* --- LAYOUT GENERAL DE BÚSQUEDA --- */
+.contenedor_busq_layout {
+    display: flex;                       /* Coloca barra lateral y contenido lado a lado */
+    flex-direction: row;                 /* Dirección horizontal */
+    width: 100%;                         /* Ancho total */
+    max-width: 1100px;                   /* Ancho máximo uniforme */
+    margin: 0 auto;                      /* Centrado en pantalla */
+    min-height: 550px;                   /* Altura mínima para que la barra se extienda */
+    padding: 20px;                       /* Relleno perimetral */
+    box-sizing: border-box;              /* Incluye paddings en el cálculo de ancho */
+    gap: 25px;                           /* Separación entre sidebar y resultados */
+}
+
+/* --- BARRA LATERAL IZQUIERDA --- */
+.sidebar_busq {
+    width: 240px;                        /* Ancho fijo de la columna izquierda */
+    flex-shrink: 0;                      /* Evita que se deforme o encoja */
+    display: flex;                       /* Activa Flexbox vertical */
+    flex-direction: column;              /* Ordena los bloques de arriba hacia abajo */
+    justify-content: space-between;      /* Separa el menú superior del inferior */
+    background: rgba(0, 0, 0, 0.45);     /* Fondo semitransparente acorde al atelier */
+    padding: 20px 15px;                  /* Espaciado interno */
+    border-radius: 8px;                  /* Bordes redondeados */
+    border-right: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisoria lateral */
+}
+
+/* --- ENLACES Y BOTONES DEL MENÚ LATERAL --- */
+.sidebar_busq .item_menu {
+    display: flex;                       /* Alineación del icono y texto */
+    align-items: center;                 /* Centrado vertical */
+    gap: 10px;                           /* Espacio entre icono y texto */
+    color: white;                        /* Color del texto */
+    text-decoration: none;               /* Quita subrayado por defecto */
+    padding: 10px 12px;                  /* Área cómoda para clic */
+    font-size: 14px;                     /* Tamaño tipográfico estándar */
+    border-radius: 6px;                  /* Bordes redondeados individuales */
+    transition: background 0.2s ease;    /* Transición suave al pasar el cursor */
+}
+
+.sidebar_busq .item_menu:hover {
+    background: rgba(255, 255, 255, 0.15); /* Efecto hover */
+}
+
+.sidebar_busq .item_menu.activo {
+    background: rgba(218, 165, 32, 0.3); /* Resalte activo color dorado */
+    color: goldenrod;                    /* Texto destacado */
+}
+
+/* --- CONTENIDO PRINCIPAL A LA DERECHA --- */
+.contenido_principal_busq {
+    flex-grow: 1;                        /* Ocupa todo el espacio sobrante a la derecha */
+    background: rgba(0, 0, 0, 0.3);      /* Fondo suave */
+    padding: 25px;                       /* Relleno interno */
+    border-radius: 8px;                  /* Bordes redondeados */
+    color: white;                        /* Color de fuente */
+}
+
+.pie_pag_busq {
+    justify-content: center;  /* Centra el contenido */
+    background-image: url('imagenes/fondopiedepagina.jpg');  
+    background-size: cover;  /* Cubre el ancho del header */
+    background-position: center;  /* Centra la imagen */
+    background-repeat: no-repeat;  /* No repite el fondo */
+    padding-bottom: 1px !important; /* Espacio casi nulo al fondo del header */
+    overflow: hidden;  /* Oculta desbordamientos */
+    color: white;
+
+    /* Medidas fijas para que no cambie su estructura */
+    width: 100%;  /* Ocupa el 100% del ancho */
+    min-height: 110px;  /* Asegura una altura mínima constante */
+    padding: 20px 30px;  /* Padding moderado que no aplasta el contenido */
+    box-sizing: border-box;  /* Respeta los límites sin desbordar la pantalla */
+
+    /* Alineación centrada */
+    display: flex;  /* Activa 'Flexbox' */
+    align-items: center;  /* Centra horizontalmente los bloques */
+    flex-direction: column;  /* Pone los botones DEBAJO del logo */
+    justify-content: center;  /* Centra verticalmente */
+} 
+
+.pie_pag_busq p {
+    margin: 0;  /* Elimina el espacio exterior entre párrafos */
+    line-height: 2;  /* Reduce el interlineado vertical al mínimo */
+}
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* FORO */
