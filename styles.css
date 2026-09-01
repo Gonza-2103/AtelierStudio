@@ -742,6 +742,10 @@
     white-space: nowrap;  /* Evita que el texto se quiebre en dos líneas */
 }
 
+#contenedor_prod h5{
+    font-weight: normal;  /* Quita la negrita por defecto */
+}
+
 /* PRODUCTO #1 */
 #contenedor_prod_1 {
     background-image: url('imagenes/fondocontadorproducto.jpg');  /* Fondo gris/textura del producto */
@@ -771,7 +775,16 @@
     border-radius: 4px;  /* Redondea los bordes de la foto */
 }
 
-#contenedor_prod_1 h4 {
+#contenedor_prod_1 h3 {
+    text-align: center;
+}
+
+#contenedor_prod_1 h5 {
+    text-align: justify;
+}
+
+#contenedor_prod_1 #precio_prod1 {
+    font-weight: bold;
     text-align: center;
 }
 
@@ -863,7 +876,16 @@
     border-radius: 4px;  /* Redondea los bordes de la foto */
 }
 
-#contenedor_prod_2 h4 {
+#contenedor_prod_2 h3 {
+    text-align: center;
+}
+
+#contenedor_prod_2 h5 {
+    text-align: justify;
+}
+
+#contenedor_prod_2 #precio_prod2 {
+    font-weight: bold;
     text-align: center;
 }
 
@@ -956,7 +978,16 @@
     border-radius: 4px;  /* Redondea los bordes de la foto */
 }
 
-#contenedor_prod_3 h4 {
+#contenedor_prod_3 h3 {
+    text-align: center;
+}
+
+#contenedor_prod_3 h5 {
+    text-align: justify;
+}
+
+#contenedor_prod_3 #precio_prod3 {
+    font-weight: bold;
     text-align: center;
 }
 
@@ -1049,7 +1080,16 @@
     border-radius: 4px;  /* Redondea los bordes de la foto */
 }
 
-#contenedor_prod_4 h4 {
+#contenedor_prod_4 h3 {
+    text-align: center;
+}
+
+#contenedor_prod_4 h5 {
+    text-align: justify;
+}
+
+#contenedor_prod_4 #precio_prod4 {
+    font-weight: bold;
     text-align: center;
 }
 
@@ -1141,7 +1181,6 @@
 }
 
 
-
 /* - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* CARRITO */
 
@@ -1154,6 +1193,7 @@
     background-position: center;  /* Centra el fondo */
     background-repeat: no-repeat;  /* No repite el fondo */
     background-attachment: fixed;  /* Mantiene la madera fija */
+    color: white;
 }
 
 /* Título de carrito y logo */
