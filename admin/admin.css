@@ -1,0 +1,229 @@
+/* Configuración general */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background-color: #f2f2f2;
+}
+
+
+/* Página administrativa */
+
+.pagina_admin {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* Menú lateral */
+
+.menu_admin {
+    display: flex;
+    flex-direction: column;
+
+    width: 250px;
+    min-height: 100vh;
+    padding: 25px 20px;
+
+    color: white;
+    background-color: #1f1f1f;
+}
+
+
+/* Logo */
+
+.logo_admin {
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #555;
+
+    text-align: center;
+}
+
+.logo_admin img {
+    display: block;
+
+    width: 110px;
+    height: auto;
+
+    margin: 0 auto 10px;
+}
+
+.logo_admin h2 {
+    margin: 0;
+
+    font-size: 22px;
+}
+
+.logo_admin p {
+    margin: 5px 0 0;
+
+    color: #cccccc;
+    font-size: 14px;
+}
+
+
+/* Navegación */
+
+.navegacion_admin {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+.enlace_admin {
+    display: block;
+
+    padding: 12px 15px;
+
+    color: white;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+}
+
+.enlace_admin:hover,
+.enlace_activo {
+    color: black;
+    background-color: #ffffff;
+}
+
+.volver_tienda {
+    margin-top: auto;
+
+    border: 1px solid white;
+
+    text-align: center;
+}
+
+
+/* Contenido principal */
+
+.contenido_admin {
+    flex: 1;
+
+    width: calc(100% - 250px);
+    padding: 35px;
+}
+
+
+/* Encabezado */
+
+.encabezado_admin {
+    padding: 25px;
+    margin-bottom: 30px;
+
+    color: black;
+    background-color: white;
+
+    border-left: 6px solid #1f1f1f;
+    border-radius: 6px;
+}
+
+.encabezado_admin h1 {
+    margin: 0 0 8px;
+
+    font-size: 30px;
+}
+
+.encabezado_admin p {
+    margin: 0;
+
+    color: #555;
+}
+
+
+/* Resumen */
+
+.resumen_admin {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+
+/* Tarjetas */
+
+.tarjeta_admin {
+    padding: 25px;
+
+    color: black;
+    background-color: white;
+
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+}
+
+.tarjeta_admin h2 {
+    margin-top: 0;
+}
+
+.tarjeta_admin p {
+    min-height: 50px;
+
+    color: #444;
+    line-height: 1.5;
+}
+
+.tarjeta_admin a {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    color: white;
+    background-color: #1f1f1f;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+}
+
+.tarjeta_admin a:hover {
+    background-color: #555555;
+}
+
+
+/* Diseño para pantallas pequeñas */
+
+@media (max-width: 768px) {
+
+    .pagina_admin {
+        flex-direction: column;
+    }
+
+    .menu_admin {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .navegacion_admin {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .volver_tienda {
+        margin-top: 0;
+    }
+
+    .contenido_admin {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .resumen_admin {
+        grid-template-columns: 1fr;
+    }
+
+}
