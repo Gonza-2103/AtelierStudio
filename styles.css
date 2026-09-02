@@ -76,9 +76,17 @@
     text-align: center;
 }
 
+.campos_login .correo,
+.campos_login .clave {
+    padding: 8px;
+    border-radius: 12px;
+    width: 100%;  /* Ocupa el 100% del contenedor padre */
+    box-sizing: border-box;  /* Incluye el padding sin desbordarse */
+}
+
 .botones_login {
     display: flex;  /* Coloca los botones uno al lado del otro */  
-    gap: 30px;  /* Espacio de separación entre los botones */
+    gap: 10px;  /* Espacio de separación entre los botones */
     width: 100%;  /* El conjunto mide lo mismo que campos de escritura (inputs) */
     justify-content: center;  /* Centra ambos botones al medio */
 }
@@ -87,6 +95,8 @@
     flex: 1;  /* Hace que ambos botones se repartan */
     padding: 12px 0;  /* Altura idéntica a los inputs */
     background-color: black;
+    color: white;
+    border-radius: 12px;
 }
 
 .forgot {
@@ -104,125 +114,190 @@
 
 .pagina_registro {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     background-image: url('imagenes/fondomadera.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
     margin: 0;
-    padding: 30px 0;
-
+    padding: 40px 15px;
     width: 100%;
     min-height: 100vh;
+    box-sizing: border-box;
+    color: white;
 }
 
-/* Logo */
+/* Logo de cabecera con las mismas cualidades de login */
 .pagina_registro .logo {
+    display: flex;
+    justify-content: center;
     width: 250px;
-    height: auto;
-    display: block;
-    margin: 0 auto 20px auto;
 }
 
-/* Contenedor del formulario */
+.pagina_registro .logo img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Tarjeta contenedora del formulario */
 .inforegistro {
-    width: 90%;
-    max-width: 500px;
+    width: 100%;
+    max-width: 560px;
     margin: 0 auto;
-    text-align: center;
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 35px 30px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
 }
 
 /* Título */
-.palabra_registro {
+.palabra_registro h1 {
     text-align: center;
-    margin-bottom: 25px;
+    font-size: 26px;
+    margin: 0 0 20px 0;
+    color: goldenrod;
+    letter-spacing: 1px;
 }
 
-/* Campos */
+/* Formulario */
 .campos_registro {
     width: 100%;
+}
+
+.campos_registro div {
+    margin-bottom: 15px;
 }
 
 /* Etiquetas */
 .campos_registro label {
     display: block;
     text-align: left;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+/* Asteriscos obligatorios */
+.camp_oblig,
+.run_oblig,
+.nomb_oblig,
+.apel_oblig,
+.correo_oblig,
+.contrasena_oblig,
+.conf_contrasena_oblig,
+.region_oblig,
+.comuna_oblig,
+.dire_oblig {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.aviso_obligatorio {
+    background: transparent;
+    color: white !important;
+    font-size: 13px;
+    text-align: left;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
 }
 
 /* Inputs y select */
 .campos_registro input,
 .campos_registro select {
     width: 100%;
-    max-width: 100%;
-    padding: 10px;
-
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 10px 12px;
+    background-color: #ffffff;
+    color: #111;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Mensajes de error */
-.campos_registro small[id^="error"]:not(:empty) {
+.campos_registro input:focus,
+.campos_registro select:focus {
+    border-color: goldenrod;
+    box-shadow: 0 0 6px rgba(218, 165, 32, 0.5);
+}
+
+/* Textos informativos y de ayuda */
+.texto-ayuda {
     display: block;
-    color: #b00020;
-    background-color: white;
-    font-weight: bold;
-    padding: 6px 8px;
-    margin-top: 5px;
-    border-radius: 4px;
+    color: #ffd700;
+    font-size: 12px;
+    margin-top: 4px;
     text-align: left;
 }
 
-/* Botones */
+/* Mensajes de error generados por JavaScript */
+.campos_registro small[class^="error"]:not(:empty) {
+    display: block;
+    color: #ff4d4d;
+    background-color: rgba(255, 0, 0, 0.1);
+    border-left: 3px solid #ff4d4d;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px 8px;
+    margin-top: 5px;
+    border-radius: 3px;
+    text-align: left;
+}
+
+/* Botones de acción */
 .botones_registro {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-
-    width: 100%;
+    gap: 12px;
     margin-top: 25px;
 }
 
-.botones_registro button,
+.btn_registrar {
+    width: 100%;
+    padding: 12px;
+    background-color: goldenrod;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btn_registrar:hover {
+    background-color: #d49b14;
+}
+
 .botones_registro a {
     width: 100%;
-    padding: 12px 0;
-
-    background-color: black;
-    color: white;
-
-    border: none;
-    border-radius: 5px;
-
+    padding: 10px 0;
+    background: transparent;
+    color: goldenrod;
+    border: 1px solid goldenrod;
+    border-radius: 6px;
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    box-sizing: border-box;
 }
 
-.texto-ayuda {
-    display: block;
+.botones_registro a:hover {
+    background-color: goldenrod;
     color: black;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 5px 8px;
-    margin-top: 5px;
-    border-radius: 4px;
-}
-
-.obligatorio {
-    color: #b00020;
-    background-color: white;
-    font-weight: bold;
-    padding: 0 3px;
-    border-radius: 3px;
-}
-
-.aviso-obligatorio {
-    background-color: white;
-    font-weight: bold;
-    text-align: left;
 }
 
 
@@ -1348,7 +1423,7 @@
 }
 
 #bloque_pago_car #btn_confirmar_compra {
-    font-family: inherit;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: 100%;
     padding: 6px 10px;  
     margin-top: 15px;
@@ -2269,6 +2344,12 @@
     text-align: center;
 }
 
+.descr_ayuda {
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
+
 .logo_ayuda {
     width: 180px;
     max-width: 100%;
@@ -2291,7 +2372,6 @@
 
 
 /* Contenedor del formulario */
-
 .contenedor_formulario_ayuda {
     max-width: 650px;
     margin: 0 auto;
@@ -2299,7 +2379,7 @@
 
     background-color: rgba(255, 255, 255, 0.90);
     border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 12px;
 }
 
 .contenedor_formulario_ayuda h2 {
@@ -2314,9 +2394,13 @@
     text-transform: uppercase;
 }
 
+.contenedor_formulario_ayuda .tit_form_ayuda {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
 
 /* Campos del formulario */
-
 .campo_ayuda {
     margin-bottom: 20px;
 }
@@ -2366,12 +2450,9 @@
 /* Asterisco de campos obligatorios */
 
 .obligatorio {
-    padding: 0 3px;
-
     color: #b00020;
-    background-color: white;
-    border-radius: 3px;
-
+    background-color: transparent;
+    padding: 0 3px;
     font-weight: bold;
 }
 
@@ -2387,7 +2468,7 @@
 
 /* Mensajes de error */
 
-.formulario_ayuda small[id^="error"]:not(:empty) {
+.formulario_ayuda small[id="error"]:not(:empty) {
     display: block;
     margin-top: 5px;
     padding: 6px 8px;
@@ -2427,7 +2508,6 @@
 
 
 /* Diseño para pantallas pequeñas */
-
 @media (max-width: 768px) {
 
     .titulo_ayuda {
@@ -2455,11 +2535,6 @@
     .contenedor_formulario_ayuda h2 {
         margin: -18px -18px 20px;
     }
-
-
 }
-
-/* - - - - - - - - - - - - - - - - - - - - - - - - - */
-/* NOSOTROS */
 
 
