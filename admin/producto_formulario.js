@@ -143,6 +143,202 @@ const errorStockCritico =
 const errorCategoria =
     document.getElementById("errorCategoriaProducto");
 
+// Validar código mientras se escribe
+
+inputCodigo.addEventListener(
+    "input",
+    function () {
+        const codigo =
+            inputCodigo.value.trim().toUpperCase();
+
+        if (codigo === "") {
+            errorCodigo.innerHTML =
+                "El código es obligatorio.";
+
+            return;
+        }
+
+        if (codigo.length < 3) {
+            errorCodigo.innerHTML =
+                "El código debe contener al menos 3 caracteres.";
+
+            return;
+        }
+
+        for (let i = 0; i < productos.length; i++) {
+            const esElMismoProducto =
+                productoEditado !== null &&
+                productos[i].id === productoEditado.id;
+
+            if (
+                productos[i].codigo.toUpperCase() === codigo &&
+                !esElMismoProducto
+            ) {
+                errorCodigo.innerHTML =
+                    "Ya existe un producto con este código.";
+
+                return;
+            }
+        }
+
+        errorCodigo.innerHTML = "";
+    }
+);
+
+
+// Validar nombre mientras se escribe
+
+inputNombre.addEventListener(
+    "input",
+    function () {
+        const nombre =
+            inputNombre.value.trim();
+
+        if (nombre === "") {
+            errorNombre.innerHTML =
+                "El nombre es obligatorio.";
+
+        } else if (nombre.length > 100) {
+            errorNombre.innerHTML =
+                "El nombre no puede superar los 100 caracteres.";
+
+        } else {
+            errorNombre.innerHTML = "";
+        }
+    }
+);
+
+
+// Validar descripción mientras se escribe
+
+inputDescripcion.addEventListener(
+    "input",
+    function () {
+        const descripcion =
+            inputDescripcion.value.trim();
+
+        if (descripcion.length > 500) {
+            errorDescripcion.innerHTML =
+                "La descripción no puede superar los 500 caracteres.";
+
+        } else {
+            errorDescripcion.innerHTML = "";
+        }
+    }
+);
+
+
+// Validar precio mientras se escribe
+
+inputPrecio.addEventListener(
+    "input",
+    function () {
+        const precioTexto =
+            inputPrecio.value.trim();
+
+        const precio =
+            Number(precioTexto);
+
+        if (precioTexto === "") {
+            errorPrecio.innerHTML =
+                "El precio es obligatorio.";
+
+        } else if (
+            Number.isNaN(precio) ||
+            precio < 0
+        ) {
+            errorPrecio.innerHTML =
+                "El precio debe ser un número igual o superior a 0.";
+
+        } else {
+            errorPrecio.innerHTML = "";
+        }
+    }
+);
+
+
+// Validar stock mientras se escribe
+
+inputStock.addEventListener(
+    "input",
+    function () {
+        const stockTexto =
+            inputStock.value.trim();
+
+        const stock =
+            Number(stockTexto);
+
+        if (stockTexto === "") {
+            errorStock.innerHTML =
+                "El stock es obligatorio.";
+
+        } else if (
+            Number.isNaN(stock) ||
+            stock < 0 ||
+            !Number.isInteger(stock)
+        ) {
+            errorStock.innerHTML =
+                "El stock debe ser un número entero igual o superior a 0.";
+
+        } else {
+            errorStock.innerHTML = "";
+        }
+    }
+);
+
+
+// Validar stock crítico mientras se escribe
+
+inputStockCritico.addEventListener(
+    "input",
+    function () {
+        const stockCriticoTexto =
+            inputStockCritico.value.trim();
+
+        if (stockCriticoTexto === "") {
+            errorStockCritico.innerHTML = "";
+            return;
+        }
+
+        const stockCritico =
+            Number(stockCriticoTexto);
+
+        if (
+            Number.isNaN(stockCritico) ||
+            stockCritico < 0 ||
+            !Number.isInteger(stockCritico)
+        ) {
+            errorStockCritico.innerHTML =
+                "El stock crítico debe ser un número entero igual o superior a 0.";
+
+        } else {
+            errorStockCritico.innerHTML = "";
+        }
+    }
+);
+
+
+// Validar categoría al cambiar la selección
+
+selectCategoria.addEventListener(
+    "change",
+    function () {
+        const categoria =
+            selectCategoria.value;
+
+        if (
+            categoria !== "Pintura" &&
+            categoria !== "Acuarela"
+        ) {
+            errorCategoria.innerHTML =
+                "Debe seleccionar una categoría.";
+
+        } else {
+            errorCategoria.innerHTML = "";
+        }
+    }
+);
+
 
 // Validar el formulario al enviarlo
 
