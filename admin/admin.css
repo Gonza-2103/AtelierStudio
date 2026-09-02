@@ -317,33 +317,56 @@ body {
     cursor: pointer;
 }
 
-.btn_mostrar_producto {
+.btn_mostrar_producto,
+.btn_mostrar_usuario {
     color: white;
     background-color: #2563eb;
 }
 
-.btn_editar_producto {
+.btn_editar_producto,
+.btn_editar_usuario {
     color: black;
     background-color: #facc15;
 }
 
-.btn_eliminar_producto {
+.btn_eliminar_producto,
+.btn_eliminar_usuario {
     color: white;
     background-color: #dc2626;
 }
 
-.btn_mostrar_producto:hover {
+.btn_mostrar_producto:hover,
+.btn_mostrar_usuario:hover {
     background-color: #1d4ed8;
 }
 
-.btn_editar_producto:hover {
+.btn_editar_producto:hover,
+.btn_editar_usuario:hover {
     background-color: #eab308;
 }
 
-.btn_eliminar_producto:hover {
+.btn_eliminar_producto:hover,
+.btn_eliminar_usuario:hover {
     background-color: #b91c1c;
 }
 
+/* Mensajes de validación de formularios */
+
+.formulario_admin .campo_admin small[id^="error"] {
+    display: block;
+    margin-top: 5px;
+    color: #d00000;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Asteriscos de campos obligatorios */
+
+.campo_requerido_admin,
+.aviso_obligatorio_admin span {
+    color: #d00000;
+}
 
 /* Diseño para pantallas pequeñas */
 
@@ -403,5 +426,7 @@ body {
         font-size: 14px;
         font-weight: 600;
     }
+
+
 
 }

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Detalle de Usuario - AtelierStudio</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body class="pagina_admin">
+
+    <!-- Menú lateral -->
+
+    <aside class="menu_admin">
+
+        <div class="logo_admin">
+
+            <img
+                src="../imagenes/atelierstudiologo.png"
+                alt="Logo de AtelierStudio"
+            >
+
+            <h2>AtelierStudio</h2>
+
+            <p>Administración</p>
+
+        </div>
+
+
+        <nav class="navegacion_admin">
+
+            <a
+                href="admin.html"
+                class="enlace_admin"
+            >
+                Inicio
+            </a>
+
+            <a
+                href="productos_admin.html"
+                class="enlace_admin"
+            >
+                Productos
+            </a>
+
+            <a
+                href="usuarios_admin.html"
+                class="enlace_admin enlace_activo"
+            >
+                Usuarios
+            </a>
+
+            <a
+                href="../index.html"
+                class="enlace_admin volver_tienda"
+            >
+                Volver a la tienda
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Contenido principal -->
+
+    <main class="contenido_admin">
+
+        <header class="encabezado_admin">
+
+            <h1>Detalle del usuario</h1>
+
+            <p>
+                Información registrada en el sistema.
+            </p>
+
+        </header>
+
+
+        <!-- Información del usuario -->
+
+        <section
+            class="contenedor_formulario_admin"
+            id="contenedorDetalleUsuario"
+        >
+
+            <dl class="detalle_usuario_admin">
+
+                <div>
+                    <dt>RUN:</dt>
+                    <dd id="detalleRun"></dd>
+                </div>
+
+                <div>
+                    <dt>Nombre:</dt>
+                    <dd id="detalleNombre"></dd>
+                </div>
+
+                <div>
+                    <dt>Apellidos:</dt>
+                    <dd id="detalleApellidos"></dd>
+                </div>
+
+                <div>
+                    <dt>Correo electrónico:</dt>
+                    <dd id="detalleCorreo"></dd>
+                </div>
+
+                <div>
+                    <dt>Teléfono:</dt>
+                    <dd id="detalleTelefono"></dd>
+                </div>
+
+                <div>
+                    <dt>Fecha de nacimiento:</dt>
+                    <dd id="detalleFechaNacimiento"></dd>
+                </div>
+
+                <div>
+                    <dt>Tipo de usuario:</dt>
+                    <dd id="detalleTipoUsuario"></dd>
+                </div>
+
+                <div>
+                    <dt>Región:</dt>
+                    <dd id="detalleRegion"></dd>
+                </div>
+
+                <div>
+                    <dt>Comuna:</dt>
+                    <dd id="detalleComuna"></dd>
+                </div>
+
+                <div>
+                    <dt>Dirección:</dt>
+                    <dd id="detalleDireccion"></dd>
+                </div>
+
+            </dl>
+
+
+            <!-- Botones -->
+
+            <div class="botones_formulario_admin">
+
+                <button
+                    type="button"
+                    id="btnEditarUsuarioDetalle"
+                >
+                    EDITAR USUARIO
+                </button>
+
+                <a href="usuarios_admin.html">
+                    VOLVER AL LISTADO
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="usuario_detalle.js"></script>
+
+</body>
+
+</html>

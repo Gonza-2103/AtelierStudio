@@ -7,7 +7,7 @@ const usuariosIniciales = [
         run: "203456778",
         nombre: "Daniela",
         apellidos: "Muñoz González",
-        correo: "daniela.munoz@duoc.cl",
+        correo: "daniela.munoz@duocuc.cl",
         contrasena: "admin123",
         telefono: "912345678",
         fechaNacimiento: "1992-04-15",
