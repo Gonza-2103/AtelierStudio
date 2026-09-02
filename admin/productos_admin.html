@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Gestión de Productos - AtelierStudio</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body class="pagina_admin">
+
+    <!-- Menú lateral -->
+
+    <aside class="menu_admin">
+
+        <div class="logo_admin">
+
+            <img
+                src="../imagenes/atelierstudiologo.png"
+                alt="Logo de AtelierStudio"
+            >
+
+            <h2>AtelierStudio</h2>
+
+            <p>Administración</p>
+
+        </div>
+
+        <nav class="navegacion_admin">
+
+            <a
+                href="admin.html"
+                class="enlace_admin"
+            >
+                Inicio
+            </a>
+
+            <a
+                href="productos_admin.html"
+                class="enlace_admin enlace_activo"
+            >
+                Productos
+            </a>
+
+            <a
+                href="usuarios_admin.html"
+                class="enlace_admin"
+            >
+                Usuarios
+            </a>
+
+            <a
+                href="../index.html"
+                class="enlace_admin volver_tienda"
+            >
+                Volver a la tienda
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Contenido principal -->
+
+    <main class="contenido_admin">
+
+        <header class="encabezado_lista_admin">
+
+            <div>
+
+                <h1>Productos</h1>
+
+                <p>
+                    Listado de productos registrados en el sistema.
+                </p>
+
+            </div>
+
+            <a
+                href="producto_formulario.html?modo=nuevo"
+                class="btn_nuevo_admin"
+                id="btnNuevoProducto"
+            >
+                NUEVO PRODUCTO
+            </a>
+
+        </header>
+
+        <!-- Tabla de productos -->
+
+        <section class="contenedor_tabla_admin">
+
+            <table class="tabla_admin">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Código</th>
+
+                        <th>Nombre</th>
+
+                        <th>Categoría</th>
+
+                        <th>Precio</th>
+
+                        <th>Stock</th>
+
+                        <th>Acciones</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="cuerpoTablaProductos">
+
+                    <!-- JavaScript mostrará aquí los productos -->
+
+                </tbody>
+
+            </table>
+
+            <p
+                id="mensajeSinProductos"
+                class="mensaje_vacio_admin"
+            >
+                No hay productos registrados.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="productos_admin.js"></script>
+
+</body>
+
+</html>

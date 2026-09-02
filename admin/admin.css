@@ -194,10 +194,160 @@ body {
     background-color: #555555;
 }
 
+/* Encabezado de los listados */
+
+.encabezado_lista_admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding: 25px;
+    margin-bottom: 25px;
+
+    background-color: white;
+
+    border-left: 6px solid #1f1f1f;
+    border-radius: 6px;
+}
+
+.encabezado_lista_admin h1 {
+    margin: 0 0 5px;
+}
+
+.encabezado_lista_admin p {
+    margin: 0;
+
+    color: #555;
+}
+
+
+/* Botón nuevo producto */
+
+.btn_nuevo_admin {
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    color: white;
+    background-color: #1f1f1f;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn_nuevo_admin:hover {
+    background-color: #555;
+}
+
+
+/* Contenedor de la tabla */
+
+.contenedor_tabla_admin {
+    overflow-x: auto;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Tabla */
+
+.tabla_admin {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.tabla_admin th,
+.tabla_admin td {
+    padding: 12px;
+
+    border-bottom: 1px solid #ddd;
+
+    text-align: left;
+}
+
+.tabla_admin th {
+    color: white;
+    background-color: #1f1f1f;
+}
+
+.tabla_admin tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabla_admin tbody tr:hover {
+    background-color: #e7e7e7;
+}
+
+
+/* Mensaje cuando no existen productos */
+
+.mensaje_vacio_admin {
+    margin: 25px 0 5px;
+
+    color: #666;
+    text-align: center;
+}
+
+/* Acciones de la tabla */
+
+.acciones_tabla_admin {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.acciones_tabla_admin button {
+    padding: 7px 10px;
+
+    border: none;
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+.btn_mostrar_producto {
+    color: white;
+    background-color: #2563eb;
+}
+
+.btn_editar_producto {
+    color: black;
+    background-color: #facc15;
+}
+
+.btn_eliminar_producto {
+    color: white;
+    background-color: #dc2626;
+}
+
+.btn_mostrar_producto:hover {
+    background-color: #1d4ed8;
+}
+
+.btn_editar_producto:hover {
+    background-color: #eab308;
+}
+
+.btn_eliminar_producto:hover {
+    background-color: #b91c1c;
+}
+
 
 /* Diseño para pantallas pequeñas */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 
     .pagina_admin {
         flex-direction: column;
@@ -224,6 +374,34 @@ body {
 
     .resumen_admin {
         grid-template-columns: 1fr;
+    }
+
+    .encabezado_lista_admin {
+    flex-direction: column;
+    align-items: flex-start;
+    }   
+
+    .btn_nuevo_admin {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Asteriscos de campos obligatorios */
+
+    .campo_requerido_admin,
+    .aviso_obligatorio_admin span {
+        color: #d00000;
+    }
+
+
+    /* Mensajes de validación */
+
+    .formulario_admin small[id^="error"] {
+        display: block;
+        margin-top: 5px;
+        color: #d00000;
+        font-size: 14px;
+        font-weight: 600;
     }
 
 }
