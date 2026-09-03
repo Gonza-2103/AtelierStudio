@@ -29,10 +29,96 @@
                 <button class="nav_btn" onclick="location.href='nosotros.html'"><strong>Nosotros</strong></button>
                 <button class="nav_btn" onclick="location.href='productos.html'"><strong>Productos</strong></button>
                 <button class="nav_btn" onclick="location.href='carrito.html'"><strong>Carrito</strong></button>
-                <button class="nav_btn" >onclick="location.href='busqueda.html'"<strong>Búsqueda</strong></button>
+                <button class="nav_btn" onclick="location.href='busqueda.html'"><strong>Búsqueda</strong></button>
                 <button class="nav_btn" onclick="location.href='blog.html'"><strong>Blog</strong></button>
                 <button class="nav_btn" onclick="location.href='contacto.html'"><strong>Contacto</strong></button>
             </figure>
         </header>
+        <!-- Contenido principal -->
+        <main class="contenido_foro">
+
+            <!-- Formulario para publicar opinión o recomendación -->
+            <section class="caja_nuevo_tema">
+                <h3>Comparte tu Opinión o Recomendación</h3>
+                <hr color="white"/>
+                <br>
+                <p>Espacio abierto para debatir técnicas, recomendar artistas independientes y comentar exposiciones, todo relacionado con el arte.</p>
+
+                <form class="form_nuevo_post" novalidate>
+                    <div>
+                        <label for="titulo_tema"><strong>Título del tema:</strong></label>
+                        <input type="text" id="titulo_tema" name="titulo_tema" placeholder="Ej: ¿Qué barniz recomiendan para pintura al óleo?">
+                    </div>
+
+                    <div>
+                        <label for="categoria_tema"><strong>Categoría:</strong></label>
+                        <select id="categoria_tema" name="categoria_tema">
+                            <option value="">Selecciona una temática</option>
+                            <option value="tecnicas">Técnicas y Materiales</option>
+                            <option value="recomendaciones">Recomendación de Obras</option>
+                            <option value="criticas">Crítica y Apreciación Visual</option>
+                            <option value="eventos">Talleres y Galerías</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="mensaje_tema"><strong>Comentario:</strong></label>
+                        <textarea id="mensaje_tema" name="mensaje_tema" rows="4" placeholder="Escribe aquí tu recomendación o consulta para la comunidad..."></textarea>
+                    </div>
+
+                    <button type="button" class="btn_publicar_foro"><strong>PUBLICAR TEMA</strong></button>
+                </form>
+            </section>
+
+            <!-- Lista de debates y opiniones comunitarias -->
+            <section class="lista_temas_foro">
+                <h3 class="subtitulo_debates">Opiniones Recientes</h3>
+
+                <!-- Tema 1 -->
+                <article class="tarjeta_debate">
+                    <figure class="autor_debate">
+                        <img src="imagenes/geraldinne.jpg" alt="Foto de Geraldinne">
+                        <figcaption><strong>Geraldinne G.</strong></figcaption>
+                    </figure>
+
+                    <div class="cuerpo_debate">
+                        <h4>Conservación de acuarelas en climas húmedos</h4>
+                        <span class="badge_categoria">Técnicas y Materiales</span>
+                        <p>¿Qué tipo de fijador o paspartú recomiendan para obras expuestas cerca de la costa? He notado que el exceso de humedad marina altera el grano del papel si no se sella de inmediato.</p>
+                        <footer class="pie_debate">
+                            <small>Publicado hace 2 horas &bull; 8 respuestas</small>
+                            <a href="#" class="enlace_responder">Responder &rarr;</a>
+                        </footer>
+                    </div>
+                </article>
+
+                <!-- Tema 2 -->
+                <article class="tarjeta_debate">
+                    <figure class="autor_debate">
+                        <img src="imagenes/gonza.jpg" alt="Foto de Gonzalo">
+                        <figcaption><strong>Gonzalo H.</strong></figcaption>
+                    </figure>
+
+                    <div class="cuerpo_debate">
+                        <h4>Apreciación del claroscuro en retratos al óleo</h4>
+                        <span class="badge_categoria">Crítica y Apreciación Visual</span>
+                        <p>Totalmente recomendada la obra 'Caballero con Pipa'. La transición de sombras en la mirada del marinero transmite una calma reflexiva que difícilmente se logra en formatos digitales.</p>
+                        <footer class="pie_debate">
+                            <small>Publicado hace 1 día &bull; 14 respuestas</small>
+                            <a href="#" class="enlace_responder">Responder &rarr;</a>
+                        </footer>
+                    </div>
+                </article>
+
+            </section>
+
+        </main>
+
+        <!-- Pie de página informativo -->
+        <footer class="pie_pag_foro">
+            <p>Viña del Mar, Chile.</p>
+            <p><strong>&copy; 2026 AtelierStudio - Galería y Plataforma de Arte Independiente.</strong></p>
+            <br>
+        </footer>
     </body>
 </html>

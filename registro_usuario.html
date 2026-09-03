@@ -37,8 +37,8 @@
                 <!-- RUN -->
                 <div>
                     <label for="run"><strong>RUT: <span class="run_oblig">*</span> </strong></label>
-                    <input type="text" class="run" name="run" id="run" maxlength="9" placeholder="Ejemplo: 19011022K (sin puntos ni guión)">
-                    <small class="texto-ayuda">Mínimo 7 y máximo 9 caracteres.</small>
+                    <input type="text" class="run" name="run" id="run" maxlength="9" placeholder="Ejemplo: 19011022K">
+                    <small class="texto-ayuda">Se requiere un mínimo 7 y un máximo de 9 caracteres, sin puntos ni guión.</small>
                     <small class="errorRun"></small>
                 </div>
 
@@ -89,7 +89,7 @@
                 <!-- Fecha de nacimiento -->
                 <div>
                     <label for="fechaNacimiento"><strong>Fecha de nacimiento:</strong></label>
-                    <input type="date" class="fechaNacimiento" name="fechaNacimiento" id="fechaNacimiento">
+                    <input type="text" class="fechaNacimiento" name="fechaNacimiento" id="fechaNacimiento" maxlength="10" placeholder="DD/MM/YYYY" autocomplete="off">
                 </div>
 
                 <!-- Región -->
@@ -109,7 +109,7 @@
                 <!-- Dirección -->
                 <div>
                     <label for="direccion"><strong>Dirección: <span class="dire_oblig">*</span></strong></label>
-                    <input type="text" class="direccion" name="direccion" id="direccion" maxlength="300" placeholder="Calle #número, depto #número">
+                    <input type="text" class="direccion" name="direccion" id="direccion" maxlength="300" placeholder="Calle #número, depto. #número">
                     <small class="errorDireccion"></small>
                 </div>
 

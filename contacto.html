@@ -27,7 +27,7 @@
                 <button class="nav_btn" onclick="location.href='carrito.html'"><strong>Carrito</strong></button>
                 <button class="nav_btn" onclick="location.href='busqueda.html'"><strong>Búsqueda</strong></button>
                 <button class="nav_btn" onclick="location.href='foro.html'"><strong>Foro</strong></button>
-                <button class="nav_btn" onclick="location.href='blog.html'"><strong>Blog</strong></button>
+                <button class="nav_btn" onclick="location.href='blogs.html'"><strong>Blogs</strong></button>
             </figure>
         </header>
 
@@ -46,6 +46,8 @@
             <section class="contenedor_formulario_ayuda">
 
                 <p class="tit_form_ayuda">Formulario</p>
+                <br>
+                <hr color="black"/>
                 
                 <form id="formAyuda" class="formulario_ayuda" novalidate>
                     <p class="aviso_obligatorio" style="color: black !important;"><span class="obligatorio">*</span>Campos obligatorios</p>
@@ -59,8 +61,8 @@
 
                     <!-- Correo -->
                     <div class="campo_ayuda">
-                        <label for="correoAyuda"><strong>Correo electrónico:<span class="obligatorio">*</span></strong></label>
-                        <input type="text" id="correoAyuda" name="correoAyuda" placeholder="ejemplo@gmail.com">
+                        <label for="correo_ayuda"><strong>Correo electrónico:<span class="obligatorio">*</span></strong></label>
+                        <input type="text" class="correo_ayuda" name="correoAyuda" placeholder="ejemplo@gmail.com">
                         <small class="texto_ayuda">Dominios permitidos: @duocuc.cl, @profesor.duocuc.cl, @gmail.com y @hotmail.com</small>
                         <small id="errorCorreoAyuda"></small>
                     </div>
@@ -81,14 +83,14 @@
         </main>
 
         <!-- Pie de página informativo -->
-        <footer id="pie_pag_ayuda">
+        <footer class="pie_pag_ayuda">
             <p>Viña del Mar, Chile.</p>
             <p><strong>&copy; 2026 AtelierStudio - Galería y Plataforma de Arte Independiente.</strong></p>
             <br>
         </footer>
 
         <!-- Validaciones del formulario -->
-        <script src="ayuda.js"></script>
+        <script src="contacto.js"></script>
 
     </body>
 </html>

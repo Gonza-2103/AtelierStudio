@@ -457,7 +457,7 @@
     width: 100%;
     min-height: 110px;
     padding: 20px 30px 1px;
-    background-image: url('imagenes/fondoblog.jpg');
+    background-image: url('imagenes/fondonosotros.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -799,6 +799,15 @@
     text-align: center;
     font-size: 17px;
     margin: 0 0 5px 0;
+}
+
+#contenedor_prod_1 #categ_prod1,
+#contenedor_prod_2 #categ_prod2,
+#contenedor_prod_3 #categ_prod3,
+#contenedor_prod_4 #categ_prod4 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 #precio_prod1,
@@ -1183,6 +1192,10 @@
 #pie_pag_det_prod p {
     margin: 0;
     line-height: 2;
+}
+
+#foot_det_prod {
+    text-align: right !important;
 }
 
 
@@ -1818,6 +1831,222 @@
     white-space: nowrap;  /* Evita que el texto se quiebre en dos líneas */
 }
 
+/* Contenido Principal */
+.contenido_foro {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 35px 20px;
+    box-sizing: border-box;
+}
+
+/* Caja para crear nuevo tema */
+.caja_nuevo_tema {
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 25px 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    
+}
+
+.caja_nuevo_tema h3 {
+    margin-top: 0;
+    color: goldenrod;
+    font-size: 22px;
+}
+
+.caja_nuevo_tema p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.form_nuevo_post div {
+    margin-bottom: 15px;
+}
+
+.form_nuevo_post label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #eee;
+}
+
+.form_nuevo_post input,
+.form_nuevo_post select,
+.form_nuevo_post textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #ffffff;
+    color: #111;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.form_nuevo_post input:focus,
+.form_nuevo_post select:focus,
+.form_nuevo_post textarea:focus {
+    border-color: goldenrod;
+    box-shadow: 0 0 6px rgba(218, 165, 32, 0.5);
+}
+
+.btn_publicar_foro {
+    padding: 10px 24px;
+    background-color: goldenrod;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: background-color 0.2s ease;
+    justify-content: right;
+}
+
+.btn_publicar_foro:hover {
+    background-color: #d49b14;
+}
+
+/* Lista de debates */
+.subtitulo_debates {
+    font-size: 22px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid white;
+    padding-bottom: 8px;
+    color: white;
+}
+
+.tarjeta_debate {
+    background-image: url('imagenes/fondocontadorproducto.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.autor_debate {
+    margin: 0;
+    text-align: center;
+    flex-shrink: 0;
+    width: 90px;
+}
+
+.autor_debate img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: block;
+    margin: 0 auto 6px auto;
+}
+
+.autor_debate figcaption {
+    font-size: 12px;
+}
+
+.cuerpo_debate {
+    flex-grow: 1;
+}
+
+.cuerpo_debate h4 {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.badge_categoria {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cuerpo_debate p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 12px 0;
+    text-align: justify;
+}
+
+.pie_debate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    padding-top: 8px;
+}
+
+.pie_debate small {
+    color: #444;
+    font-size: 12px;
+}
+
+.enlace_responder {
+    color: black;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+/* Pie de página */
+.pie_pag_foro {
+    justify-content: center;
+    background-image: url('imagenes/fondopiedepagina.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 1px !important;
+    overflow: hidden;
+    width: 100%;
+    min-height: 110px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.pie_pag_foro p {
+    margin: 0;
+    line-height: 2;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 600px) {
+    .tarjeta_debate {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .autor_debate {
+        width: 100%;
+    }
+}
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* BLOG */
@@ -1905,6 +2134,7 @@
 .caso .img1, .caso .img2 {
     display: block;  /* Permite centrar con márgenes */
     margin: 0 auto;  /* Centra horizontalmente la imagen */
+    border-radius: 12px;
 }
 
 .btn_caso1,
@@ -2233,43 +2463,37 @@
 /* - - - - - - - - - - - - - - - - - - - - - - - - - */
 /* CONTACTO */
 
-/* Fondo general de la página */
 .ayuda {
-    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url("imagenes/fondogeneral.jpg");
+    background-image: url('imagenes/fondogeneral.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-
-/* Encabezado de Ayuda */
+/* Título de contacto y logo */
 .titulo_ayuda {
-    width: 100%;
-    min-height: 110px;
-    padding: 20px 30px 1px;
-
-    background-image: url("imagenes/fondoblog.jpg");
+    justify-content: center;
+    background-image: url('imagenes/fondocontacto.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
+    padding-bottom: 1px !important;
+    overflow: hidden;
+    width: 100%;
+    min-height: 110px;
+    padding: 20px 30px;
+    box-sizing: border-box;
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-
-    box-sizing: border-box;
-    overflow: hidden;
 }
 
-
 /* Logo y título del encabezado */
-
 .titulo_ayuda .titlogo {
     display: flex;
     align-items: center;
@@ -2291,9 +2515,7 @@
     white-space: nowrap;
 }
 
-
 /* Botones de navegación */
-
 .btns_navegacion_ayuda {
     display: flex;
     justify-content: center;
@@ -2314,7 +2536,7 @@
     width: 100px;
     padding: 5px;
 
-    color: black;
+    color: white;
     background: none;
     border: none;
     border-radius: 6px;
@@ -2326,18 +2548,14 @@
     cursor: pointer;
 }
 
-
 /* Contenido principal */
-
 .contenido_ayuda {
     width: 90%;
     max-width: 850px;
     margin: 40px auto;
 }
 
-
 /* Presentación de la empresa */
-
 .presentacion_ayuda {
     margin-bottom: 30px;
     color: white;
@@ -2369,7 +2587,6 @@
     font-size: 18px;
     text-shadow: 2px 2px 4px black;
 }
-
 
 /* Contenedor del formulario */
 .contenedor_formulario_ayuda {
@@ -2431,24 +2648,17 @@
     resize: vertical;
 }
 
-
 /* Texto explicativo del correo */
-
 .texto_ayuda {
     display: block;
     margin-top: 5px;
     padding: 5px 8px;
-
-    color: #333;
-    background-color: white;
-    border-radius: 4px;
-
+    color: black;
     text-align: left;
+    font-size: 12px;
 }
 
-
 /* Asterisco de campos obligatorios */
-
 .obligatorio {
     color: #b00020;
     background-color: transparent;
@@ -2456,18 +2666,14 @@
     font-weight: bold;
 }
 
-
 /* Aviso de campos obligatorios */
-
 .aviso_obligatorio {
     color: #333;
     font-weight: bold;
     text-align: left;
 }
 
-
 /* Mensajes de error */
-
 .formulario_ayuda small[id="error"]:not(:empty) {
     display: block;
     margin-top: 5px;
@@ -2482,9 +2688,7 @@
     text-align: left;
 }
 
-
 /* Botón para enviar el mensaje */
-
 .boton_ayuda {
     margin-top: 25px;
     text-align: center;
@@ -2505,7 +2709,6 @@
     color: white;
     background-color: #333;
 }
-
 
 /* Diseño para pantallas pequeñas */
 @media (max-width: 768px) {
@@ -2537,4 +2740,28 @@
     }
 }
 
+/* Pie de página */
+.pie_pag_ayuda {
+    justify-content: center;
+    background-image: url('imagenes/fondopiedepagina.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 1px !important;
+    overflow: hidden;
+    width: 100%;
+    min-height: 110px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.pie_pag_ayuda p {
+    margin: 0;
+    line-height: 2;
+}
 
