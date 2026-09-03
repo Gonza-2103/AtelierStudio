@@ -368,6 +368,164 @@ body {
     color: #d00000;
 }
 
+/* Contenedor de formularios y detalles */
+
+.contenedor_formulario_admin {
+    max-width: 850px;
+    padding: 30px;
+    margin: 0 auto;
+
+    background-color: white;
+
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Formulario administrativo */
+
+.formulario_admin {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* Campos del formulario */
+
+.campo_admin {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo_admin label {
+    color: #222222;
+}
+
+.campo_admin input,
+.campo_admin select,
+.campo_admin textarea {
+    width: 100%;
+    padding: 11px 12px;
+
+    color: #222222;
+    background-color: white;
+
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.campo_admin textarea {
+    resize: vertical;
+}
+
+.campo_admin input:focus,
+.campo_admin select:focus,
+.campo_admin textarea:focus {
+    border-color: #1f1f1f;
+    outline: 2px solid rgba(31, 31, 31, 0.15);
+}
+
+
+/* Textos de ayuda */
+
+.texto_ayuda_admin {
+    color: #666666;
+    font-size: 12px;
+}
+
+
+/* Aviso de campos obligatorios */
+
+.aviso_obligatorio_admin {
+    margin: 0;
+
+    color: #555555;
+    font-size: 14px;
+}
+
+
+/* Botones de formularios y detalles */
+
+.botones_formulario_admin {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 10px;
+}
+
+.botones_formulario_admin button,
+.botones_formulario_admin a {
+    display: inline-block;
+
+    padding: 11px 18px;
+
+    border: none;
+    border-radius: 5px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.botones_formulario_admin button {
+    color: white;
+    background-color: #1f1f1f;
+}
+
+.botones_formulario_admin button:hover {
+    background-color: #555555;
+}
+
+.botones_formulario_admin a {
+    color: #1f1f1f;
+    background-color: #dddddd;
+}
+
+.botones_formulario_admin a:hover {
+    background-color: #cccccc;
+}
+
+
+/* Detalle del usuario */
+
+.detalle_usuario_admin {
+    margin: 0 0 25px;
+}
+
+.detalle_usuario_admin div {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 15px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+.detalle_usuario_admin dt {
+    font-weight: bold;
+}
+
+.detalle_usuario_admin dd {
+    margin: 0;
+
+    color: #444444;
+    overflow-wrap: anywhere;
+}
+
+
 /* Diseño para pantallas pequeñas */
 
 @media (max-width: 600px) {
@@ -400,8 +558,8 @@ body {
     }
 
     .encabezado_lista_admin {
-    flex-direction: column;
-    align-items: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }   
 
     .btn_nuevo_admin {
@@ -425,6 +583,25 @@ body {
         color: #d00000;
         font-size: 14px;
         font-weight: 600;
+    }
+
+    .contenedor_formulario_admin {
+        padding: 20px;
+    }
+
+    .detalle_usuario_admin div {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .botones_formulario_admin {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .botones_formulario_admin button,
+    .botones_formulario_admin a {
+        width: 100%;
     }
 
 

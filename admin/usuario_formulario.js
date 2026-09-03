@@ -225,6 +225,8 @@ if (modoNuevo) {
         formularioUsuario.reset();
     }
 
+}
+
     // Capturar las etiquetas de error
 
 const errorRun =
@@ -861,4 +863,3 @@ formularioUsuario.addEventListener(
     }
 );
 
-}

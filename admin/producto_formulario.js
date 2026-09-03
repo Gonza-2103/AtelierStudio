@@ -12,6 +12,9 @@ const inputNombre =
 const inputDescripcion =
     document.getElementById("descripcionProducto");
 
+const inputMedidas =
+    document.getElementById("medidasProducto");
+
 const inputPrecio =
     document.getElementById("precioProducto");
 
@@ -99,6 +102,9 @@ if (modoNuevo) {
         inputDescripcion.value =
             productoEditado.descripcion;
 
+        inputMedidas.value =
+            productoEditado.medidas || "";
+
         inputPrecio.value = productoEditado.precio;
         inputStock.value = productoEditado.stock;
         inputStockCritico.value =
@@ -120,6 +126,7 @@ if (modoNuevo) {
 
 }
 
+
     // Capturar las etiquetas para mostrar errores
 
 const errorCodigo =
@@ -130,6 +137,10 @@ const errorNombre =
 
 const errorDescripcion =
     document.getElementById("errorDescripcionProducto");
+
+const errorMedidas =
+    document.getElementById("errorMedidasProducto");
+
 
 const errorPrecio =
     document.getElementById("errorPrecioProducto");
@@ -223,6 +234,23 @@ inputDescripcion.addEventListener(
 
         } else {
             errorDescripcion.innerHTML = "";
+        }
+    }
+);
+
+// Validar medidas mientras se escribe
+
+inputMedidas.addEventListener(
+    "input",
+    function () {
+        const medidas =
+            inputMedidas.value.trim();
+
+        if (medidas === "") {
+            errorMedidas.innerHTML =
+                "Las medidas son obligatorias.";
+        } else {
+            errorMedidas.innerHTML = "";
         }
     }
 );
@@ -362,6 +390,9 @@ formularioProducto.addEventListener(
         const descripcion =
             inputDescripcion.value.trim();
 
+        const medidas =
+            inputMedidas.value.trim();
+
         const precioTexto =
             inputPrecio.value.trim();
 
@@ -405,6 +436,7 @@ formularioProducto.addEventListener(
         errorCodigo.innerHTML = "";
         errorNombre.innerHTML = "";
         errorDescripcion.innerHTML = "";
+        errorMedidas.innerHTML = "";
         errorPrecio.innerHTML = "";
         errorStock.innerHTML = "";
         errorStockCritico.innerHTML = "";
@@ -473,6 +505,14 @@ formularioProducto.addEventListener(
             formularioValido = false;
         }
 
+        // Validar medidas
+
+        if (medidas === "") {
+            errorMedidas.innerHTML =
+                "Las medidas son obligatorias.";
+
+            formularioValido = false;
+        }
 
         // Validar precio
 
@@ -567,6 +607,7 @@ formularioProducto.addEventListener(
             productoEditado.codigo = codigo;
             productoEditado.nombre = nombre;
             productoEditado.descripcion = descripcion;
+            productoEditado.medidas = medidas;
             productoEditado.precio = precio;
             productoEditado.stock = stock;
             productoEditado.stockCritico = stockCritico;
@@ -601,6 +642,7 @@ formularioProducto.addEventListener(
                 codigo: codigo,
                 nombre: nombre,
                 descripcion: descripcion,
+                medidas: medidas,
                 precio: precio,
                 stock: stock,
                 stockCritico: stockCritico,
