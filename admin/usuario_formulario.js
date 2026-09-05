@@ -225,8 +225,6 @@ if (modoNuevo) {
         formularioUsuario.reset();
     }
 
-}
-
     // Capturar las etiquetas de error
 
 const errorRun =
@@ -265,62 +263,14 @@ const errorDireccion =
     document.getElementById("errorDireccion");
 
 
-// Validar el dígito verificador del RUN
-
-function runChilenoValido(run) {
-    const runLimpio =
-        run.trim().toUpperCase();
-
-    const formatoValido =
-        /^[0-9]{6,8}[0-9K]$/.test(runLimpio);
-
-    if (!formatoValido) {
-        return false;
-    }
-
-    const cuerpo =
-        runLimpio.slice(0, -1);
-
-    const digitoIngresado =
-        runLimpio.slice(-1);
-
-    let suma = 0;
-    let multiplicador = 2;
-
-    for (let i = cuerpo.length - 1; i >= 0; i--) {
-        suma +=
-            Number(cuerpo[i]) * multiplicador;
-
-        multiplicador++;
-
-        if (multiplicador === 8) {
-            multiplicador = 2;
-        }
-    }
-
-    const resultado =
-        11 - (suma % 11);
-
-    let digitoCalculado;
-
-    if (resultado === 11) {
-        digitoCalculado = "0";
-    } else if (resultado === 10) {
-        digitoCalculado = "K";
-    } else {
-        digitoCalculado =
-            String(resultado);
-    }
-
-    return digitoIngresado === digitoCalculado;
-}
-
-
 // Validar RUN
 
 function validarRun() {
     const run =
         inputRun.value.trim().toUpperCase();
+
+    const formatoRunValido =
+        /^[0-9]{6,8}[0-9K]$/.test(run);
 
     if (run === "") {
         errorRun.innerHTML =
@@ -329,16 +279,10 @@ function validarRun() {
         return false;
     }
 
-    if (run.length < 7 || run.length > 9) {
+    if (!formatoRunValido) {
         errorRun.innerHTML =
-            "El RUN debe tener entre 7 y 9 caracteres.";
-
-        return false;
-    }
-
-    if (!runChilenoValido(run)) {
-        errorRun.innerHTML =
-            "El RUN ingresado no es válido.";
+            "El RUN debe tener entre 7 y 9 caracteres, " +
+            "sin puntos ni guion.";
 
         return false;
     }
@@ -362,7 +306,6 @@ function validarRun() {
     errorRun.innerHTML = "";
     return true;
 }
-
 
 // Validar nombre
 
@@ -863,3 +806,4 @@ formularioUsuario.addEventListener(
     }
 );
 
+}
