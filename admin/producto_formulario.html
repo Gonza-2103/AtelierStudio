@@ -1,366 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Producto - AtelierStudio</title>
-
-    <link rel="stylesheet" href="admin.css">
-
-</head>
-
-<body class="pagina_admin">
-
-    <!-- Menú lateral -->
-
-    <aside class="menu_admin">
-
-        <div class="logo_admin">
-
-            <img
-                src="../imagenes/atelierstudiologo.png"
-                alt="Logo de AtelierStudio"
-            >
-
-            <h2>AtelierStudio</h2>
-
-            <p>Administración</p>
-
-        </div>
-
-        <nav class="navegacion_admin">
-
-            <a
-                href="admin.html"
-                class="enlace_admin"
-            >
-                Inicio
-            </a>
-
-            <a
-                href="productos_admin.html"
-                class="enlace_admin enlace_activo"
-            >
-                Productos
-            </a>
-
-            <a
-                href="usuarios_admin.html"
-                class="enlace_admin"
-            >
-                Usuarios
-            </a>
-
-            <a
-                href="../index.html"
-                class="enlace_admin volver_tienda"
-            >
-                Volver a la tienda
-            </a>
-
-        </nav>
-
-    </aside>
-
-    <!-- Contenido principal -->
-
-    <main class="contenido_admin">
-
-        <header class="encabezado_admin">
-
-            <h1 id="tituloFormularioProducto">
-                Nuevo producto
-            </h1>
-
-            <p>
-                Complete los datos solicitados.
-            </p>
-
-        </header>
-
-        <!-- Formulario de producto -->
-
-        <section class="contenedor_formulario_admin">
-
-            <form
-                id="formProducto"
-                class="formulario_admin"
-                novalidate
-            >
-
-                <p class="aviso_obligatorio_admin">
-                    <span>*</span> Campos obligatorios
-                </p>
-
-                <!-- Código -->
-
-                <div class="campo_admin">
-
-                    <label for="codigoProducto">
-
-                        <strong>
-                            Código:
-                            <span class="campo_requerido_admin">*</span>
-                        </strong>
-
-                    </label>
-
-                    <input
-                        type="text"
-                        id="codigoProducto"
-                        name="codigoProducto"
-                    >
-
-                    <small class="texto_ayuda_admin">
-                        Debe contener un mínimo de 3 caracteres.
-                    </small>
-
-                    <small id="errorCodigoProducto"></small>
-
-                </div>
-
-                <!-- Nombre -->
-
-                <div class="campo_admin">
-
-                    <label for="nombreProducto">
-
-                        <strong>
-                            Nombre:
-                            <span class="campo_requerido_admin">*</span>
-                        </strong>
-
-                    </label>
-
-                    <input
-                        type="text"
-                        id="nombreProducto"
-                        name="nombreProducto"
-                    >
-
-                    <small id="errorNombreProducto"></small>
-
-                </div>
-
-                <!-- Descripción -->
-
-                <div class="campo_admin">
-
-                    <label for="descripcionProducto">
-                        <strong>Descripción:</strong>
-                    </label>
-
-                    <textarea
-                        id="descripcionProducto"
-                        name="descripcionProducto"
-                        rows="5"
-                    ></textarea>
-
-                    <small class="texto_ayuda_admin">
-                        Campo opcional. Máximo 500 caracteres.
-                    </small>
-
-                    <small id="errorDescripcionProducto"></small>
-
-                </div>
-
-                <!-- Medidas -->
-
-                <div class="campo_admin">
-
-                    <label for="medidasProducto">
-
-                        <strong>
-                            Medidas:
-                            <span class="campo_requerido_admin">*</span>
-                        </strong>
-
-                    </label>
-
-                    <input
-                        type="text"
-                        id="medidasProducto"
-                        name="medidasProducto"
-                        placeholder="Ej: 50 x 70 cm"
-                    >
-
-        
-
-                    <small id="errorMedidasProducto"></small>
-
-                </div>
-
-                <!-- Precio -->
-
-                <div class="campo_admin">
-
-                    <label for="precioProducto">
-
-                        <strong>
-                            Precio:
-                            <span class="campo_requerido_admin">*</span>
-                        </strong>
-
-                    </label>
-
-                    <input
-                        type="number"
-                        id="precioProducto"
-                        name="precioProducto"
-                        step="any"
-                    >
-
-                    <small class="texto_ayuda_admin">
-                        Puede ser 0 para productos gratuitos.
-                    </small>
-
-                    <small id="errorPrecioProducto"></small>
-
-                </div>
-
-                <!-- Stock -->
-
-                <div class="campo_admin">
-
-                    <label for="stockProducto">
-
-                        <strong>
-                            Stock:
-                            <span class="campo_requerido_admin">*</span>
-                        </strong>
-
-                    </label>
-
-                    <input
-                        type="number"
-                        id="stockProducto"
-                        name="stockProducto"
-                    >
-
-                    <small class="texto_ayuda_admin">
-                        Debe ser un número entero igual o superior a 0.
-                    </small>
-
-                    <small id="errorStockProducto"></small>
-
-                </div>
-
-                <!-- Stock crítico -->
-
-                <div class="campo_admin">
-
-                    <label for="stockCriticoProducto">
-                        <strong>Stock crítico:</strong>
-                    </label>
-
-                    <input
-                        type="number"
-                        id="stockCriticoProducto"
-                        name="stockCriticoProducto"
-                    >
-
-                    <small class="texto_ayuda_admin">
-                        Campo opcional. Debe ser un número entero
-                        igual o superior a 0.
-                    </small>
-
-                    <small id="errorStockCriticoProducto"></small>
-
-                </div>
-
-                <!-- Categoría -->
-
-                <div class="campo_admin">
-
-                    <label for="categoriaProducto">
-
-                        <strong>
-                            Categoría:
-                            <span class="campo_requerido_admin">*</span>
-                        </strong>
-
-                    </label>
-
-                    <select
-                        id="categoriaProducto"
-                        name="categoriaProducto"
-                    >
-
-                        <option value="">
-                            Seleccione una categoría
-                        </option>
-
-                        <option value="Pintura">
-                            Pintura
-                        </option>
-
-                        <option value="Acuarela">
-                            Acuarela
-                        </option>
-
-                        
-
-                    </select>
-
-                    <small id="errorCategoriaProducto"></small>
-
-                </div>
-
-                <!-- Imagen -->
-
-                <div class="campo_admin">
-
-                    <label for="imagenProducto">
-                        <strong>Imagen:</strong>
-                    </label>
-
-                    <input
-                        type="text"
-                        id="imagenProducto"
-                        name="imagenProducto"
-                        placeholder="Ej: imagenes/fotoarte1.jpg"
-                    >
-
-                    <small class="texto_ayuda_admin">
-                        Campo opcional. Ingrese la ruta de la imagen.
-                    </small>
-
-                    <small id="errorImagenProducto"></small>
-
-                </div>
-
-                <!-- Botones -->
-
-                <div class="botones_formulario_admin">
-
-                    <button
-                        type="submit"
-                        id="btnGuardarProducto"
-                    >
-                        GUARDAR PRODUCTO
-                    </button>
-
-                    <a href="productos_admin.html">
-                        CANCELAR
-                    </a>
-
-                </div>
-
-            </form>
-
-        </section>
-
-    </main>
-
-    <script src="producto_formulario.js"></script>
-
-</body>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Producto - AtelierStudio</title>
+
+        <!-- Estilos del administrador -->
+        <link rel="stylesheet" href="admin.css">
+    </head>
+
+    <body class="pagina_admin">
+
+        <!-- Menú lateral -->
+        <aside class="menu_admin">
+
+            <div class="logo_admin">
+                <img src="../imagenes/atelierstudiologo.png" alt="Logo de AtelierStudio">
+                <h2>AtelierStudio</h2>
+                <p>Administración</p>
+            </div>
+
+            <nav class="navegacion_admin">
+                <a href="admin.html" class="enlace_admin">Inicio</a>
+                <a href="productos_admin.html" class="enlace_admin enlace_activo">Productos</a>
+                <a href="usuarios_admin.html" class="enlace_admin">Usuarios</a>
+                <a href="../index.html" class="enlace_admin volver_tienda">Volver a la tienda</a>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="contenido_admin">
+
+            <header class="encabezado_admin">
+                <h1 id="tituloFormularioProducto">Nuevo producto</h1>
+                <p>Complete los datos solicitados.</p>
+            </header>
+
+            <!-- Formulario de producto -->
+            <section class="contenedor_formulario_admin">
+
+                <form id="formProducto" class="formulario_admin" novalidate>
+                    <p class="aviso_obligatorio_admin"><span>*</span> Campos obligatorios</p>
+
+                    <!-- Código -->
+                    <div class="campo_admin">
+                        <label for="codigoProducto">
+                            <strong>Código:<span class="campo_requerido_admin">*</span></strong>
+                        </label>
+                        <input type="text" id="codigoProducto" name="codigoProducto">
+                        <small class="texto_ayuda_admin">Debe contener un mínimo de 3 caracteres.</small>
+                        <small id="errorCodigoProducto"></small>
+                    </div>
+
+                    <!-- Nombre -->
+                    <div class="campo_admin">
+                        <label for="nombreProducto">
+                            <strong>Nombre:<span class="campo_requerido_admin">*</span></strong>
+                        </label>
+                        <input type="text" id="nombreProducto" name="nombreProducto">
+                        <small id="errorNombreProducto"></small>
+                    </div>
+
+                    <!-- Descripción -->
+                    <div class="campo_admin">
+                        <label for="descripcionProducto"><strong>Descripción:</strong></label>
+                        <textarea id="descripcionProducto" name="descripcionProducto" rows="5"></textarea>
+                        <small class="texto_ayuda_admin">Campo opcional. Máximo 500 caracteres.</small>
+                        <small id="errorDescripcionProducto"></small>
+                    </div>
+
+                    <!-- Precio -->
+                    <div class="campo_admin">
+                        <label for="precioProducto">
+                            <strong>Precio:<span class="campo_requerido_admin">*</span></strong>
+                        </label>
+                        <input type="number" id="precioProducto" name="precioProducto" step="any">
+                        <small class="texto_ayuda_admin">Puede ser 0 para productos gratuitos.</small>
+                        <small id="errorPrecioProducto"></small>
+                    </div>
+
+                    <!-- Stock -->
+                    <div class="campo_admin">
+                        <label for="stockProducto">
+                            <strong>Stock:<span class="campo_requerido_admin">*</span></strong>
+                        </label>
+                        <input type="number" id="stockProducto" name="stockProducto">
+                        <small class="texto_ayuda_admin">Debe ser un número entero igual o superior a 0.</small>
+                        <small id="errorStockProducto"></small>
+                    </div>
+
+                    <!-- Stock crítico -->
+                    <div class="campo_admin">
+                        <label for="stockCriticoProducto"><strong>Stock crítico:</strong></label>
+                        <input type="number" id="stockCriticoProducto" name="stockCriticoProducto">
+                        <small class="texto_ayuda_admin">Campo opcional. Debe ser un número entero igual o superior a 0.</small>
+                        <small id="errorStockCriticoProducto"></small>
+                    </div>
+
+                    <!-- Categoría -->
+                    <div class="campo_admin">
+                        <label for="categoriaProducto">
+                            <strong>Categoría:<span class="campo_requerido_admin">*</span></strong>
+                        </label>
+                        <select id="categoriaProducto" name="categoriaProducto">
+                            <option value="">Seleccione una categoría</option>
+                            <option value="Pintura">Pintura</option>
+                            <option value="Acuarela">Acuarela</option>
+                        </select>
+                        <small id="errorCategoriaProducto"></small>
+                    </div>
+
+                    <!-- Imagen -->
+                    <div class="campo_admin">
+                        <label for="imagenProducto"><strong>Imagen:</strong></label>
+                        <input type="text" id="imagenProducto" name="imagenProducto" placeholder="Ej: imagenes/fotoarte1.jpg">
+                        <small class="texto_ayuda_admin">Campo opcional. Ingrese la ruta de la imagen.</small>
+                        <small id="errorImagenProducto"></small>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="botones_formulario_admin">
+                        <button type="submit" id="btnGuardarProducto">GUARDAR PRODUCTO</button>
+                        <a href="productos_admin.html">CANCELAR</a>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <script src="producto_formulario.js"></script>
+    </body>
 </html>
+

@@ -1,516 +1,160 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Usuario - AtelierStudio</title>
-
-    <link rel="stylesheet" href="admin.css">
-
-</head>
-
-<body class="pagina_admin">
-
-    <!-- Menú lateral -->
-
-    <aside class="menu_admin">
-
-        <div class="logo_admin">
-
-            <img
-                src="../imagenes/atelierstudiologo.png"
-                alt="Logo de AtelierStudio"
-            >
-
-            <h2>AtelierStudio</h2>
-
-            <p>Administración</p>
-
-        </div>
-
-
-        <nav class="navegacion_admin">
-
-            <a
-                href="admin.html"
-                class="enlace_admin"
-            >
-                Inicio
-            </a>
-
-            <a
-                href="productos_admin.html"
-                class="enlace_admin"
-            >
-                Productos
-            </a>
-
-            <a
-                href="usuarios_admin.html"
-                class="enlace_admin enlace_activo"
-            >
-                Usuarios
-            </a>
-
-            <a
-                href="../index.html"
-                class="enlace_admin volver_tienda"
-            >
-                Volver a la tienda
-            </a>
-
-        </nav>
-
-    </aside>
-
-
-    <!-- Contenido principal -->
-
-    <main class="contenido_admin">
-
-        <header class="encabezado_admin">
-
-            <h1 id="tituloFormularioUsuario">
-                Nuevo usuario
-            </h1>
-
-            <p>
-                Complete los datos solicitados.
-            </p>
-
-        </header>
-
-
-        <!-- Formulario de usuario -->
-
-        <section class="contenedor_formulario_admin">
-
-            <form
-                id="formUsuario"
-                class="formulario_admin"
-                novalidate
-            >
-
-                <p class="aviso_obligatorio_admin">
-
-                    <span>*</span>
-                    Campos obligatorios
-
-                </p>
-
-
-                <!-- RUN -->
-
-                <div class="campo_admin">
-
-                    <label for="run">
-
-                        <strong>
-                            RUN:
-                            <span class="campo_requerido_admin">
-                                *
-                            </span>
-                        </strong>
-
-                    </label>
-
-                    <input
-                        type="text"
-                        id="run"
-                        name="run"
-                        placeholder="Ej: 19011022K"
-                    >
-
-                    <small class="texto_ayuda_admin">
-                        Ingrese entre 7 y 9 caracteres,
-                        sin puntos ni guion.
-                    </small>
-
-                    <small id="errorRun"></small>
-
-                </div>
-
-
-                <!-- Nombre -->
-
-                <div class="campo_admin">
-
-                    <label for="nombre">
-
-                        <strong>
-                            Nombre:
-                            <span class="campo_requerido_admin">
-                                *
-                            </span>
-                        </strong>
-
-                    </label>
-
-                    <input
-                        type="text"
-                        id="nombre"
-                        name="nombre"
-                    >
-
-                    <small class="texto_ayuda_admin">
-                        Máximo 50 caracteres.
-                    </small>
-
-                    <small id="errorNombre"></small>
-
-                </div>
-
-
-                <!-- Apellidos -->
-
-                <div class="campo_admin">
-
-                    <label for="apellidos">
-
-                        <strong>
-                            Apellidos:
-                            <span class="campo_requerido_admin">
-                                *
-                            </span>
-                        </strong>
-
-                    </label>
-
-                    <input
-                        type="text"
-                        id="apellidos"
-                        name="apellidos"
-                    >
-
-                    <small class="texto_ayuda_admin">
-                        Máximo 100 caracteres.
-                    </small>
-
-                    <small id="errorApellidos"></small>
-
-                </div>
-
-
-                <!-- Correo electrónico -->
-
-                <div class="campo_admin">
-
-                    <label for="correo">
-
-                        <strong>
-                            Correo electrónico:
-                            <span class="campo_requerido_admin">
-                                *
-                            </span>
-                        </strong>
-
-                    </label>
-
-                    <input
-                        type="text"
-                        id="correo"
-                        name="correo"
-                        placeholder="ejemplo@duoc.cl"
-                    >
-
-                    <small class="texto_ayuda_admin">
-                        Se permiten los dominios @duocuc.cl,
-                        @profesor.duocuc.cl y @gmail.com.
-                    </small>
-
-                    <small id="errorCorreo"></small>
-
-                </div>
-
-
-                <!-- Contraseña -->
-
-                <div class="campo_admin">
-
-                    <label for="contrasena">
-
-                        <strong>
-                            Contraseña:
-                            <span class="campo_requerido_admin">
-                                *
-                            </span>
-                        </strong>
-
-                    </label>
-
-                    <input
-                        type="password"
-                        id="contrasena"
-                        name="contrasena"
-                    >
-
-                    <small class="texto_ayuda_admin">
-                        Debe tener entre 4 y 10 caracteres.
-                    </small>
-
-                    <small id="errorContrasena"></small>
-
-                </div>
-
-
-                <!-- Confirmar contraseña -->
-
-                <div class="campo_admin">
-
-                    <label for="confirmarContrasena">
-
-                        <strong>
-                            Confirmar contraseña:
-                            <span class="campo_requerido_admin">
-                                *
-                            </span>
-                        </strong>
-
-                    </label>
-
-                    <input
-                        type="password"
-                        id="confirmarContrasena"
-                        name="confirmarContrasena"
-                    >
-
-                    <small id="errorConfirmarContrasena"></small>
-
-                </div>
-
-
-                <!-- Teléfono -->
-
-                <div class="campo_admin">
-
-                    <label for="telefono">
-
-                        <strong>
-                            Teléfono de contacto:
-                        </strong>
-
-                    </label>
-
-                    <input
-                        type="text"
-                        id="telefono"
-                        name="telefono"
-                        placeholder="Ej: 912345678"
-                    >
-
-                    <small class="texto_ayuda_admin">
-                        Campo opcional. Debe contener 9 números.
-                    </small>
-
-                    <small id="errorTelefono"></small>
-
-                </div>
-
-
-                <!-- Fecha de nacimiento -->
-
-                <div class="campo_admin">
-
-                    <label for="fechaNacimiento">
-
-                        <strong>
-                            Fecha de nacimiento:
-                        </strong>
-
-                    </label>
-
-                    <input
-                        type="date"
-                        id="fechaNacimiento"
-                        name="fechaNacimiento"
-                    >
-
-                    <small class="texto_ayuda_admin">
-                        Campo opcional.
-                    </small>
-
-                    <small id="errorFechaNacimiento"></small>
-
-                </div>
-
-
-                <!-- Tipo de usuario -->
-
-                <div class="campo_admin">
-
-                    <label for="tipoUsuario">
-
-                        <strong>
-                            Tipo de usuario:
-                            <span class="campo_requerido_admin">
-                                *
-                            </span>
-                        </strong>
-
-                    </label>
-
-                    <select
-                        id="tipoUsuario"
-                        name="tipoUsuario"
-                    >
-
-                        <option value="">
-                            Seleccione un tipo de usuario
-                        </option>
-
-                        <option value="Administrador">
-                            Administrador
-                        </option>
-
-                        <option value="Cliente">
-                            Cliente
-                        </option>
-
-                        <option value="Vendedor">
-                            Vendedor
-                        </option>
-
-                    </select>
-
-                    <small id="errorTipoUsuario"></small>
-
-                </div>
-
-
-                <!-- Región -->
-
-                <div class="campo_admin">
-
-                    <label for="region">
-
-                        <strong>
-                            Región:
-                            <span class="campo_requerido_admin">
-                                *
-                            </span>
-                        </strong>
-
-                    </label>
-
-                    <select
-                        id="region"
-                        name="region"
-                    >
-
-                        <option value="">
-                            Seleccione una región
-                        </option>
-
-                    </select>
-
-                    <small id="errorRegion"></small>
-
-                </div>
-
-
-                <!-- Comuna -->
-
-                <div class="campo_admin">
-
-                    <label for="comuna">
-
-                        <strong>
-                            Comuna:
-                            <span class="campo_requerido_admin">
-                                *
-                            </span>
-                        </strong>
-
-                    </label>
-
-                    <select
-                        id="comuna"
-                        name="comuna"
-                    >
-
-                        <option value="">
-                            Seleccione una comuna
-                        </option>
-
-                    </select>
-
-                    <small id="errorComuna"></small>
-
-                </div>
-
-
-                <!-- Dirección -->
-
-                <div class="campo_admin">
-
-                    <label for="direccion">
-
-                        <strong>
-                            Dirección:
-                            <span class="campo_requerido_admin">
-                                *
-                            </span>
-                        </strong>
-
-                    </label>
-
-                    <input
-                        type="text"
-                        id="direccion"
-                        name="direccion"
-                        placeholder="Calle y número"
-                    >
-
-                    <small class="texto_ayuda_admin">
-                        Máximo 300 caracteres.
-                    </small>
-
-                    <small id="errorDireccion"></small>
-
-                </div>
-
-
-                <!-- Botones -->
-
-                <div class="botones_formulario_admin">
-
-                    <button
-                        type="submit"
-                        id="btnGuardarUsuario"
-                    >
-                        GUARDAR USUARIO
-                    </button>
-
-                    <a href="usuarios_admin.html">
-                        CANCELAR
-                    </a>
-
-                </div>
-
-            </form>
-
-        </section>
-
-    </main>
-
-
-    <!-- Arreglo compartido de regiones y comunas -->
-
-    <script src="../regiones.js"></script>
-
-
-    <!-- Formulario administrativo de usuarios -->
-
-    <script src="usuario_formulario.js"></script>
-
-</body>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nuevo usuario</title>
+        <link rel="stylesheet" href="admin.css">
+    </head>
+
+    <body class="pagina_admin">
+
+        <!-- Menú lateral -->
+        <aside class="menu_admin">
+
+            <div class="logo_admin">
+                <img src="../imagenes/atelierstudiologo.png" alt="Logo de AtelierStudio">
+                <h2>AtelierStudio</h2>
+                <p>Administración</p>
+            </div>
+
+            <nav class="navegacion_admin">
+                <a href="admin.html" class="enlace_admin">Inicio</a>
+                <a href="productos_admin.html" class="enlace_admin">Productos</a>
+                <a href="usuarios_admin.html" class="enlace_admin enlace_activo">Usuarios</a>
+                <a href="../index.html" class="enlace_admin volver_tienda">Volver a la tienda</a>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="contenido_admin">
+
+            <header class="encabezado_admin">
+                <h1 id="tituloFormularioUsuario">Nuevo usuario</h1>
+                <p>Complete los datos solicitados.</p>
+            </header>
+
+            <!-- Formulario de usuario -->
+            <section class="contenedor_formulario_admin">
+
+                <form id="formUsuario" class="formulario_admin" novalidate>
+                    <p class="aviso_obligatorio_admin"><span>*</span>Campos obligatorios</p>
+
+                    <!-- RUN -->
+                    <div class="campo_admin">
+                        <label for="run"><strong>RUN:<span class="campo_requerido_admin">*</span></strong></label>
+                        <input type="text" id="run" name="run" placeholder="Ej: 19011022K">
+                        <small class="texto_ayuda_admin">Ingrese entre 7 y 9 caracteres, sin puntos ni guion.</small>
+                        <small id="errorRun"></small>
+                    </div>
+
+                    <!-- Nombre -->
+                    <div class="campo_admin">
+                        <label for="nombre"><strong>Nombre:<span class="campo_requerido_admin">*</span></strong></label>
+                        <input type="text" id="nombre" name="nombre">
+                        <small class="texto_ayuda_admin">Máximo 50 caracteres.</small>
+                        <small id="errorNombre"></small>
+                    </div>
+
+                    <!-- Apellidos -->
+                    <div class="campo_admin">
+                        <label for="apellidos"><strong>Apellidos:<span class="campo_requerido_admin">*</span></strong></label>
+                        <input type="text" id="apellidos" name="apellidos">
+                        <small class="texto_ayuda_admin">Máximo 100 caracteres.</small>
+                        <small id="errorApellidos"></small>
+                    </div>
+
+                    <!-- Correo electrónico -->
+                    <div class="campo_admin">
+                        <label for="correo"><strong>Correo electrónico:<span class="campo_requerido_admin">*</span></strong></label>
+                        <input type="text" id="correo" name="correo" placeholder="ejemplo@gmail.com">
+                        <small class="texto_ayuda_admin">Se permiten los dominios @duocuc.cl, @profesor.duocuc.cl y @gmail.com.</small>
+                        <small id="errorCorreo"></small>
+                    </div>
+
+                    <!-- Contraseña -->
+                    <div class="campo_admin">
+                        <label for="contrasena"><strong>Contraseña:<span class="campo_requerido_admin">*</span></strong></label>
+                        <input type="password" id="contrasena" name="contrasena">
+                        <small class="texto_ayuda_admin">Debe tener entre 4 y 10 caracteres.</small>
+                        <small id="errorContrasena"></small>
+                    </div>
+
+                    <!-- Confirmar contraseña -->
+                    <div class="campo_admin">
+                        <label for="confirmarContrasena"><strong>Confirmar contraseña:<span class="campo_requerido_admin">*</span></strong></label>
+                        <input type="password" id="confirmarContrasena" name="confirmarContrasena">
+                        <small id="errorConfirmarContrasena"></small>
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="campo_admin">
+                        <label for="telefono"><strong>Teléfono de contacto:</strong></label>
+                        <input type="text" id="telefono" name="telefono" placeholder="Ej: 912345678">
+                        <small class="texto_ayuda_admin">Campo opcional. Debe contener 9 números.</small>
+                        <small id="errorTelefono"></small>
+                    </div>
+
+                    <!-- Fecha de nacimiento -->
+                    <div class="campo_admin">
+                        <label for="fechaNacimiento"><strong>Fecha de nacimiento:</strong></label>
+                        <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+                        <small class="texto_ayuda_admin">Campo opcional.</small>
+                        <small id="errorFechaNacimiento"></small>
+                    </div>
+
+                    <!-- Tipo de usuario -->
+                    <div class="campo_admin">
+                        <label for="tipoUsuario">
+                            <strong>Tipo de usuario:<span class="campo_requerido_admin">*</span></strong>
+                        </label>
+
+                        <select id="tipoUsuario" name="tipoUsuario">
+                            <option value="">Seleccione un tipo de usuario</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Cliente">Cliente</option>
+                            <option value="Vendedor">Vendedor</option>
+                        </select>
+                        <small id="errorTipoUsuario"></small>
+                    </div>
+
+                    <!-- Región -->
+                    <div class="campo_admin">
+                        <label for="region"><strong>Región:<span class="campo_requerido_admin">*</span></strong></label>
+                        <select id="region" name="region"><option value="">Seleccione una región</option></select>
+                        <small id="errorRegion"></small>
+                    </div>
+
+                    <!-- Comuna -->
+                    <div class="campo_admin">
+                        <label for="comuna"><strong>Comuna:<span class="campo_requerido_admin">*</span></strong></label>
+                        <select id="comuna" name="comuna"><option value="">Seleccione una comuna</option></select>
+                        <small id="errorComuna"></small>
+                    </div>
+
+                    <!-- Dirección -->
+                    <div class="campo_admin">
+                        <label for="direccion"><strong>Dirección:<span class="campo_requerido_admin">*</span></strong></label>
+                        <input type="text" id="direccion" name="direccion" placeholder="Calle y número">
+                        <small class="texto_ayuda_admin">Máximo 300 caracteres.</small>
+                        <small id="errorDireccion"></small>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="botones_formulario_admin">
+                        <button type="submit" id="btnGuardarUsuario">GUARDAR USUARIO</button>
+                        <a href="usuarios_admin.html">CANCELAR</a>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <!-- Arreglo compartido de regiones y comunas -->
+        <script src="../regiones.js"></script>
+
+        <!-- Formulario administrativo de usuarios -->
+        <script src="usuario_formulario.js"></script>
+    </body>
 </html>
+

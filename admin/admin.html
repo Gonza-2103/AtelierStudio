@@ -1,121 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Administrativo - AtelierStudio</title>
-    <!-- Estilos del administrador -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Panel Administrativo - AtelierStudio</title>
 
-    <link rel="stylesheet" href="admin.css">
-</head>
-<body class="pagina_admin">
+        <!-- Estilos del administrador -->
+        <link rel="stylesheet" href="admin.css">
+    </head>
+    <body class="pagina_admin">
 
-    <div class="logo_admin">
-
-            <img
-                src="../imagenes/atelierstudiologo.png"
-                alt="Logo de AtelierStudio"
-            >
-
+        <div class="logo_admin">
+            <img src="../imagenes/atelierstudiologo.png" alt="Logo de AtelierStudio">
             <h2>AtelierStudio</h2>
-
             <p>Administración</p>
-
         </div>
+        <aside>
+            <nav class="navegacion_admin">
+                <a href="admin.html" class="enlace_admin enlace_activo">Inicio</a>
+                <a href="productos_admin.html" class="enlace_admin">Productos</a>
+                <a href="usuarios_admin.html" class="enlace_admin">Usuarios</a>
+                <a href="../index.html" class="enlace_admin volver_tienda">Volver a la tienda</a>
+            </nav>
+        </aside>
 
-        <nav class="navegacion_admin">
+        <!-- Contenido principal -->
+        <main class="contenido_admin">
 
-            <a
-                href="admin.html"
-                class="enlace_admin enlace_activo"
-            >
-                Inicio
-            </a>
+            <header class="encabezado_admin">
+                <div>
+                    <h1>¡Hola, Administrador!</h1>
+                    <p>Bienvenido al panel de gestión de AtelierStudio.</p>
+                </div>
+            </header>
 
-            <a
-                href="productos_admin.html"
-                class="enlace_admin"
-            >
-                Productos
-            </a>
+            <!-- Accesos principales -->
+            <section class="resumen_admin">
 
-            <a
-                href="usuarios_admin.html"
-                class="enlace_admin"
-            >
-                Usuarios
-            </a>
+                <article class="tarjeta_admin">
+                    <h2>Productos</h2>
+                    <p>Crea, visualiza y modifica los productos disponibles en la tienda.</p>
+                    <a href="productos_admin.html">Gestionar productos</a>
+                </article>
 
-            <a
-                href="../index.html"
-                class="enlace_admin volver_tienda"
-            >
-                Volver a la tienda
-            </a>
-
-        </nav>
-
-    </aside>
-
-    <!-- Contenido principal -->
-
-    <main class="contenido_admin">
-
-        <header class="encabezado_admin">
-
-            <div>
-
-                <h1>¡Hola, Administrador!</h1>
-
-                <p>
-                    Bienvenido al panel de gestión de AtelierStudio.
-                </p>
-
-            </div>
-
-        </header>
-
-        <!-- Accesos principales -->
-
-        <section class="resumen_admin">
-
-            <article class="tarjeta_admin">
-
-                <h2>Productos</h2>
-
-                <p>
-                    Crea, visualiza y modifica los productos
-                    disponibles en la tienda.
-                </p>
-
-                <a href="productos_admin.html">
-                    Gestionar productos
-                </a>
-
-            </article>
-
-            <article class="tarjeta_admin">
-
-                <h2>Usuarios</h2>
-
-                <p>
-                    Crea, visualiza y modifica los usuarios
-                    registrados en el sistema.
-                </p>
-
-                <a href="usuarios_admin.html">
-                    Gestionar usuarios
-                </a>
-
-            </article>
-
-        </section>
-
-    </main>
-
-    <script src="admin.js"></script>
-
-</body>
-    
-
+                <article class="tarjeta_admin">
+                    <h2>Usuarios</h2>
+                    <p>Crea, visualiza y modifica los usuarios registrados en el sistema.</p>
+                    <a href="usuarios_admin.html">Gestionar usuarios</a>
+                </article>
+            </section>
+        </main>
+        <script src="admin.js"></script>
+    </body>
 </html>
+

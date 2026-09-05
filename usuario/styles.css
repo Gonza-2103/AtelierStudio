@@ -17,7 +17,7 @@
     justify-content: center;  
     text-align: center;  
     
-    background-image: url('imagenes/fondomadera.jpg');
+    background-image: url('../imagenes/fondomadera.jpg');
     background-position: center;  /* Centra la imagen de fondo vertical y horizontalmente */
     background-repeat: no-repeat;  /* Evita que el fondo se repita */
     background-size: cover;  /* Ajusta la imagen a toda la pantalla manteniendo proporción*/
@@ -118,7 +118,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-image: url('imagenes/fondomadera.jpg');
+    background-image: url('../imagenes/fondomadera.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -308,7 +308,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Tipografía general*/
     margin: 0;  /* Elimina márgenes externos */
     padding: 0;  /* Elimina rellenos internos */
-    background-image: url('imagenes/fondogeneral.jpg');  /* Imagen de fondo */
+    background-image: url('../imagenes/fondogeneral.jpg');  /* Imagen de fondo */
     background-size: cover;  /* Cubre toda la pantalla */
     background-position: center;  /* Centra el fondo */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -318,7 +318,7 @@
 /* Título de carrito y logo */
 #titulo_port {
     justify-content: center;  /* Centra el contenido */
-    background-image: url('imagenes/fondoportada.jpg');  
+    background-image: url('../imagenes/fondoportada.jpg');  
     background-size: cover;  /* Cubre el ancho del header */
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -403,14 +403,14 @@
 
 /* Botón de cerrar sesión */
 .btn_cerrar_sesion {
-    text-align: right;                   /* Alinea el enlace al extremo derecho */
-    margin-top: 30px;                    /* Misma separacion superior que el pie de detalle blog 1 */
-    width: 100%;                         /* Asegura el ancho total para pegarse a la derecha */
+    text-align: right;  /* Alinea el enlace al extremo derecho */
+    margin-top: 30px;  /* Misma separacion superior que el pie de detalle blog 1 */
+    width: 100%;  /* Asegura el ancho total para pegarse a la derecha */
 }
 
 #pie_pag_port {
     justify-content: center;  /* Centra el contenido */
-    background-image: url('imagenes/fondopiedepagina.jpg');  
+    background-image: url('../imagenes/fondopiedepagina.jpg');  
     background-size: cover;  /* Cubre el ancho del header */
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -444,7 +444,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('imagenes/fondogeneral.jpg');
+    background-image: url('../imagenes/fondogeneral.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -457,7 +457,7 @@
     width: 100%;
     min-height: 110px;
     padding: 20px 30px 1px;
-    background-image: url('imagenes/fondonosotros.jpg');
+    background-image: url('../imagenes/fondonosotros.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -589,7 +589,7 @@
 
 .equipo_nos_int1,
 .equipo_nos_int2 {
-    background-image: url('imagenes/fondocontadorproducto.jpg');
+    background-image: url('../imagenes/fondocontadorproducto.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -633,7 +633,7 @@
 /* Pie de página */
 .pie_pag_nos {
     justify-content: center;
-    background-image: url('imagenes/fondopiedepagina.jpg');
+    background-image: url('../imagenes/fondopiedepagina.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -663,7 +663,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('imagenes/fondogeneral.jpg');
+    background-image: url('../imagenes/fondogeneral.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -673,7 +673,7 @@
 /* Título de producto y logo */
 #titulo_prod {
     justify-content: center;
-    background-image: url('imagenes/fondoturquesa.jpg');
+    background-image: url('../imagenes/fondoturquesa.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -760,7 +760,7 @@
 #contenedor_prod_2,
 #contenedor_prod_3,
 #contenedor_prod_4 {
-    background-image: url('imagenes/fondocontadorproducto.jpg');
+    background-image: url('../imagenes/fondocontadorproducto.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -846,9 +846,9 @@
 }
 
 #btn_agr_car_det {
-    margin: 0;                  /* Quita los márgenes automáticos de <figure> */
+    margin: 0;  /* Quita los márgenes automáticos de <figure> */
     display: flex;
-    justify-content: center;   /* Centra el botón horizontalmente */
+    justify-content: center;  /* Centra el botón horizontalmente */
     width: 100%;
 }
 
@@ -879,7 +879,7 @@
     border-radius: 6px;
     color: white;
     transition: background-color 0.2s ease;
-    margin: 10px auto;          /* Centra el botón como bloque */
+    margin: 10px auto;  /* Centra el botón como bloque */
 }
 
 #btn_car_comp p {
@@ -894,7 +894,7 @@
 /* Pie de página */
 #pie_pag_prod {
     justify-content: center;
-    background-image: url('imagenes/fondopiedepagina.jpg');
+    background-image: url('../imagenes/fondopiedepagina.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -924,7 +924,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('imagenes/fondogeneral.jpg');
+    background-image: url('../imagenes/fondogeneral.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -934,7 +934,7 @@
 /* Título de producto y logo */
 #titulo_det_prod {
     justify-content: center;
-    background-image: url('imagenes/fondoturquesa.jpg');
+    background-image: url('../imagenes/fondoturquesa.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1172,7 +1172,7 @@
 /* --- Pie de página --- */
 #pie_pag_det_prod {
     justify-content: center;
-    background-image: url('imagenes/fondopiedepagina.jpg');
+    background-image: url('../imagenes/fondopiedepagina.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1206,7 +1206,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('imagenes/fondogeneral.jpg');
+    background-image: url('../imagenes/fondogeneral.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1217,7 +1217,7 @@
 /* Título de carrito y logo */
 #titulo_car {
     justify-content: center;
-    background-image: url('imagenes/fondocarrito.jpg');
+    background-image: url('../imagenes/fondocarrito.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1294,7 +1294,7 @@
 
 /* Tarjeta del producto */
 #contenedor_prod_car1 {
-    background-image: url('imagenes/fondocontadorproducto.jpg');
+    background-image: url('../imagenes/fondocontadorproducto.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1437,7 +1437,7 @@
 
 #bloque_pago_car #btn_confirmar_compra {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    width: 100%;
+    width: 60%;
     padding: 6px 10px;  
     margin-top: 15px;
     background-color: goldenrod;
@@ -1445,9 +1445,11 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-weight: bold;
     transition: background-color 0.5s ease;
+    display: block;  /* Convierte el botón en elemento de bloque */
+    margin: 15px auto 0 auto;  /* Centra horizontalmente (auto a los lados) */
 }
 
 #bloque_pago_car #btn_confirmar_compra:hover {
@@ -1470,7 +1472,7 @@
 /* Pie de página informativo */
 #pie_pag_car {
     justify-content: center;
-    background-image: url('imagenes/fondopiedepagina.jpg');
+    background-image: url('../imagenes/fondopiedepagina.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1500,7 +1502,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Tipografía general*/
     margin: 0;  /* Elimina márgenes externos */
     padding: 0;  /* Elimina rellenos internos */
-    background-image: url('imagenes/fondogeneral.jpg');  /* Imagen de fondo */
+    background-image: url('../imagenes/fondogeneral.jpg');  /* Imagen de fondo */
     background-size: cover;  /* Cubre toda la pantalla */
     background-position: center;  /* Centra el fondo */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -1510,7 +1512,7 @@
 /* Título de búsqueda y logo */
 .titulo_busq {
     justify-content: center;  /* Centra el contenido */
-    background-image: url('imagenes/fondobusqueda.jpg');  
+    background-image: url('../imagenes/fondobusqueda.jpg');  
     background-size: cover;  /* Cubre el ancho del header */
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -1682,7 +1684,7 @@
 }
 
 .tarjeta_res_busq {
-    background-image: url('imagenes/fondocontadorproducto.jpg');
+    background-image: url('../imagenes/fondocontadorproducto.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1723,7 +1725,7 @@
 
 .pie_pag_busq {
     justify-content: center;  /* Centra el contenido */
-    background-image: url('imagenes/fondopiedepagina.jpg');  
+    background-image: url('../imagenes/fondopiedepagina.jpg');  
     background-size: cover;  /* Cubre el ancho del header */
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -1757,7 +1759,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Tipografía general*/
     margin: 0;  /* Elimina márgenes externos */
     padding: 0;  /* Elimina rellenos internos */
-    background-image: url('imagenes/fondogeneral.jpg');  /* Imagen de fondo */
+    background-image: url('../imagenes/fondogeneral.jpg');  /* Imagen de fondo */
     background-size: cover;  /* Cubre toda la pantalla */
     background-position: center;  /* Centra el fondo */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -1767,7 +1769,7 @@
 /* Título de foro y logo */
 .titulo_foro {
     justify-content: center;  /* Centra el contenido */
-    background-image: url('imagenes/fondoforo.jpg');  
+    background-image: url('../imagenes/fondoforo.jpg');  
     background-size: cover;  /* Cubre el ancho del header */
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -1927,7 +1929,7 @@
 }
 
 .tarjeta_debate {
-    background-image: url('imagenes/fondocontadorproducto.jpg');
+    background-image: url('../imagenes/fondocontadorproducto.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2013,7 +2015,7 @@
 /* Pie de página */
 .pie_pag_foro {
     justify-content: center;
-    background-image: url('imagenes/fondopiedepagina.jpg');
+    background-image: url('../imagenes/fondopiedepagina.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2055,7 +2057,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Tipografía general*/
     margin: 0;  /* Elimina márgenes externos */
     padding: 0;  /* Elimina rellenos internos */
-    background-image: url('imagenes/fondogeneral.jpg');  /* Imagen de fondo */
+    background-image: url('../imagenes/fondogeneral.jpg');  /* Imagen de fondo */
     background-size: cover;  /* Cubre toda la pantalla */
     background-position: center;  /* Centra el fondo */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -2067,7 +2069,7 @@
 /* Título de blog y logo */
 .titulo_blog {
     justify-content: center;  /* Centra el contenido */
-    background-image: url('imagenes/fondoblog.jpg');  
+    background-image: url('../imagenes/fondoblog.jpg');  
     background-size: cover;  /* Cubre el ancho del header */
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -2155,7 +2157,7 @@
 
 .pie_pag_blog {
     justify-content: center;  /* Centra el contenido */
-    background-image: url('imagenes/fondopiedepagina.jpg');  
+    background-image: url('../imagenes/fondopiedepagina.jpg');  
     background-size: cover;  /* Cubre el ancho del header */
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -2189,7 +2191,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Tipografía general*/
     margin: 0;  /* Elimina márgenes externos */
     padding: 0;  /* Elimina rellenos internos */
-    background-image: url('imagenes/fondogeneral.jpg');  /* Imagen de fondo */
+    background-image: url('../imagenes/fondogeneral.jpg');  /* Imagen de fondo */
     background-size: cover;  /* Cubre toda la pantalla */
     background-position: center;  /* Centra el fondo */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -2201,7 +2203,7 @@
 /* Título de blog y logo */
 .titulo_det_blog1 {
     justify-content: center;  /* Centra el contenido */
-    background-image: url('imagenes/fondoblog.jpg');  
+    background-image: url('../imagenes/fondoblog.jpg');  
     background-size: cover;  /* Cubre el ancho del header */
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -2286,7 +2288,7 @@
 
 .pie_pag_det_blog1 {
     justify-content: center;  /* Centra el contenido */
-    background-image: url('imagenes/fondopiedepagina.jpg');  
+    background-image: url('../imagenes/fondopiedepagina.jpg');  
     background-size: cover;  /* Cubre el ancho del header */
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -2328,7 +2330,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Tipografía general*/
     margin: 0;  /* Elimina márgenes externos */
     padding: 0;  /* Elimina rellenos internos */
-    background-image: url('imagenes/fondogeneral.jpg');  /* Imagen de fondo */
+    background-image: url('../imagenes/fondogeneral.jpg');  /* Imagen de fondo */
     background-size: cover;  /* Cubre toda la pantalla */
     background-position: center;  /* Centra el fondo */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -2340,7 +2342,7 @@
 /* Título de blog y logo */
 .titulo_det_blog2 {
     justify-content: center;  /* Centra el contenido */
-    background-image: url('imagenes/fondoblog.jpg');  
+    background-image: url('../imagenes/fondoblog.jpg');  
     background-size: cover;  /* Cubre el ancho del header */
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -2425,7 +2427,7 @@
 
 .pie_pag_det_blog2 {
     justify-content: center;  /* Centra el contenido */
-    background-image: url('imagenes/fondopiedepagina.jpg');  
+    background-image: url('../imagenes/fondopiedepagina.jpg');  
     background-size: cover;  /* Cubre el ancho del header */
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* No repite el fondo */
@@ -2467,7 +2469,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('imagenes/fondogeneral.jpg');
+    background-image: url('../imagenes/fondogeneral.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2477,7 +2479,7 @@
 /* Título de contacto y logo */
 .titulo_ayuda {
     justify-content: center;
-    background-image: url('imagenes/fondocontacto.jpg');
+    background-image: url('../imagenes/fondocontacto.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2743,7 +2745,7 @@
 /* Pie de página */
 .pie_pag_ayuda {
     justify-content: center;
-    background-image: url('imagenes/fondopiedepagina.jpg');
+    background-image: url('../imagenes/fondopiedepagina.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
