@@ -1509,6 +1509,10 @@ section[id^="contenedor_prod_car"] #btn_sumar {
     background-position: center;  /* Centra el fondo */
     background-repeat: no-repeat;  /* No repite el fondo */
     background-attachment: fixed;  /* Mantiene la madera fija */
+    width: 100%;
+    min-width: fit-content;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Título de búsqueda y logo */
@@ -1524,6 +1528,7 @@ section[id^="contenedor_prod_car"] #btn_sumar {
     /* Medidas fijas para que no cambie su estructura */
     width: 100%;  /* Ocupa el 100% del ancho */
     min-height: 110px;  /* Asegura una altura mínima constante */
+    width: max-content;  /* Se adapta si el contenido horizontal sobrepasa la pantalla */
     padding: 20px 30px;  /* Padding moderado que no aplasta el contenido */
     box-sizing: border-box;  /* Respeta los límites sin desbordar la pantalla */
 
@@ -1531,8 +1536,7 @@ section[id^="contenedor_prod_car"] #btn_sumar {
     display: flex;  /* Activa 'Flexbox' */
     align-items: center;  /* Centra horizontalmente los bloques */
     flex-direction: column;  /* Pone los botones DEBAJO del logo */
-    justify-content: center;  /* Centra verticalmente */
-    
+    justify-content: center;  /* Centra verticalmente */   
 }
 
 .titulo_busq .titlogo {
@@ -1554,6 +1558,13 @@ section[id^="contenedor_prod_car"] #btn_sumar {
     color: white;  /* Color de texto negro */
     font-size: 28px;  /* Tamaño de letra del título */
     white-space: nowrap;  /* Evita saltos de linea */
+}
+
+.titulo_busq,
+.pie_pag_busq {
+    width: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
 }
 
 .btns_navegacion_busq {
@@ -1580,15 +1591,17 @@ section[id^="contenedor_prod_car"] #btn_sumar {
 
 /* --- LAYOUT GENERAL DE BÚSQUEDA --- */
 .contenedor_busq_layout {
-    display: flex;                       /* Coloca barra lateral y contenido lado a lado */
-    flex-direction: row;                 /* Dirección horizontal */
-    width: 100%;                         /* Ancho total */
-    max-width: 1100px;                   /* Ancho máximo uniforme */
-    margin: 0 auto;                      /* Centrado en pantalla */
-    min-height: 550px;                   /* Altura mínima para que la barra se extienda */
-    padding: 20px;                       /* Relleno perimetral */
-    box-sizing: border-box;              /* Incluye paddings en el cálculo de ancho */
-    gap: 25px;                           /* Separación entre sidebar y resultados */
+    display: flex;  /* Coloca barra lateral y contenido lado a lado */
+    flex-direction: row !important;  /* Dirección horizontal */
+    flex-wrap: nowrap !important;
+    width: 100%;  /* Ancho total */
+    min-width: 850px;
+    max-width: 1100px;  /* Ancho máximo uniforme */
+    margin: 0 auto;  /* Centrado en pantalla */
+    min-height: 550px;  /* Altura mínima para que la barra se extienda */
+    padding: 20px;  /* Relleno perimetral */
+    box-sizing: border-box;  /* Incluye paddings en el cálculo de ancho */
+    gap: 25px;  /* Separación entre sidebar y resultados */
 }
 
 /* --- BARRA LATERAL IZQUIERDA --- */
@@ -1622,9 +1635,29 @@ section[id^="contenedor_prod_car"] #btn_sumar {
 }
 
 .sidebar_busq .item_menu.activo {
-    background: rgba(218, 165, 32, 0.3); /* Resalte activo color dorado */
-    color: goldenrod;                    /* Texto destacado */
+    background: rgba(218, 165, 32, 0.3);  /* Resalte activo color dorado */
+    color: goldenrod;  /* Texto destacado */
 }
+
+.btn_det_busq {
+    background-color: goldenrod;
+    color: black;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.2s ease;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
 
 /* --- CONTENIDO PRINCIPAL A LA DERECHA --- */
 .contenido_principal_busq {
