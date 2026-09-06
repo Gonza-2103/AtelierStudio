@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 nombre: "Cuadro 'Mar y Playa'",
                 precio: 45000,
                 stock: 10,
+                categoria: "Fotografía de Autor",
                 imagen: "../imagenes/fotoarte1.jpg",
                 descripcion: "Fotografía aérea que captura el contraste entre las aguas turquesas del océano y la arena blanca, destacando el movimiento de las olas al llegar a la costa."
             },
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 nombre: "Retrato 'Caballero con Pipa'",
                 precio: 60000,
                 stock: 8,
+                categoria: "Óleo sobre Lienzo",
                 imagen: "../imagenes/fotoarte2.jpg",
                 descripcion: "Pintura al óleo de estilo expresivo que retrata de perfil a un marinero o pescador de mirada reflexiva, con una pipa y un paisaje de mar al fondo."
             },
@@ -29,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 nombre: "Cuadro 'Paisaje de Montaña'",
                 precio: 48000,
                 stock: 6,
+                categoria: "Óleo sobre Lienzo",
                 imagen: "../imagenes/fotoarte3.png",
                 descripcion: "Pintura paisajística al óleo que muestra una cordillera nevada reflejada en un lago de aguas cristalinas, rodeado de bosques bajo un cielo parcialmente nublado."
             },
@@ -38,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 nombre: "Retrato 'Gato entre Sombras'",
                 precio: 72000,
                 stock: 6,
+                categoria: "Acuarela y Papel",
                 imagen: "../imagenes/fotoarte4.png",
                 descripcion: "Acuarela que representa a un gato atigrado de pelaje naranja y blanco, rodeado por un marcado juego de luces y sombras proyectadas por la vegetación."
             }
@@ -61,8 +65,33 @@ document.addEventListener("DOMContentLoaded", function () {
         const spanCantidad = contenedor.querySelector("#numero_prod strong") || contenedor.querySelector("#numero_prod");
         const btnAgregar = contenedor.querySelector("#btn_car_comp");
 
-        const productoDatos = catalogo.find(p => p.id === item.id);
-        const stockDisponible = productoDatos ? productoDatos.stock : 0;
+        const productoDatos = catalogo.find(p => Number(p.id) === item.id);
+
+        if (!productoDatos) {
+            contenedor.style.display = "none";
+            return;
+        }
+
+        // Actualizar información visible con los datos guardados por el administrador
+        const titulo = contenedor.querySelector("h3");
+        const textos = contenedor.querySelectorAll("h5");
+        const imagen = contenedor.querySelector("img");
+
+        if (titulo) {
+            titulo.textContent = productoDatos.nombre;
+        }
+
+        if (textos.length >= 3) {
+            textos[0].textContent = "(" + (productoDatos.categoria || "Sin categoría") + ")";
+            textos[1].textContent = productoDatos.descripcion || "";
+            textos[2].textContent = "$" + Number(productoDatos.precio).toLocaleString("es-CL");
+        }
+
+        if (imagen) {
+            imagen.src = productoDatos.imagen;
+            imagen.alt = productoDatos.nombre;
+        }
+        const stockDisponible = productoDatos.stock;
 
         // Botón Restar
         if (btnRestar && spanCantidad) {
