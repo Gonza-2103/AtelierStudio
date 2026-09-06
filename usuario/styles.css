@@ -1947,7 +1947,9 @@ section[id^="contenedor_prod_car"] #btn_sumar {
     border-radius: 12px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     transition: background-color 0.2s ease;
-    justify-content: right;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn_publicar_foro:hover {

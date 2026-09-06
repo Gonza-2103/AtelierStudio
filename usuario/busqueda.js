@@ -92,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
             card.innerHTML = `
                 <img src="${prod.imagen}" alt="${prod.nombre}">
                 <h4>${prod.nombre}</h4>
-                <a href="detalle_producto.html" class="link_det_busq" data-id="${prod.id}">VER DETALLES</a>
             `;
             grillaResultados.appendChild(card);
         });
