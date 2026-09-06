@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 precio: 45000,
                 stock: 10,
                 imagen: "../imagenes/fotoarte1.jpg",
-                descripcion: "Fotografía aérea en plano cenital que captura el contraste entre las aguas turquesas del océano y la orilla de arena blanca, destacando el movimiento de la espuma de las olas rompiendo suavemente en la costa."
+                descripcion: "Fotografía aérea que captura el contraste entre las aguas turquesas del océano y la arena blanca, destacando el movimiento de las olas al llegar a la costa."
             },
             {
                 id: 2,
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 precio: 60000,
                 stock: 8,
                 imagen: "../imagenes/fotoarte2.jpg",
-                descripcion: "Pintura al óleo de estilo expresivo que retrata de perfil a un marinero o pescador de mirada reflexiva, sosteniendo una pipa humeante en la boca y herramientas de red, con un fondo de playa, cielo azul y mar abierto."
+                descripcion: "Pintura al óleo de estilo expresivo que retrata de perfil a un marinero o pescador de mirada reflexiva, con una pipa y un paisaje de mar al fondo."
             },
             {
                 id: 3,
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 precio: 48000,
                 stock: 6,
                 imagen: "../imagenes/fotoarte3.png",
-                descripcion: "Pintura paisajística tradicional al óleo que muestra una cordillera alpina nevada reflejada en un lago sereno de aguas cristalinas, flanqueado por densos bosques de coníferas bajo un cielo parcialmente nublado."
+                descripcion: "Pintura paisajística al óleo que muestra una cordillera nevada reflejada en un lago de aguas cristalinas, rodeado de bosques bajo un cielo parcialmente nublado."
             },
             {
                 id: 4,
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 precio: 72000,
                 stock: 6,
                 imagen: "../imagenes/fotoarte4.png",
-                descripcion: "Acuarela luminosa que ilustra a un gato atigrado de pelaje naranja y blanco sentado en un escalón de piedra, envuelto en un marcado juego de luces solares directas y sombras violáceas proyectadas por la vegetación."
+                descripcion: "Acuarela que representa a un gato atigrado de pelaje naranja y blanco, rodeado por un marcado juego de luces y sombras proyectadas por la vegetación."
             }
         ];
     }
