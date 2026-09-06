@@ -69,6 +69,31 @@
                         <small id="errorDescripcionProducto"></small>
                     </div>
 
+                    <!-- *Medidas* -->
+
+                    <div class="campo_admin">
+
+                        <label for="medidasProducto">
+                            <strong>
+                                Medidas:<span class="campo_requerido_admin">*</span>
+                            </strong>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="medidasProducto"
+                            name="medidasProducto"
+                            placeholder="Ej: 60x70 cm"
+                        >
+
+                        <small class="texto_ayuda_admin">
+                            Ingrese las medidas de la obra.
+                        </small>
+
+                        <small id="errorMedidasProducto"></small>
+
+                    </div>
+
                     <!-- Precio -->
                     <div class="campo_admin">
                         <label for="precioProducto">
@@ -103,17 +128,18 @@
                             <strong>Categoría:<span class="campo_requerido_admin">*</span></strong>
                         </label>
                         <select id="categoriaProducto" name="categoriaProducto">
-                            <option value="">Seleccione una categoría</option>
-                            <option value="Pintura">Pintura</option>
-                            <option value="Acuarela">Acuarela</option>
-                        </select>
+                        <option value="">Seleccione una categoría</option>
+                        <option value="Óleo sobre Lienzo">Óleo sobre Lienzo</option>
+                        <option value="Acuarela y Papel">Acuarela y Papel</option>
+                        <option value="Fotografía de Autor">Fotografía de Autor</option>
+                    </select>
                         <small id="errorCategoriaProducto"></small>
                     </div>
 
                     <!-- Imagen -->
                     <div class="campo_admin">
                         <label for="imagenProducto"><strong>Imagen:</strong></label>
-                        <input type="text" id="imagenProducto" name="imagenProducto" placeholder="Ej: imagenes/fotoarte1.jpg">
+                        <input type="text" id="imagenProducto" name="imagenProducto" placeholder="Ej: ../imagenes/fotoarte1.jpg">
                         <small class="texto_ayuda_admin">Campo opcional. Ingrese la ruta de la imagen.</small>
                         <small id="errorImagenProducto"></small>
                     </div>

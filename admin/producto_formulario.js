@@ -90,6 +90,8 @@ if (modoNuevo) {
         }
     }
 
+    console.log("Producto encontrado:", productoEditado);
+
 
     // Mostrar los datos del producto encontrado
 
@@ -355,12 +357,11 @@ selectCategoria.addEventListener(
             selectCategoria.value;
 
         if (
-            categoria !== "Pintura" &&
-            categoria !== "Acuarela"
+            categoria !== "Óleo sobre Lienzo" &&
+            categoria !== "Acuarela y Papel" &&
+            categoria !== "Fotografía de Autor"
         ) {
-            errorCategoria.innerHTML =
-                "Debe seleccionar una categoría.";
-
+            errorCategoria.innerHTML = "Debe seleccionar una categoría.";
         } else {
             errorCategoria.innerHTML = "";
         }
@@ -573,13 +574,16 @@ formularioProducto.addEventListener(
         // Validar categoría
 
         if (
-            categoria !== "Pintura" &&
-            categoria !== "Acuarela"
+            categoria !== "Óleo sobre Lienzo" &&
+            categoria !== "Acuarela y Papel" &&
+            categoria !== "Fotografía de Autor"
         ) {
             errorCategoria.innerHTML =
                 "Debe seleccionar una categoría.";
 
-            formularioValido = false;
+                formularioValido = false;
+        } else {
+            errorCategoria.innerHTML = "";
         }
 
 

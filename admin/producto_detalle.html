@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Producto - AtelierStudio</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body class="pagina_admin">
+
+    <aside class="menu_admin">
+
+        <div class="logo_admin">
+            <img src="../imagenes/atelierstudiologo.png" alt="Logo de AtelierStudio">
+            <h2>AtelierStudio</h2>
+            <p>Administración</p>
+        </div>
+
+        <nav class="navegacion_admin">
+            <a href="admin.html" class="enlace_admin">Inicio</a>
+            <a href="productos_admin.html" class="enlace_admin enlace_activo">Productos</a>
+            <a href="usuarios_admin.html" class="enlace_admin">Usuarios</a>
+            <a href="../index.html" class="enlace_admin volver_tienda">Volver a la tienda</a>
+        </nav>
+
+    </aside>
+
+    <main class="contenido_admin">
+
+        <header class="encabezado_admin">
+            <h1>Detalle del producto</h1>
+            <p>Información registrada del producto.</p>
+        </header>
+
+        <section class="contenedor_detalle_admin">
+
+            <div class="detalle_admin">
+
+                <img
+                    id="detalleImagenProducto"
+                    src=""
+                    alt="Imagen del producto"
+                >
+
+                <p>
+                    <strong>Código:</strong>
+                    <span id="detalleCodigoProducto"></span>
+                </p>
+
+                <p>
+                    <strong>Nombre:</strong>
+                    <span id="detalleNombreProducto"></span>
+                </p>
+
+                <p>
+                    <strong>Descripción:</strong>
+                    <span id="detalleDescripcionProducto"></span>
+                </p>
+
+                <p>
+                    <strong>Medidas:</strong>
+                    <span id="detalleMedidasProducto"></span>
+                </p>
+
+                <p>
+                    <strong>Precio:</strong>
+                    <span id="detallePrecioProducto"></span>
+                </p>
+
+                <p>
+                    <strong>Stock:</strong>
+                    <span id="detalleStockProducto"></span>
+                </p>
+
+                <p>
+                    <strong>Stock crítico:</strong>
+                    <span id="detalleStockCriticoProducto"></span>
+                </p>
+
+                <p>
+                    <strong>Categoría:</strong>
+                    <span id="detalleCategoriaProducto"></span>
+                </p>
+
+                <div class="botones_formulario_admin">
+
+                    <button
+                        type="button"
+                        id="btnEditarProducto"
+                    >
+                        EDITAR
+                    </button>
+
+                    <a href="productos_admin.html">
+                        VOLVER
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="producto_detalle.js"></script>
+
+</body>
+
+</html>

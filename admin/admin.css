@@ -525,6 +525,16 @@ body {
     overflow-wrap: anywhere;
 }
 
+#detalleImagenProducto {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+
 
 /* Diseño para pantallas pequeñas */
 
