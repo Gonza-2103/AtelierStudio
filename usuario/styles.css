@@ -1212,6 +1212,9 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Título de carrito y logo */
@@ -1284,6 +1287,11 @@
     margin: 0 auto;
     padding: 30px 20px;
     box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* Centra horizontalmente todo el contenido */
+    justify-content: center;
 }
 
 #titulo_seccion_car {
@@ -1293,7 +1301,8 @@
 }
 
 /* Tarjeta del producto */
-#contenedor_prod_car1 {
+/* Tarjetas de productos en el carrito (aplica a todos los productos presentes y futuros) */
+section[id^="contenedor_prod_car"] {
     background-image: url('../imagenes/fondocontadorproducto.jpg');
     background-size: cover;
     background-position: center;
@@ -1309,12 +1318,12 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-#contenedor_prod_car1 #contador_prod {
+section[id^="contenedor_prod_car"] #contador_prod {
     margin: 0;
     padding: 0;
 }
 
-#contenedor_prod_car1 img {
+section[id^="contenedor_prod_car"] img {
     width: 100%;
     height: 190px;
     object-fit: cover;
@@ -1323,14 +1332,14 @@
     margin: 10px 0;
 }
 
-#contenedor_prod_car1 h3 {
+section[id^="contenedor_prod_car"] h3 {
     text-align: center;
     text-decoration: underline;
     font-size: 17px;
     margin: 0 0 5px 0;
 }
 
-#contenedor_prod_car1 #precio_prod1 {
+section[id^="contenedor_prod_car"] h5[id^="precio_prod"] {
     font-weight: bold !important;
     text-align: center !important;
     display: block;
@@ -1339,7 +1348,7 @@
     margin: 5px 0;
 }
 
-#contenedor_prod_car1 #btns_cont_prod {
+section[id^="contenedor_prod_car"] #btns_cont_prod {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -1348,8 +1357,8 @@
     width: 100%;
 }
 
-#contenedor_prod_car1 #btn_restar, 
-#contenedor_prod_car1 #btn_sumar {
+section[id^="contenedor_prod_car"] #btn_restar, 
+section[id^="contenedor_prod_car"] #btn_sumar {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -1386,8 +1395,9 @@
 
 /* Bloque resumen y finalización de compra */
 #bloque_pago_car {
+    width: 100%;
     max-width: 320px;
-    margin: 30px auto 10px auto;
+    margin: 20px 0 10px 0;    /* Espaciado uniforme */
     background: rgba(0, 0, 0, 0.65);
     padding: 20px;
     border-radius: 8px;
@@ -1458,9 +1468,10 @@
 
 /* Enlace inferior de navegación */
 #volver_catalogo_car {
-    text-align: right;
+    width: 100%;
     max-width: 320px;
-    margin: 15px auto 0 auto;
+    text-align: right;  /* Centra el enlace respecto a la calculadora */
+    margin: 15px 0 0 0;
 }
 
 #volver_catalogo_car a {
