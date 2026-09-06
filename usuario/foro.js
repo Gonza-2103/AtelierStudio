@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnPublicar = document.querySelector(".btn_publicar_foro");
     const seccionDebates = document.querySelector(".lista_temas_foro");
 
-    // 1. Obtener perfil activo de localStorage (o usuario registrado)
+    // OBTENER PERFIL ACTIVO DE localStorage (O USUARIO REGISTRADO)
     const usuarioActivo = JSON.parse(localStorage.getItem("usuarioRegistrado")) ||
                           JSON.parse(localStorage.getItem("usuarioActivo")) || null;
 
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fotoAutor = usuarioActivo.foto || "../imagenes/atelierstudiologo.png";
     }
 
-    // 2. Diccionario de categorías visibles
+    // DICCIONARIO DE CATEGORÍAS VISIBLES
     const nombresCategorias = {
         tecnicas: "Técnicas y Materiales",
         recomendaciones: "Recomendación de Obras",
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         eventos: "Talleres y Galerías"
     };
 
-    // 3. Función para contar palabras ignorando tildes, signos de puntuación y mayúsculas
+    // FUNCIÓN PARA CONTAR PALABRAS IGNORANDO TILDES, SIGNOS DE PUNTUACIÓN Y MAYÚSCULAS
     function contarPalabrasNormalizadas(texto) {
         if (!texto) return 0;
         const textoLimpio = texto
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return textoLimpio.split(" ").length;
     }
 
-    // 4. Cargar debates almacenados o inicializar con los debates de ejemplo
+    // CARGAR DEBATES ALMACENADOS O INICIALIZAR CON LOS DEBATES DE EJEMPLO
     let debates = JSON.parse(localStorage.getItem("debatesForo"));
 
     if (!debates || debates.length === 0) {
@@ -70,8 +70,9 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("debatesForo", JSON.stringify(debates));
     }
 
-    // 5. Renderizado en el contenedor manteniendo la estructura exigida
+    // MANTENCIÓN DE LA ESTRUCTURA DEL COMENTARIO POSTEADO
     function renderizarDebates() {
+
         // Eliminar tarjetas renderizadas previamente para no duplicar
         const tarjetasActuales = seccionDebates.querySelectorAll(".tarjeta_debate");
         tarjetasActuales.forEach(t => t.remove());
@@ -107,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 6. Publicación de nuevo tema
+    // PUBLICACIÓN DEL NUEVO TEMA
     if (btnPublicar) {
         btnPublicar.addEventListener("click", function () {
             const tituloVal = inputTitulo.value.trim();
@@ -127,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const cantidadDuplicada = debates.some(d => d.conteoPalabras === cantidadPalabras);
 
             if (cantidadDuplicada) {
-                alert(`No es posible publicar: ya existe un comentario registrado con exactamente ${cantidadPalabras} palabras. Modifica o amplía la extensión de tu opinión.`);
+                alert("No es posible publicar: Ya existe un comentario registrado con la misma cantidad de palabras. Modifica o amplía la extensión de tu opinión.");
                 return;
             }
 
@@ -152,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
             textareaMensaje.value = "";
 
             renderizarDebates();
-            alert("¡Tu tema ha sido publicado exitosamente en el foro!");
+            alert("¡Tu tema ha sido publicado en el foro!");
         });
     }
 
