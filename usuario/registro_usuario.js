@@ -1,281 +1,213 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".campos_registro");
 
-// Captura de datos de html
-const formulario = document.getElementById("formRegistro");
-const inputRun = document.getElementById("run");
-const inputNombre = document.getElementById("nombre");
-const inputApellidos = document.getElementById("apellidos");
-const inputCorreo = document.getElementById("correo");
-const inputContrasena = document.getElementById("contrasena");
-const inputConfirmarContrasena = document.getElementById("confirmarContrasena");
-const inputTelefono =document.getElementById("telefono");
-const errorContrasena =document.getElementById("errorContrasena");
-const errorConfirmarContrasena = document.getElementById("errorConfirmarContrasena");
-const errorTelefono =  document.getElementById("errorTelefono");
-const inputFechaNacimiento = document.getElementById("fechaNacimiento");
-const selectRegion = document.getElementById("region");
-const selectComuna = document.getElementById("comuna");
-const inputDireccion = document.getElementById("direccion");
+    // Elementos de entrada
+    const inputRun = document.getElementById("run");
+    const inputNombre = document.getElementById("nombre");
+    const inputApellidos = document.getElementById("apellidos");
+    const inputCorreo = document.getElementById("correo");
+    const inputContrasena = document.getElementById("contrasena");
+    const inputConfirmar = document.getElementById("confirmarContrasena");
+    const inputTelefono = document.getElementById("telefono");
+    const selectRegion = document.getElementById("region");
+    const selectComuna = document.getElementById("comuna");
+    const inputDireccion = document.getElementById("direccion");
 
-// Captura de las etiquetas <small> para mostrar errores en pantalla
-const errorRun = document.getElementById("errorRun");
-const errorNombre = document.getElementById("errorNombre");
-const errorApellidos = document.getElementById("errorApellidos");
-const errorCorreo = document.getElementById("errorCorreo");
-const errorRegion = document.getElementById("errorRegion");
-const errorComuna = document.getElementById("errorComuna");
-const errorDireccion = document.getElementById("errorDireccion");
+    // Contenedores de mensajes de error
+    const errorRun = document.querySelector(".errorRun");
+    const errorNombre = document.querySelector(".errorNombre");
+    const errorApellidos = document.querySelector(".errorApellidos");
+    const errorCorreo = document.querySelector(".errorCorreo");
+    const errorContrasena = document.querySelector(".errorContrasena");
+    const errorConfirmar = document.querySelector(".errorConfirmarContrasena");
+    const errorTelefono = document.querySelector(".errorTelefono");
+    const errorRegion = document.querySelector(".errorRegion");
+    const errorComuna = document.querySelector(".errorComuna");
+    const errorDireccion = document.querySelector(".errorDireccion");
 
-//Cargar regiones y comunas
-for (let i = 0; i < regionesYComunas.length; i++) {
-    const opcionRegion = document.createElement("option");
-    opcionRegion.value = regionesYComunas[i].region;
-    opcionRegion.textContent = regionesYComunas[i].region;
-    selectRegion.appendChild(opcionRegion);
-}
 
-// Evento para actualizar las comunas según la región seleccionada
-selectRegion.addEventListener("change", function () {
-    const regionSeleccionada = selectRegion.value;
+    // ==========================================
+    // CARGA DE REGIONES Y COMUNAS
+    // ==========================================
 
-    // Limpiar las opciones de comunas
-    selectComuna.innerHTML = '<option value="">Seleccione una Comuna</option>';
+    if (typeof regionesYComunas !== "undefined" && selectRegion && selectComuna) {
+        // Cargar las opciones en el selector de regiones
+        regionesYComunas.forEach(item => {
+            const opcion = document.createElement("option");
+            opcion.value = item.region;
+            opcion.textContent = item.region;
+            selectRegion.appendChild(opcion);
+        });
 
-    if(regionSeleccionada !== "") {
-        // Buscar la región seleccionada en el arreglo
-       for (let i = 0; i < regionesYComunas.length; i++) {
-            if (regionesYComunas[i].region === regionSeleccionada) {
-                const listaComunas = regionesYComunas[i].comunas;
+        // Actualizar comunas cuando cambia la región
+        selectRegion.addEventListener("change", function () {
+            selectComuna.innerHTML = '<option value="">Seleccione una comuna</option>';
 
-                // Llenar el select con las comunas correspondientes
-                for (let j = 0; j < listaComunas.length; j++) {
-                    const opcionComuna = document.createElement("option");
-                    opcionComuna.value = listaComunas[j];
-                    opcionComuna.textContent = listaComunas[j];
-                    selectComuna.appendChild(opcionComuna);
-                }
+            const regionSeleccionada = selectRegion.value;
+            const dataRegion = regionesYComunas.find(item => item.region === regionSeleccionada);
+
+            if (dataRegion && dataRegion.comunas) {
+                dataRegion.comunas.forEach(comuna => {
+                    const opcion = document.createElement("option");
+                    opcion.value = comuna;
+                    opcion.textContent = comuna;
+                    selectComuna.appendChild(opcion);
+                });
             }
+        });
+    }
+
+
+    // ==========================================
+    // VALIDACIÓN DEL FORMULARIO
+    // ==========================================
+
+    function limpiarErrores() {
+        const errores = form.querySelectorAll("small[class^='error']");
+        errores.forEach(err => {
+            err.textContent = "";
+            err.style.color = "#d00000";
+            err.style.display = "block";
+        });
+    }
+
+    form.addEventListener("submit", function (evento) {
+        evento.preventDefault();
+        limpiarErrores();
+
+        const runVal = inputRun.value.trim();
+        const nombreVal = inputNombre.value.trim();
+        const apellidosVal = inputApellidos.value.trim();
+        const correoVal = inputCorreo.value.trim();
+        const claveVal = inputContrasena.value;
+        const confirmarVal = inputConfirmar.value;
+        const regionVal = selectRegion.value;
+        const comunaVal = selectComuna.value;
+        const direccionVal = inputDireccion.value.trim();
+        const telefonoVal = inputTelefono.value.trim();
+
+        // CONDICIÓN 1: Todos los campos están vacíos
+        if (
+            runVal === "" &&
+            nombreVal === "" &&
+            apellidosVal === "" &&
+            correoVal === "" &&
+            claveVal === "" &&
+            confirmarVal === "" &&
+            regionVal === "" &&
+            comunaVal === "" &&
+            direccionVal === "" &&
+            telefonoVal === ""
+        ) {
+            alert("No es posible registrar: todos los campos están vacíos.");
+            return;
         }
-    }
+
+        // CONDICIÓN 2: Algún campo obligatorio está vacío
+        if (
+            runVal === "" ||
+            nombreVal === "" ||
+            apellidosVal === "" ||
+            correoVal === "" ||
+            claveVal === "" ||
+            confirmarVal === "" ||
+            regionVal === "" ||
+            comunaVal === "" ||
+            direccionVal === ""
+        ) {
+            alert("Debe completar todos los campos obligatorios (*) antes de registrar.");
+            return;
+        }
+
+        // CONDICIÓN 3: Las contraseñas no son iguales (AÑADIDO)
+        if (claveVal !== confirmarVal) {
+            errorConfirmar.textContent = "Las contraseñas ingresadas no coinciden.";
+            alert("No es posible registrar: las contraseñas no coinciden.");
+            return;
+        }
+
+        let formularioValido = true;
+
+        // Validación específica: RUT (entre 7 y 9 caracteres, sin puntos ni guión)
+        const regexRut = /^[0-9]{6,8}[0-9kK]$/;
+        if (runVal === "") {
+            errorRun.textContent = "El RUT es obligatorio.";
+            formularioValido = false;
+        } else if (!regexRut.test(runVal) || runVal.length < 7 || runVal.length > 9) {
+            errorRun.textContent = "RUT inválido. Debe tener entre 7 y 9 caracteres sin puntos ni guión (ej: 19011022K).";
+            formularioValido = false;
+        }
+
+        // Validación específica: Nombre
+        if (nombreVal === "") {
+            errorNombre.textContent = "El nombre es obligatorio.";
+            formularioValido = false;
+        }
+
+        // Validación específica: Apellidos
+        if (apellidosVal === "") {
+            errorApellidos.textContent = "Los apellidos son obligatorios.";
+            formularioValido = false;
+        }
+
+        // Validación específica: Correo electrónico (@duoc.cl, @profesor.duoc.cl, @gmail.com)
+        const dominiosPermitidos = ["@duoc.cl", "@profesor.duoc.cl", "@gmail.com"];
+        const dominioValido = dominiosPermitidos.some(d => correoVal.toLowerCase().endsWith(d));
+
+        if (correoVal === "") {
+            errorCorreo.textContent = "El correo electrónico es obligatorio.";
+            formularioValido = false;
+        } else if (!dominioValido) {
+            errorCorreo.textContent = "Solo se permiten dominios: @duoc.cl, @profesor.duoc.cl y @gmail.com.";
+            formularioValido = false;
+        }
+
+        // Validación específica: Contraseña (8 a 10 caracteres)
+        if (claveVal === "") {
+            errorContrasena.textContent = "La contraseña es obligatoria.";
+            formularioValido = false;
+        } else if (claveVal.length < 8 || claveVal.length > 10) {
+            errorContrasena.textContent = "La contraseña debe contener entre 8 y 10 caracteres.";
+            formularioValido = false;
+        }
+
+        // Validación específica: Confirmación de contraseña
+        if (confirmarVal === "") {
+            errorConfirmar.textContent = "Debe confirmar su contraseña.";
+            formularioValido = false;
+        } else if (confirmarVal !== claveVal) {
+            errorConfirmar.textContent = "Las contraseñas ingresadas no coinciden.";
+            formularioValido = false;
+        }
+
+        // Validación específica: Teléfono (opcional, pero si tiene datos debe tener 9 dígitos)
+        if (telefonoVal !== "" && !/^[0-9]{9}$/.test(telefonoVal)) {
+            errorTelefono.textContent = "El teléfono debe contener 9 dígitos numéricos (ej: 912345678).";
+            formularioValido = false;
+        }
+
+        // Validación específica: Región y Comuna
+        if (regionVal === "") {
+            errorRegion.textContent = "Debe seleccionar una región.";
+            formularioValido = false;
+        }
+
+        if (comunaVal === "") {
+            errorComuna.textContent = "Debe seleccionar una comuna.";
+            formularioValido = false;
+        }
+
+        // Validación específica: Dirección
+        if (direccionVal === "") {
+            errorDireccion.textContent = "La dirección es obligatoria.";
+            formularioValido = false;
+        }
+
+        // Si cumple todas las reglas, se procede con el registro
+        if (formularioValido) {
+            alert("¡Usuario registrado con exito!");
+            window.location.href = "login.html";
+        }
+    });
 });
 
-// Evento para validar el formulario al enviarlo
-formulario.addEventListener("submit", function (event) {
-    event.preventDefault(); // Evitar el envío del formulario por defecto
-    
-    // Capturar los valores de los campos
-    const run = inputRun.value.trim();
-    const nombre = inputNombre.value.trim();
-    const apellidos = inputApellidos.value.trim();
-    const correo = inputCorreo.value.trim().toLowerCase();
-    const contrasena = inputContrasena.value;
-    const confirmarContrasena = inputConfirmarContrasena.value;
-    const telefono = inputTelefono.value.trim();
-    const fechaNacimiento = inputFechaNacimiento.value;
-    const region = selectRegion.value;
-    const comuna = selectComuna.value;
-    const direccion = inputDireccion.value.trim();
-
-
-    // Variable para verificar si todo está correcto
-    let registroValido = true;
-    console.log("Validando registro de usuario...");
-
-    //Validar RUN (Requerido, sin puntos ni guion, entre 7 y 9 caracteres)
-    const formatoRunValido = /^[0-9]{6,8}[0-9Kk]$/.test(run);
-
-    if (!formatoRunValido) {
-        errorRun.innerHTML = "El RUN debe contener solo números y terminar en un número o K, sin puntos ni guion.";
-        console.log("Error en RUN: Formato inválido.");
-        registroValido = false;
-    } else {
-        errorRun.innerHTML = "";
-        console.log("RUN válido: " + run);
-    }
-
-// Validar Nombre (Requerido, máximo 50 caracteres)
-    if (nombre.trim() === "" || nombre.length > 50) {
-        errorNombre.innerHTML = "El nombre es requerido y no puede superar los 50 caracteres.";
-        console.log("Error en Nombre: Es requerido y no puede superar los 50 caracteres.");
-        registroValido = false;
-    } else {
-        errorNombre.innerHTML = "";
-        console.log("Nombre válido: " + nombre);
-    }
-
-    // Validar Apellidos (Requeridos, máximo 100 caracteres)
-    if (apellidos.trim() === "" || apellidos.length > 100) {
-        errorApellidos.innerHTML = "Los apellidos son requeridos y no pueden superar los 100 caracteres.";
-        console.log("Error en Apellidos: Son requeridos y no pueden superar los 100 caracteres.");
-        registroValido = false;
-    } else {
-        errorApellidos.innerHTML = "";
-        console.log("Apellidos válidos: " + apellidos);
-    }
-
-    // Validar Correo (Requerido, máximo 100 caracteres y dominios permitidos)
-    const esDominioValido = correo.endsWith("@duocuc.cl") || correo.endsWith("@profesor.duocuc.cl") || correo.endsWith("@gmail.com");
-
-    if (correo === "") {
-        errorCorreo.innerHTML = "El correo es requerido.";
-        console.log("Error en Correo: El correo es requerido.");
-        registroValido = false;
-    } else if (correo.length > 100) {
-        errorCorreo.innerHTML = "El correo no puede superar los 100 caracteres.";
-        console.log("Error en Correo: No puede superar los 100 caracteres.");
-        registroValido = false;
-    } else if (!esDominioValido) {
-        errorCorreo.innerHTML = "El correo debe ser @duocuc.cl, @profesor.duocuc.cl o @gmail.com.";
-        console.log("Error en Correo: Debe ser @duocuc.cl, @profesor.duocuc.cl o @gmail.com.");
-        registroValido = false;
-    } else {
-        errorCorreo.innerHTML = "";
-        console.log("Correo válido: " + correo);
-    }
-
-    // Validar Contraseña (Requerida, entre 4 y 10 caracteres)
-
-    if (contrasena === "" || contrasena.length < 4 || contrasena.length > 10) {
-
-        errorContrasena.innerHTML ="La contraseña es requerida y debe tener entre 4 y 10 caracteres.";
-
-        console.log("Error en Contraseña: Debe tener entre 4 y 10 caracteres." );
-
-        registroValido = false;
-
-    } else { errorContrasena.innerHTML = "";
-            console.log("Contraseña válida.");
-
-    }
-
-
-    // Validar Confirmación de Contraseña
-
-    if (confirmarContrasena === "") {
-
-        errorConfirmarContrasena.innerHTML =
-            "Debe confirmar la contraseña.";
-
-        console.log(
-            "Error en Confirmación: El campo está vacío."
-        );
-
-        registroValido = false;
-
-    } else if (confirmarContrasena !== contrasena) {
-
-        errorConfirmarContrasena.innerHTML =
-            "Las contraseñas no coinciden.";
-
-        console.log(
-            "Error en Confirmación: Las contraseñas no coinciden."
-        );
-
-        registroValido = false;
-
-    } else {
-
-        errorConfirmarContrasena.innerHTML = "";
-
-        console.log("Las contraseñas coinciden.");
-
-    }
-
-
-    // Validar Teléfono (Opcional)
-
-    const formatoTelefonoValido = /^[0-9]{9}$/.test(telefono);
-
-    if (telefono === "") {
-
-        errorTelefono.innerHTML = "";
-
-        console.log("Teléfono: No ingresado (opcional).");
-
-    } else if (!formatoTelefonoValido) {
-
-        errorTelefono.innerHTML =
-            "El teléfono debe contener 9 números.";
-
-        console.log(
-            "Error en Teléfono: Debe contener 9 números."
-        );
-
-        registroValido = false;
-
-    } else {
-
-        errorTelefono.innerHTML = "";
-
-        console.log("Teléfono válido: " + telefono);
-
-    }
-
-    // Fecha de Nacimiento (Opcional)
-    if (fechaNacimiento === "") {
-        console.log("Fecha de nacimiento: No ingresada (opcional).");
-    } else {
-        console.log("Fecha de nacimiento ingresada: " + fechaNacimiento);
-    }
-
-    //Validar Región (Requerido)
-    if (region === "") {
-        errorRegion.innerHTML = "Debe seleccionar una región de la lista.";
-        console.log("Error en Región: Debe seleccionar una región de la lista.");
-        registroValido = false;
-    } else {
-        errorRegion.innerHTML = "";
-        console.log("Región seleccionada: " + region);
-    }
-
-    //Validar Comuna (Requerido)
-    if (comuna === "") {
-        errorComuna.innerHTML = "Debe seleccionar una comuna de la lista.";
-        console.log("Error en Comuna: Debe seleccionar una comuna de la lista.");
-        registroValido = false;
-    } else {
-        errorComuna.innerHTML = "";
-        console.log("Comuna seleccionada: " + comuna);
-    }
-
-    // Validar Dirección (Requerida, máximo 300 caracteres)
-    if (direccion.trim() === "" || direccion.length > 300) {
-        errorDireccion.innerHTML = "La dirección es requerida y no puede superar los 300 caracteres.";
-        console.log("Error en Dirección: Es requerida y no puede superar los 300 caracteres.");
-        registroValido = false;
-    } else {
-        errorDireccion.innerHTML = "";
-        console.log("Dirección válida: " + direccion);
-    }
-
-
-    console.log("---------------------------------------");
-    if (registroValido) {
-        console.log("ESTADO: Registro completado con éxito.");
-        alert("Registro completado con éxito. Redirigiendo a la página de inicio de sesión...");
-
-        // JavaScript realiza la navegación tras validar con éxito:
-        window.location.href = "login.html";
-
-    } else {
-         //Nombres de los campos que quedaron con mensaje de error
-        let camposConError = [];
-        if (errorRun.innerHTML !== "") camposConError.push("- RUN");
-        if (errorNombre.innerHTML !== "") camposConError.push("- Nombre");
-        if (errorApellidos.innerHTML !== "") camposConError.push("- Apellidos");
-        if (errorCorreo.innerHTML !== "") camposConError.push("- Correo");
-        if (errorContrasena.innerHTML !== "") {camposConError.push("- Contraseña");}
-        if (errorConfirmarContrasena.innerHTML !== "") {camposConError.push("- Confirmar contraseña");}
-        if (errorTelefono.innerHTML !== "") {camposConError.push("- Teléfono");}
-        if (errorRegion.innerHTML !== "") camposConError.push("- Región");
-        if (errorComuna.innerHTML !== "") camposConError.push("- Comuna");
-        if (errorDireccion.innerHTML !== "") camposConError.push("- Dirección");
-
-        // Se señala lo que se debe corregir en el formulario
-        alert("Registro rechazado. Revisa y corrige los siguientes campos:\n\n" + camposConError.join("\n"));
-        console.log("ESTADO: Registro rechazado por datos inválidos.");
-        
-    }
-
-   
-
-});
