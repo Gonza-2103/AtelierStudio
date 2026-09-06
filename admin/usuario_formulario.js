@@ -224,7 +224,7 @@ if (modoNuevo) {
 
         formularioUsuario.reset();
     }
-
+}
     // Capturar las etiquetas de error
 
 const errorRun =
@@ -264,7 +264,6 @@ const errorDireccion =
 
 
 // Validar RUN
-
 function validarRun() {
     const run =
         inputRun.value.trim().toUpperCase();
@@ -281,13 +280,61 @@ function validarRun() {
 
     if (!formatoRunValido) {
         errorRun.innerHTML =
-            "El RUN debe tener entre 7 y 9 caracteres, " +
-            "sin puntos ni guion.";
+            "El RUN debe tener entre 7 y 9 caracteres, sin puntos ni guion.";
+
+        return false;
+    }
+
+    const cuerpo =
+        run.slice(0, -1);
+
+    const digitoIngresado =
+        run.slice(-1);
+
+    let suma = 0;
+    let multiplicador = 2;
+
+    for (let i = cuerpo.length - 1; i >= 0; i--) {
+
+        suma +=
+            Number(cuerpo[i]) *
+            multiplicador;
+
+        multiplicador++;
+
+        if (multiplicador === 8) {
+            multiplicador = 2;
+        }
+    }
+
+    const resto =
+        11 - (suma % 11);
+
+    let digitoCalculado = "";
+
+    if (resto === 11) {
+        digitoCalculado = "0";
+
+    } else if (resto === 10) {
+        digitoCalculado = "K";
+
+    } else {
+        digitoCalculado =
+            String(resto);
+    }
+
+    if (
+        digitoIngresado !==
+        digitoCalculado
+    ) {
+        errorRun.innerHTML =
+            "El RUN ingresado no es válido.";
 
         return false;
     }
 
     for (let i = 0; i < usuarios.length; i++) {
+
         const esElMismoUsuario =
             usuarioEditado !== null &&
             usuarios[i].id === usuarioEditado.id;
@@ -806,4 +853,3 @@ formularioUsuario.addEventListener(
     }
 );
 
-}
