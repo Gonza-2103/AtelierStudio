@@ -756,10 +756,7 @@
 }
 
 /* Tarjetas individuales de productos */
-#contenedor_prod_1,
-#contenedor_prod_2,
-#contenedor_prod_3,
-#contenedor_prod_4 {
+#contenedor_prod > section[id^="contenedor_prod_"] {
     background-image: url('../imagenes/fondocontadorproducto.jpg');
     background-size: cover;
     background-position: center;
@@ -801,19 +798,13 @@
     margin: 0 0 5px 0;
 }
 
-#contenedor_prod_1 #categ_prod1,
-#contenedor_prod_2 #categ_prod2,
-#contenedor_prod_3 #categ_prod3,
-#contenedor_prod_4 #categ_prod4 {
+#contenedor_prod [id^="categ_prod"] {
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
-#precio_prod1,
-#precio_prod2,
-#precio_prod3,
-#precio_prod4 {
+#contenedor_prod [id^="precio_prod"] {
     text-align: center !important;
     margin-right: 19px !important;
     font-weight: bold !important;

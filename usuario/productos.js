@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 descripcion: "Acuarela que representa a un gato atigrado de pelaje naranja y blanco, rodeado por un marcado juego de luces y sombras proyectadas por la vegetación."
             }
         ];
+
+        
     }
 
     // Asociar eventos a cada tarjeta individual de producto
@@ -55,6 +57,47 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: 3, selector: "#contenedor_prod_3" },
         { id: 4, selector: "#contenedor_prod_4" }
     ];
+
+    // Crear tarjetas para productos nuevos agregados desde administrador
+
+    const contenedorGeneral = document.getElementById("contenedor_prod");
+    const plantillaProducto = document.getElementById("contenedor_prod_4");
+
+    for (let i = 0; i < catalogo.length; i++) {
+
+        const producto = catalogo[i];
+
+        if (Number(producto.id) > 4) {
+
+            const nuevaTarjeta = plantillaProducto.cloneNode(true);
+
+            nuevaTarjeta.id = "contenedor_prod_" + producto.id;
+
+            const categoria = nuevaTarjeta.querySelector('[id^="categ_prod"]');
+            const precio = nuevaTarjeta.querySelector('[id^="precio_prod"]');
+
+            if (categoria) {
+                categoria.id = "categ_prod" + producto.id;
+            }
+
+            if (precio) {
+                precio.id = "precio_prod" + producto.id;
+            }
+
+            const cantidad = nuevaTarjeta.querySelector("#numero_prod strong");
+
+            if (cantidad) {
+                cantidad.textContent = "1";
+            }
+
+            contenedorGeneral.appendChild(nuevaTarjeta);
+
+            seccionesProductos.push({
+                id: Number(producto.id),
+                selector: "#contenedor_prod_" + producto.id
+            });
+        }
+    }
 
     seccionesProductos.forEach(item => {
         const contenedor = document.querySelector(item.selector);
@@ -88,8 +131,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (imagen) {
-            imagen.src = productoDatos.imagen;
-            imagen.alt = productoDatos.nombre;
+            if (productoDatos.imagen) {
+                imagen.src = productoDatos.imagen;
+                imagen.alt = productoDatos.nombre;
+            } else {
+                imagen.style.display = "none";
+            }
         }
         const stockDisponible = productoDatos.stock;
 
