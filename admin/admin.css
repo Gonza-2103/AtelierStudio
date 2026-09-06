@@ -26,7 +26,7 @@ body {
 }
 
 /* Menú lateral */
-..menu_admin {
+.menu_admin {
     display: flex;
     flex-direction: column;
     width: 250px;
