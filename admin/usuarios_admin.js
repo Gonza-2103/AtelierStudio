@@ -7,7 +7,7 @@ const usuariosIniciales = [
         run: "203456778",
         nombre: "Daniela",
         apellidos: "Muñoz González",
-        correo: "daniela.munoz@duocuc.cl",
+        correo: "daniela.munoz@admin.cl",
         contrasena: "admin123",
         telefono: "912345678",
         fechaNacimiento: "1992-04-15",
@@ -19,7 +19,7 @@ const usuariosIniciales = [
 
     {
         id: 2,
-        run: "127894887",
+        run: "194077947",
         nombre: "Matías",
         apellidos: "Rojas Contreras",
         correo: "matias.rojas@gmail.com",

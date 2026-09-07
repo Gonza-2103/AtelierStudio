@@ -69,23 +69,51 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // 4. Validación de tipo de usuario
-            if (correo.toLowerCase().endsWith("@admin.cl")) {
-                const autorizacionAdmin = sessionStorage.getItem("modoAdminActivado");
+            const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-                if (autorizacionAdmin !== "true") {
-                    alert("No puedes entrar directamente como administrador. Debes usar primero el botón de administrador (escudo).");
-                    return;
+            let usuarioEncontrado = null;
+
+            for (let i = 0; i < usuarios.length; i++) {
+
+                if (
+                    usuarios[i].correo.toLowerCase() === correo.toLowerCase() &&
+                    usuarios[i].contrasena === clave
+                ) {
+                    usuarioEncontrado = usuarios[i];
+                    break;
                 }
+            }
 
-                // Limpiar permiso de acceso
+            if (!usuarioEncontrado) {
+
+                alert("Correo o contraseña incorrectos.");
+
+                return;
+            }
+
+            // *Guardar usuario que inició sesión*
+
+            sessionStorage.setItem(
+                "usuarioActivo",
+                JSON.stringify(usuarioEncontrado)
+            );
+
+            // *Redirección según rol*
+
+            if (usuarioEncontrado.rol === "Administrador") {
+
                 sessionStorage.removeItem("modoAdminActivado");
 
-                // Redirección al panel 'admin'
-                window.location.assign("../admin/admin.html");
+                window.location.href = "../admin/admin.html";
+
+            } else if (usuarioEncontrado.rol === "Vendedor") {
+
+                window.location.href = "../admin/productos_admin.html";
 
             } else {
-                // Usuario estándar
-                window.location.assign("portada.html");
+
+                window.location.href = "portada.html";
+
             }
         });
     }

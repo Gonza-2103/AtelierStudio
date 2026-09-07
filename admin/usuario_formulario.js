@@ -411,9 +411,9 @@ function validarCorreo() {
         inputCorreo.value.trim().toLowerCase();
 
     const formatoCorreoValido =
-        /^[^\s@]+@(duocuc\.cl|profesor\.duocuc\.cl|gmail\.com)$/.test(
-            correo
-        );
+    /^[^\s@]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com|admin\.cl)$/.test(
+        correo
+    );
 
     if (correo === "") {
         errorCorreo.innerHTML =
@@ -431,8 +431,8 @@ function validarCorreo() {
 
     if (!formatoCorreoValido) {
         errorCorreo.innerHTML =
-            "El correo debe ser @duocuc.cl, " +
-            "@profesor.duocuc.cl o @gmail.com.";
+            "El correo debe ser @duoc.cl, " +
+            "@profesor.duoc.cl, @gmail.com o @admin.cl.";
 
         return false;
     }
