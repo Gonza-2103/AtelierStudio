@@ -43,24 +43,24 @@ document.addEventListener("DOMContentLoaded", function () {
         formLogin.addEventListener("submit", function (evento) {
             evento.preventDefault();
 
-            const correo = inputCorreo.value.trim();
-            const clave = inputClave.value;
+            const correo = inputCorreo.value.trim().toLowerCase();
+            const clave = inputClave.value.trim();
 
-            // 1. Validación de casillas vacías
+            // Validación de casillas vacías
             if (correo === "" || clave === "") {
                 alert("Ambas casillas deben completarse antes de entrar.");
                 return;
             }
 
-            // 2. Comprobar dominio permitido
-            const dominioValido = dominiosPermitidos.some(dominio => correo.toLowerCase().endsWith(dominio));
+            // Comprobar dominio permitido
+            const dominioValido = dominiosPermitidos.some(dominio => correo.endsWith(dominio));
 
             if (!dominioValido) {
                 alert("Correo no válido. Solo se permiten dominios: @duoc.cl, @profesor.duoc.cl, @gmail.com o @admin.cl.");
                 return;
             }
 
-            // 3. Validar largo de contraseña (entre 8 y 10 caracteres)
+            // Validar largo de contraseña (entre 8 y 10 caracteres)
             const largoClaveValido = clave.length >= 8 && clave.length <= 10;
 
             if (!largoClaveValido) {
@@ -68,52 +68,67 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            // 4. Validación de tipo de usuario
-            const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+            // Usuarios predeterminados del sistema
+            const usuariosPredeterminados = [
+                {
+                    nombre: "Daniela",
+                    apellidos: "Muñoz",
+                    correo: "daniela.munoz@admin.cl",
+                    contrasena: "holiholi",
+                    rol: "Administrador"
+                },
+                {
+                    nombre: "Camila",
+                    apellidos: "Fernández",
+                    correo: "camila.fernandez@gmail.com",
+                    contrasena: "nanonano",
+                    rol: "Cliente"
+                }
+            ];
 
+            // Cargar usuarios desde localStorage (tanto lista grupal como registro individual)
+            let usuariosGuardados = JSON.parse(localStorage.getItem("usuarios")) || [];
+            const usuarioRegistradoIndividual = JSON.parse(localStorage.getItem("usuarioRegistrado"));
+
+            if (usuarioRegistradoIndividual) {
+                usuariosGuardados.push(usuarioRegistradoIndividual);
+            }
+
+            // Unir todos los usuarios disponibles (predeterminados + guardados)
+            const todosLosUsuarios = [...usuariosPredeterminados, ...usuariosGuardados];
+
+            // Búsqueda flexible de usuario verificando todas las posibles claves de contraseña
             let usuarioEncontrado = null;
 
-            for (let i = 0; i < usuarios.length; i++) {
+            for (let i = 0; i < todosLosUsuarios.length; i++) {
+                const u = todosLosUsuarios[i];
+                if (!u || !u.correo) continue;
 
-                if (
-                    usuarios[i].correo.toLowerCase() === correo.toLowerCase() &&
-                    usuarios[i].contrasena === clave
-                ) {
-                    usuarioEncontrado = usuarios[i];
+                const correoBD = u.correo.trim().toLowerCase();
+                const claveBD = (u.contrasena || u.clave || u.password || u.contraseña || "").trim();
+
+                if (correoBD === correo && claveBD === clave) {
+                    usuarioEncontrado = u;
                     break;
                 }
             }
 
             if (!usuarioEncontrado) {
-
                 alert("Correo o contraseña incorrectos.");
-
                 return;
             }
 
-            // *Guardar usuario que inició sesión*
+            // Guardar usuario que inició sesión
+            sessionStorage.setItem("usuarioActivo", JSON.stringify(usuarioEncontrado));
 
-            sessionStorage.setItem(
-                "usuarioActivo",
-                JSON.stringify(usuarioEncontrado)
-            );
-
-            // *Redirección según rol*
-
-            if (usuarioEncontrado.rol === "Administrador") {
-
+            // Redirección según rol
+            if (usuarioEncontrado.rol === "Administrador" || correo.endsWith("@admin.cl")) {
                 sessionStorage.removeItem("modoAdminActivado");
-
                 window.location.href = "../admin/admin.html";
-
             } else if (usuarioEncontrado.rol === "Vendedor") {
-
                 window.location.href = "../admin/productos_admin.html";
-
             } else {
-
                 window.location.href = "portada.html";
-
             }
         });
     }
